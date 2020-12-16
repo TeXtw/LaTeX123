@@ -1,0 +1,97 @@
+% $Id: example20.tex,v 1.2 2004/01/31 15:01:15 edt1023 Exp $
+% example20.tex
+\documentclass[12pt]{article}
+\usepackage{textcomp,booktabs}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{colortbl}
+\definecolor{mygray}{gray}{.9}
+\definecolor{mypink}{rgb}{.99,.91,.95}
+\definecolor{mycyan}{cmyk}{.3,0,0,0}
+\parindent=0pt
+\parskip=3ex
+\begin{document}
+\centering
+% 灰階間隔的橫條
+\section*{SPECIFIC HEATS (20 \textcelsius\ AND 1 ATM)}
+\begin{tabular}{>{\sf }lll}    % 第一欄位使用 sans serif 字族
+\toprule
+ & \multicolumn{2}{c}{\bf Specific Heats} \\ % 跨二三欄排版，文字置中
+\cmidrule{2-3}
+ & $c$ (J/kg$\cdot$K) & $C$ (J/mol$\cdot$K) \\
+\midrule
+Aluminum     & 900  & 24.3 \\
+\rowcolor{mygray}
+Copper       & 385  & 24.4 \\
+Gold         & 130  & 25.6 \\
+\rowcolor{mygray}
+Steel/Iron   & 450  & 25.0 \\
+Lead         & 130  & 26.8 \\
+\rowcolor{mygray}
+Mercury      & 140  & 28.0 \\
+Water        & 4190 & 75.4 \\
+\rowcolor{mygray}
+Ice ($-$10 \textcelsius) & 2100 & 38 \\
+\bottomrule
+\end{tabular}
+
+\vspace{8ex} % 直欄著色
+\section*{SPECIFIC HEATS (20 \textcelsius\ AND 1 ATM)}
+\begin{tabular}{>{\columncolor{mypink}\sf }lll@{}}
+\toprule
+\rowcolor{white}
+ & \multicolumn{2}{c}{\bf Specific Heats} \\
+\cmidrule{2-3}
+\rowcolor{white}
+ & $c$ (J/kg$\cdot$K) & $C$ (J/mol$\cdot$K) \\
+\midrule
+Aluminum     & 900  & 24.3 \\
+Copper       & 385  & 24.4 \\
+Gold         & 130  & 25.6 \\
+Steel/Iron   & 450  & 25.0 \\
+Lead         & 130  & 26.8 \\
+Mercury      & 140  & 28.0 \\
+Water        & 4190 & 75.4 \\
+Ice ($-$10 \textcelsius) & 2100 & 38 \\
+\bottomrule
+\end{tabular}
+
+% 整個表格置於顏色背景
+\section*{SPECIFIC HEATS (20 \textcelsius\ AND 1 ATM)}
+\fboxsep=12pt
+\colorbox{mypink}{
+\begin{tabular}{@{}>{\sf }lll@{}}
+\toprule
+ & \multicolumn{2}{c}{\bf Specific Heats} \\
+\cmidrule{2-3}
+ & $c$ (J/kg$\cdot$K) & $C$ (J/mol$\cdot$K) \\
+\midrule
+Aluminum     & 900  & 24.3 \\
+Copper       & 385  & 24.4 \\
+Gold         & 130  & 25.6 \\
+Steel/Iron   & 450  & 25.0 \\
+Lead         & 130  & 26.8 \\
+Mercury      & 140  & 28.0 \\
+Water        & 4190 & 75.4 \\
+Ice ($-$10 \textcelsius) & 2100 & 38 \\
+\bottomrule
+\end{tabular}}
+
+\vspace{8ex} % 對某一個小方框著色，和 \multicolumn 配合
+\section*{SPECIFIC HEATS (20 \textcelsius\ AND 1 ATM)}
+\begin{tabular}{@{}>{\sf }lll@{}}
+\toprule
+ & \multicolumn{2}{c}{\bf Specific Heats} \\
+\cmidrule{2-3}
+ & $c$ (J/kg$\cdot$K) & $C$ (J/mol$\cdot$K) \\
+\midrule
+Aluminum     & 900  & 24.3 \\
+Copper       & 385  & 24.4 \\
+Gold         & 130  & 25.6 \\
+Steel/Iron   & 450  & 25.0 \\
+Lead         & 130  & 26.8 \\
+Mercury      & 140  & 28.0 \\
+Water        & \multicolumn{1}{>{\columncolor{mycyan}}l}{4190} & 75.4 \\
+Ice ($-$10 \textcelsius) & 2100 & 38 \\
+\bottomrule
+\end{tabular}
+\end{document}

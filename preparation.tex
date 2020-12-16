@@ -1,0 +1,166 @@
+% ``大家來學 LaTeX'' LaTeX 文稿 preparation.tex
+% Copyright (c) 2004  Edward G.J. Lee <edt1023@info.sayya.org>
+%
+% 在不違反 GNU Free Documentation License 1.2 或以後的版本規範之下，
+% 允許拷貝、散佈或修改。但原版權、授權聲明不得移除。
+%
+% 本散佈版本，含有 fdl.tex，內容為 GNU FDL 的規範原文。如果遺失，可由
+% http://www.gnu.org 取得，或寫信至自由軟體基金會(Free Software Fundation)
+% 索取。
+% 9 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+%
+% $Id: preparation.tex,v 1.23 2004/03/07 12:19:47 edt1023 Exp $
+%
+\chapter{行前準備}
+
+使用 \TeX/\LaTeX\ 系統，剛開始，比較麻煩的是安裝問題。不過，以現在的作業系統而言，幾乎較流行的作業系統都有現成包好的 \TeX\ 系統套件可以安裝，例如 Un*x 系統的 te\TeX\index{teTeX@te\TeX}、Windows 系統的 MiK\TeX\index{MiKTeX@MiK\TeX} 及 fp\TeX\index{fpTeX@fp\TeX}。另外，也有
+\TeX\ Live CD\footnote{\url{http://tug.org/texlive/}}\index{TeX Live CD@\TeX\ Live CD}
+可以供下載、購買，這是
+TUG(\TeX\ User Group)\footnote{\url{http://www.tug.org/}。加入會員的話，只要些許會費，則可以獲得 \TeX\ Live CD 及年報資訊的寄發。}
+製作的各種作業系統的可執行檔，使用上相當方便。
+
+目前所謂的 \TeX\ 套件，是把原來的 \TeX\ 排版引擎本身，加上 \LaTeX\ 及其他相關的巨集，再加上字型軟體（\MF{}）、繪圖程式（\MP{}）、字型檔\chdots{}等等，所組合成的一整個可實際運作的排版系統。因此，什麼是 \TeX{}？會因使用的場合不同而有不同的意義，一般純指指令本身的時候，就單純寫成小寫的 {\tt tex}，此時所用的巨集，預設就是 Knuth 教授所寫的 plain \TeX。寫成 \TeX\ 時，一般是指整個系統而言。這在 \LaTeX\ 巨集亦同，{\tt latex} 指的是指令，\LaTeX\ 指的是整個巨集系統。
+
+
+\section{Unix-like 系統}
+
+一般 Unix-like 系統都是安裝 te\TeX\ 套件，凡是和 {\tt tetex} 字樣相關的 packages 都安裝起來，目前 GNU/Linux\index{GNU/Linux} 各種 distribution 及 FreeBSD\index{FreeBSD} 都有現成的 packages 供安裝使用。如果是沒有提供這個套件的作業系統，可能得自行編譯了，原始碼在：
+
+\begin{quote}
+\url{http://www.tug.org/teTeX}\\
+\url{ftp://cam.ctan.org/tex-archive/systems/unix/teTeX}\\
+\url{ftp://tug.ctan.org/tex-archive/systems/unix/teTeX}\\
+\url{ftp://dante.ctan.org/tex-archive/systems/unix/teTeX}
+\end{quote}
+
+
+\section{MS Windows 系統}
+
+最常使用的 free 版本，大概就是 MiK\TeX\ 及 fp\TeX，其中，後者等於是 Un*x 中的 te\TeX\ 的 Windows 移植版本。
+
+\begin{quote}
+\url{http://www.miktex.org/}\\
+\url{http://www.fptex.org/}
+\end{quote}
+
+安裝的話都自動化了，應該可以很方便的安裝起來。
+
+\subsection{cygwin 環境}
+
+這是 Windows 系統下的一個 Un*x 環境（正確的說，是 Linux-like），有了這個環境就可以使用 Unix-like 的界面，也可以編譯 Unix-like 中的程式，當然也就可以安裝 Unix-like 系統的 te\TeX\ 套件了，有人習慣了 Unix-like 的操作環境，但又常需要在 Windows 平台下作業，這是個不錯的選擇。
+
+\begin{quote}
+\url{http://sources.redhat.com/cygwin}\\
+\url{http://sources.redhat.com/cygwin/setup.exe}
+\end{quote}
+
+只要先下載 {\tt setup.exe} 這個可執行檔，然後執行後按著指示就可以完成安裝，當然，網路要連線。至於 te\TeX\ 相關的套件，安裝好 cygwin\index{cygwin} 就會安裝，至於中文 \textsf{CJK}\index{CJK@\textsf{CJK}} 套件，感謝 seventeen\index{seventeen} 的製作，請參考：
+
+\begin{quote}
+\url{http://seventeen.mit.edu/blog/17/archives/000141.html}
+\end{quote}
+
+
+\section{Mac OS X 系統}
+
+個人對 Mac OS X\index{Mac OS X} 並不熟悉，所以僅提供個人知道的 distribution。但 Mac OS X 亦可以安裝 Un*x 系統上的 te\TeX\ 系統，也可以在其上自行編譯。
+
+\begin{quote}
+參考文件：\\
+\htmladdnormallink{[文件]MacOS 10.2.4安裝teTeX}{http://groups.google.com/groups?q=macos+group:tw.bbs.comp.tex&hl=zh-TW&lr=&ie=UTF-8&inlang=zh-TW&group=tw.bbs.comp.tex&selm=468AAJ\%24sn4\%40bbs.sayya.org&rnum=1}\\
+\url{http://www.rna.nl/tex.html}\\
+\url{http://www.cs.wright.edu/~jslater/mac-tex/mac-tex-intro/mac-tex-intro.pdf}\\
+\TeX{}Shop\\
+\url{http://www.uoregon.edu/~koch/texshop/texshop.html}\\
+i\TeX{}Mac\\
+\url{http://itexmac.sourceforge.net/}
+\end{quote}
+
+\section{商業維護的 \TeX/\LaTeX\ 系統}
+
+上面所提到的都是 free 的版本，縱使是 \TeX\ Live CD，雖也可以讓非 TUG\index{TUG} 會員訂購，但他們的 iso 是可以自由下載，不一定要花錢買。當然，這裡是鼓勵大家加入會員或花點小錢購買，也算是贊助他們繼續維護好品質的 \TeX\ 系統。另外，亦有商業維護的 \TeX/\LaTeX\ 系統，雖然要花錢，但功能上可能會比較符合特別的需要，而且有比較完整的售後服務方案：
+
+\begin{quote}
+\begin{tabular}{lll}
+True\TeX 	& \url{http://www.truetex.com/}	& Windows\\
+Turbo\TeX 	& \url{http://www.truetex.com/}	& Un*x, DOS, Windows\\
+Y\&Y \TeX 	& \url{http://www.YandY.com/}	& Windows\\
+pc\TeX   	& \url{http://www.pctex.com/}	& Windows\\
+V\TeX		& \url{http://www.micropress-inc.com/} & Windows, Linux, OS/2\\
+Scientific Word	& \url{http://www.sciword.demon.co.uk} & Windows\\
+Textures 	& \url{http://www.bluesky.com/}	& Macintosh\\
+Oz\TeX		& \url{http://www.trevorrow.com/oztex/}	& Mac OS X\\
+Scientific Assistant & \url{http://www.advanced-science.com/} & Mac OS X
+\end{tabular}
+\end{quote}
+
+\section{選個順手的編輯器}
+
+\TeX/\LaTeX\ 本身並不內附編輯器\index{編輯器}，這和許多排版軟體不一樣，他只專注在排版的過程，原始文稿是如何產生的並不插手干涉，這樣子的自由度很大，每個人都可以選用適合他自己的編輯器，但和目前一般的幕前排版系統比較的話，會讓初接觸的朋友不知所措，因為他不曉得要如何使用 \TeX/\LaTeX\ 來「編輯」原始文稿！
+
+當然，有些 \TeX/\LaTeX\ 的發行版本，乾脆就弄了個編輯器，把編輯器和排版系統本身連接起來，這樣是很方便，但有很大的可能又得花時間學習另一種不熟悉的編輯器操作。本文的說明，不準備被編輯器給綁住，你愛用什麼編輯器就用什麼編輯器，讓我們專心在排版過程本身吧！
+
+以下僅簡單介紹和中文相容的編輯器。當然，只要使用順手的編輯器都可以拿來用。原則上，剛開始接觸 \LaTeX{}，個人是建議從命令列開始瞭解起，等整個流程有個概念後再來使用一些方便的編輯器上的巨集及按鈕設定，不然，有時編輯器上的設定有問題時，會不知道從何改起。至於編輯器的操作，請自行參考各編輯器的說明文件或網路上的教學文件，這裡就不多談了。
+
+\subsection{{\sl V}{\it im}}
+\index{Vim@{\sl V}{\it im}}
+這有各種平台的版本可以下載：
+
+\begin{quote}
+\url{http://www.vim.org/}
+\end{quote}
+
+可以配合 vim-latex suite\index{vim-latex suite} 來使用：
+
+\begin{quote}
+\url{http://vim-latex.sourceforge.net/}
+\end{quote}
+
+\subsection{GNU Emacs/XEmacs}
+\index{GNU Emacs}\index{XEmacs}
+
+這也是有各種平台的版本，也可以配合
+AUC\TeX\footnote{\url{http://www.gnu.org/software/auctex/}}
+來使用，相當方便，這也是 Knuth 教授本身所愛用的編輯器：
+
+\begin{quote}
+\url{http://www.gnu.org/software/emacs/emacs.html}\\
+\url{http://www.xemacs.org}
+\end{quote}
+
+\subsection{NEdit}
+\index{NEdit}
+
+這也可以配合 AUC\TeX\index{AUCTeX@AUC\TeX} 來使用，但只有 Un*x 系統的版本：
+
+\begin{quote}
+\url{http://nedit.org}
+\end{quote}
+
+\subsection{WinEdt}
+\index{WinEdt}
+
+這是 shareware，只有 Windows 版本：
+
+\begin{quote}
+\url{http://home.istar.ca/~winedt}
+\end{quote}
+
+\subsection{UltraEdit}
+\index{UltraEdit}
+
+這也是 shareware，也是只有 Windows 版本。
+
+\begin{quote}
+\url{http://www.ultraedit.com}
+\end{quote}
+
+\subsection{Kile}
+\index{kile}
+
+這是很方便的 \LaTeX\ 圖形界面整合環境，還可叫出繪圖軟體來繪圖，如果其他作業系統也有安裝 Qt/KDE\index{Qt/KDE} 的話，也是可以編譯安裝使用：
+
+\begin{quote}
+\url{http://kile.sourceforge.net/}
+\end{quote}
+

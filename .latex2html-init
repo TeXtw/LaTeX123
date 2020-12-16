@@ -1,0 +1,12 @@
+# Initial file for LaTeX2HTML
+# $Id: .latex2html-init,v 1.1 2004/03/03 13:24:35 edt1023 Exp $
+#
+$ADDRESS = "<I>Compiled by Edward G.J. Lee ($address_data[1])</I>";
+$charset = "big5";
+$NO_NAVIGATION = 0;
+$BOTTOM_NAVIGATION = 1;
+$LOCAL_ICONS = 1;
+$WHITE_BACKGROUND = 1;
+$TRANSPARENT_FIGURES = 1;
+
+1;

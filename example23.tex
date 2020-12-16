@@ -1,0 +1,37 @@
+% $Id: example23.tex,v 1.1 2004/01/31 14:57:37 edt1023 Exp $
+% This example borrow from Sebastian Rahtz and Leonor Barroca's
+% rotating package. Modified to fit booktabs package.
+% example23.tex
+\documentclass{report}
+\usepackage{rotating,booktabs}
+\parindent=0pt
+\begin{document}
+\begin{sidewaystable}
+\centering
+\begin{tabular}{llllllllp{1in}lp{1in}}
+\toprule
+Context   &Length   &Breadth/   &Depth   &Profile   &Pottery   &Flint   &Animal   &Stone   &Other    &C14 Dates \\
+  &         &Diameter   &        &          &          &        & 
+Bones&&&\\
+\midrule
+&&&&&&&&&&\\
+\multicolumn{10}{l}{\bf Grooved Ware}&\\
+784       &---        &0.9m       &0.18m   &Sloping U &P1       &$\times$46  &  $\times$8      &&       $\times$2 bone&  2150$\pm$ 100 BC\\
+785       &---        &1.00m      &0.12    &Sloping U &P2--4    &$\times$23  &  $\times$21     & Hammerstone &---&---\\
+962       &---        &1.37m      &0.20m   &Sloping U &P5--6    &$\times$48  &  $\times$57*    & ---&     ---&1990 $\pm$ 80 BC (Layer 4) 1870 $\pm$90 BC (Layer 1)\\
+983       &0.83m      &0.73m      &0.25m   &Stepped U &---      &$\times$18  &  $\times$8      & ---& Fired clay&---\\
+&&&&&&&&&&\\
+\multicolumn{10}{l}{\bf Beaker}&\\
+552       &---        &0.68m      &0.12m   &Saucer    &P7--14   &---           & ---       & ---       &---        &---\\
+790       &---        &0.60m      &0.25m   &U         &P15      &$\times$12    & ---       & Quartzite-lump&---    &---\\
+794       &2.89m      &0.75m      &0.25m   &Irreg.    &P16      &$\times$3     & ---       & ---       &---        &---\\
+\bottomrule
+\end{tabular}
+\caption[Grooved Ware and Beaker Features, their Finds and
+Radiocarbon Dates]{Grooved Ware and Beaker Features, their
+Finds and Radiocarbon Dates; For a breakdown of the Pottery
+Assemblages see Tables I and III; for
+the Flints see Tables II and IV; for the
+Animal Bones see Table V.}
+\end{sidewaystable}
+\end{document}

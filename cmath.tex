@@ -1,0 +1,21 @@
+% $Id: cmath.tex,v 1.3 2004/03/05 18:15:19 edt1023 Exp $
+% cmath.tex
+\documentclass[12pt]{article}
+\usepackage{CJK}
+\usepackage{amssymb}
+\usepackage{amsmath,amsthm}
+\theoremstyle{remark}
+\pagestyle{empty}
+\newtheorem{cdefi}{\bf 定義}
+\renewcommand\CJKglue{\hskip -0.3pt plus 0.08\baselineskip}
+\begin{document}
+\begin{CJK}{Bg5}{hwmm}
+\begin{cdefi}
+設函數 $f:[a,b]\rightarrow{\mathbb R}$ 為可微分，且 $(f')^2$ 為可積，則稱
+\[
+L(s)=\int^b_a\sqrt{1+(f'(x))^2}dx
+\]
+為 $f$ 之圖形自點 $(a,f(a))$ 至點 $(b,f(b))$ 之弧 $s$ 的弧長。
+\end{cdefi}
+\end{CJK}
+\end{document}

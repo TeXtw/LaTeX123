@@ -1,0 +1,27 @@
+% $Id: example16.tex,v 1.3 2004/01/29 14:05:32 edt1023 Exp $
+% example16.tex
+\documentclass{article}
+\usepackage{textcomp}             % for \textcelsius
+\renewcommand{\arraystretch}{1.2} % 將表格行間距加大為原來的 1.2 倍
+\arrayrulewidth=1pt               % 調整線條粗細為 1pt
+\tabcolsep=12pt                   % 調整欄間距為 24pt
+\begin{document}
+\centering
+\section*{SPECIFIC HEATS (20 \textcelsius\ AND 1 ATM)}
+\begin{tabular}{@{\sf }lll@{}}    % 第一欄位使用 sans serif 字族
+\hline
+ & \multicolumn{2}{c}{\bf Specific Heats} \\ % 跨二三欄排版，文字置中
+\cline{2-3}                                  % 只畫二三欄橫線
+ & $c$ (J/kg$\cdot$K) & $C$ (J/mol$\cdot$K) \\
+\hline
+Aluminum     & 900  & 24.3 \\
+Copper       & 385  & 24.4 \\
+Gold         & 130  & 25.6 \\
+Steel/Iron   & 450  & 25.0 \\
+Lead         & 130  & 26.8 \\
+Mercury      & 140  & 28.0 \\
+Water        & 4190 & 75.4 \\
+Ice ($-$10 \textcelsius) & 2100 & 38 \\
+\hline
+\end{tabular}
+\end{document}

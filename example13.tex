@@ -1,0 +1,23 @@
+% $Id: example13.tex,v 1.1 2004/01/14 14:28:42 edt1023 Exp $
+% example13.tex
+\documentclass{article}
+\usepackage{color}
+\parskip=3ex
+\parindent=0pt
+\begin{document}
+This is a line.       % 畫高 1pt 寬 3cm 的橫線。
+\rule{3cm}{1pt}
+\rule[1ex]{3cm}{1pt}
+\rule[-1ex]{3cm}{1pt}
+
+\rule{1pt}{3cm}      % 畫高 3cm 寬 1pt 的直線。
+
+\rule{3cm}{0pt}TEST. % 把 TEST 向右推 3cm。
+
+\rule{2cm}{3cm}      % 畫高 3cm 寬 2cm 的方框。
+
+\textcolor{blue}{This is color lines.}
+\textcolor{red}{\rule{3cm}{1pt}}        % 有顏色的線框。
+\textcolor{green}{\rule[1ex]{3cm}{1pt}}
+\textcolor{blue}{\rule[-1ex]{3cm}{1pt}}
+\end{document}

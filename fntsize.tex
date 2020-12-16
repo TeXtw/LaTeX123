@@ -1,0 +1,24 @@
+% fntsize.tex font size relative command and examples.
+%
+% $Id: fntsize.tex,v 1.3 2004/03/05 18:15:20 edt1023 Exp $
+\documentclass{report}
+\usepackage{CJK,array}
+\begin{document}
+\begin{CJK}{Bg5}{hwmm}
+\thispagestyle{empty}
+\begin{tabular}{lll>{\tt}l}
+指令 & 實際例子 & 效果 & 實際的大小（點數）\\
+\hline
+\verb|\tiny| & \verb|{\tiny tiny}| & {\tiny tiny} & 5pt \\
+\verb|\scriptsize| & \verb|{\scriptsize scriptsize}| & {\scriptsize scriptsize} & 7pt \\
+\verb|\footnotesize| & \verb|{\footnotesize footnotesize}| & {\footnotesize footnotesize} & 8pt \\
+\verb|\small| & \verb|{\small small}| & {\small small} & 9pt \\
+\verb|\normalsize| & \verb|{\normalsize normalsize}| & {\normalsize normalsize} & 10pt \\
+\verb|\large| & \verb|{\large large}| & {\large large} & 12pt \\
+\verb|\Large| & \verb|{\Large Large}| & {\Large Large} & 14.4pt \\[.7ex]
+\verb|\LARGE| & \verb|{\LARGE LARGE}| & {\LARGE LARGE} & 17.28pt \\
+\verb|\huge| &  \verb|{\huge huge}| & {\huge huge} & 20.74pt \\
+\verb|\Huge| &  \verb|{\Huge Huge}| & {\Huge Huge} & 24.88pt \\
+\end{tabular}
+\end{CJK}
+\end{document}

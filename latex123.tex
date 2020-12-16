@@ -1,0 +1,311 @@
+% ``大家來學 LaTeX'' LaTeX 文稿 latex123.tex
+% Copyright (c) 2004  Edward G.J. Lee <edt1023@info.sayya.org>
+%
+% 在不違反 GNU Free Documentation License 1.2 或以後的版本規範之下，
+% 允許拷貝、散佈或修改。但版權、授權聲明不得更改、移除。
+%
+% 本散佈版本，含有 fdl.tex，內容為 GNU FDL 的規範原文。如果遺失，可由
+% http://www.gnu.org 取得，或寫信至自由軟體基金會(Free Software Fundation)
+% 索取。
+% 9 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+%
+% $Id: latex123.tex,v 1.48 2004/03/07 12:13:32 edt1023 Exp $
+%
+\special{ pdf: bgcolor [ 1.00 0.98 0.95 ] }
+\documentclass[12pt,a4paper]{report}
+\usepackage{CJK}
+\usepackage{makeidx}
+\usepackage{array}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{amsmath,amsthm,amssymb}
+\newtheorem{defi}{Definition}
+\usepackage{alltt}
+\definecolor{steelblue}{rgb}{.275,.51,.71}
+\definecolor{lpink}{rgb}{.991,.711,.754}
+\definecolor{mygray}{gray}{0.92}
+\definecolor{darkblue}{rgb}{0,0,.5}
+\definecolor{darkgreen}{rgb}{0,.39,0}
+\definecolor{hgray}{gray}{.5}
+\definecolor{lgray}{gray}{.8}
+
+\newcommand{\chdots}{$\cdots\cdots$}
+
+%% 會和 l2h 衝突的，包在 latexonly 環境內
+%begin{latexonly}
+\ifx\pdfoutput\undefined
+  \DeclareGraphicsRule{*}{eps}{*}{}
+\else
+  \DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+\usepackage{type1cm}
+\usepackage{mflogo}
+\newcommand{\myheader}[1]{\textcolor{darkblue}{#1}}
+\newcommand{\script}[1]{{\scshape#1}}
+\newcommand{\hwmm}{\CJKfamily{hwmm}}
+\newcommand{\hwmh}{\CJKfamily{hwmh}}
+%\newcommand{\wclsm}{\CJKfamily{wclsm}}
+\newcommand{\hwyk}{\CJKfamily{hwyk}}
+
+%% 以下調整字距
+\renewcommand\CJKglue{\hskip -0.3pt plus 0.08\baselineskip}
+%% 以下調整行距，兩者 latex2html 皆不支援。
+\linespread{1.382}
+%% 以下調整表格行距
+%\extrarowheight=.5ex
+\renewcommand{\arraystretch}{1.2}
+%% 以下表示各段落不縮排
+\parindent=0pt
+%% 縮小 quote 為正常行距，並使用較小字體
+\renewenvironment{quote}
+  {\list{}{\topsep 0ex\parsep 0ex\setlength\leftmargin{1.5em}%
+           \rightmargin\leftmargin}\item\relax\linespread{1.0}\small}%
+  {\endlist}
+
+%% 由於把行距加大，要把腳注的行距縮成預設的，這個設定採自吳聰敏教授的
+%% 《cwTeX 排版系統》修訂二版一書，頁 143。
+\let\oldfootnote\footnote
+\renewcommand\footnote[1]{\oldfootnote{\renewcommand\baselinestretch{1.0}%
+\large\footnotesize\ignorespaces#1}}
+\addtolength{\footnotesep}{3pt}
+
+%% 調整版面，節省紙張。
+\addtolength{\textwidth}{1in}
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\textheight}{1in}
+\addtolength{\topmargin}{-.5in}
+%\usepackage[margin=2cm]{geometry}
+
+\usepackage{fancyvrb}
+
+%% 華麗的頁眉功能
+%% 左章右節，每一頁皆相同。不使用 twoside option，則每一頁皆視為右頁。
+\usepackage{fancyhdr}
+\fancyhead[R]{\textsl{\footnotesize\textcolor{hgray}\rightmark}}
+\fancyhead[L]{\textsl{\footnotesize\textcolor{hgray}\leftmark}}
+
+\usepackage[sf]{titlesec}
+\usepackage{titletoc}
+\titlespacing{\chapter}{0pt}{0pt}{7ex}
+\titleformat{\chapter}[display]
+            {\normalfont\LARGE\sf\hwyk}
+            {\filleft\LARGE \myheader{第\ \thechapter\ 章}}
+            {1ex}
+            {\titlerule\vspace{.5ex}
+             \filright\LARGE\myheader}
+             [\vspace{.5ex} \titlerule]
+\titleformat{\section}[hang]{\Large\sf\hwyk}
+            {\myheader\thesection}
+            {1em}
+            {\myheader}
+\titleformat{\subsection}[hang]{\large\sf\hwyk}
+            {\myheader\thesubsection}
+            {1em}
+            {\myheader}
+\titleformat{\subsubsection}[hang]{\normalsize\sf\hwyk}
+            {\myheader\thesubsubsection}
+            {1em}
+            {\myheader}
+
+\titlecontents{chapter}
+              [2em]{\large\sf\hwyk\addvspace{-0.1em}}
+              {\contentslabel{2em}}
+%%            {\hspace*{-2.3em}}
+              {}
+              {\titlerule*[0.8pc]{.}\contentspage}
+\titlecontents{section}
+              [4em]{\small\addvspace{-0.2em}}
+              {\contentslabel{3em}}
+%%            {\hspace*{-2.3em}}
+              {}
+              {\titlerule*[0.8pc]{.}\contentspage}
+
+\titlecontents{subsection}
+              [6em]{\small\addvspace{-0.2em}}
+              {\contentslabel{3em}}
+%%            {\hspace*{-2.3em}}
+              {}
+              {\titlerule*[0.8pc]{.}\contentspage}
+
+%% 以下是使用 hyperref package，要放在其他 packages 之後。
+%% 如果 hyperref.cfg 已有定義，則 [] 內之選項可以省略。
+\usepackage[CJKbookmarks,dvipdfm,plainpages=false,hyperindex]{hyperref}
+\hypersetup{pdfauthor={李果正 Edward G.J. Lee},
+            pdftitle={大家來學 LaTeX Version 1.0},
+            pdfsubject={大家來學 LaTeX Version 1.0},
+	    pdfkeywords={大家來學 LaTeX,CJK,LaTeX,latex123}}
+%end{latexonly}
+
+\makeindex
+
+%% 要放在最後，否則會和 hyperref 衝突。因 html 會主動載入無任何參數
+%% 的 hyperref
+\usepackage{html}
+%% 引入 taiwan style(taiwan.perl) 會使 image 的製作出問題，要和 taiwan.sty
+%% 配合才能正常，目前只存在 taiwan.sty 的空檔，裡頭沒有任何定義
+\begin{htmlonly}
+\usepackage{taiwan}
+\end{htmlonly}
+
+% let the depth of report to subsubsection
+\setcounter{secnumdepth}{3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  進入本文區
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{CJK}{Bg5}{hwmm}
+%% 設定頁眉，由於標題使用中文，因此要置於 CJK 環境內。
+%%\pagestyle{headings} % 這是原始 LaTeX 的陽春頁眉功能。
+\pagestyle{fancy}
+
+%\bibliographystyle{plain}
+
+%begin{latexonly}
+%% 定義常要用到的指令
+\newcommand{\drawwidth}[1]{\rule{0.3pt}{1.3ex}\rule[1mm]{#1}{0.3pt}\rule{0.3pt}{1.3ex}}
+\renewcommand\contentsname{目~錄~}
+\renewcommand\indexname{索~引}
+\renewcommand\bibname{參~考~資~料}
+\renewcommand\chaptermark[1]{\markboth{第\ \thechapter\ 章\  #1}{}}
+\renewcommand\today{\number\year~年~\number\month~月~\number\day~日}
+%end{latexonly}
+
+% 封面自行設計。HTML 版本要稍微修改一下位置及字型大小，l2h 不支援 type1cm
+\begin{titlepage}
+\vspace*{5ex}
+  \begin{flushright}
+    {\textcolor{steelblue}{\fontsize{36}{20pt}\selectfont \hwyk 大家來學 \textbf{\LaTeX}}}
+  \end{flushright}
+  \textcolor{lpink}{\rule{\textwidth}{.256ex}}
+  \begin{htmlonly}
+  \htmlrule
+  \end{htmlonly}
+  \begin{flushleft}
+    Version 1.0\\
+    \today
+  \end{flushleft}
+  \vspace{8ex}
+  \hspace*{3em}\includegraphics[scale=.75]{cover2.1}
+  \vspace{8ex}
+  \begin{flushright}
+    By Edward G.J.\ Lee 李果正\\
+    Email : \htmladdnormallink{\tt edt1023@info.sayya.org}{mailto:edt1023@info.sayya.org}\\
+    本教學文件之製作，部份接受下列計劃補助：\\
+    行政院研考會委辦 「政府機關資料文件交換之電子檔案格式應用研究」
+  \end{flushright}
+\end{titlepage}
+
+%% 目錄的部份以羅馬數字計頁
+\pagenumbering{roman} 
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+
+%% 本文回復為阿拉伯數字計頁，並從頭起算
+% hyperref 索引頁數會出錯，很有可能是 hyperref 的 bug
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+%% 調整段落間距離，置於 preamble 區會影響 TOC 的行距，因此置於本文區
+\parskip=1.618ex
+
+%%% 以下是本文
+
+%begin{latexonly}
+\input{story.cjk}
+\input{preparation.cjk}
+\input{syntax.cjk}
+\input{start.cjk}
+\input{space.cjk}
+\input{class.cjk}
+\input{package.cjk}
+\input{table.cjk}
+\input{graphic.cjk}
+\input{math.cjk}
+\input{abook.cjk}
+\input{theend.cjk}
+\input{fdl.cjk}
+%end{latexonly}
+
+\begin{htmlonly}
+\input{story}
+\input{preparation}
+\input{syntax}
+\input{start}
+\input{space}
+\input{class}
+\input{package}
+\input{table}
+\input{graphic}
+\input{math}
+\input{abook}
+\input{theend}
+\input{fdl}
+\end{htmlonly}
+
+\cleardoublepage
+
+%\bibliography{mybib}
+%\nocite{*}
+%\addcontentsline{toc}{chapter}{參考資料}
+
+\begin{thebibliography}{KDE}
+\label{bib:bib}
+\addcontentsline{toc}{chapter}{參考資料}
+
+\bibitem{KDEt} Knuth, Donald E., \textit{The \TeX{}book},
+Reading, Massachusetts: Addison-Wesley, 1989.
+
+\bibitem[KDE]{KDEm} Knuth, Donald E., \textit{The \MF{}book},
+Reading, Massachusetts: Addison-Wesley, 1986.
+
+\bibitem{topic} Clark, Malcolm, \textit{\TeX\ by Topic},
+Reading, Massachusetts: Addison-Wesley, 1992.
+
+\bibitem{Impatient} Abrahams, Paul W., Berry, Karl and Hargreaves, Kathryn A.,
+\textit{\TeX\ for the Impatient},
+Reading, Massachusetts: Addison-Wesley, 1990.
+
+\bibitem{comp} Goossens, Michel, Mittelbach, Frank, and Samarin, Alexander,
+\textit{The \LaTeX\ Companion},
+Reading, Massachusetts: Addison-Wesley, 1993.
+
+\bibitem{cwtex} 吳聰敏、吳聰慧，《\texttt{cw}\TeX\ 排版系統》，台北：吳聰敏，2002。
+
+\bibitem{clatex} 鄭郁耀、郭雅思，《\LaTeX\ 數理排版：由入門到應用》，台北：全華，1995。
+
+\bibitem{clinux} 王佑中，《Linux 中文應用手冊》，台北：第三波，1995。
+
+\bibitem{paper1} 朱浤源，《撰寫博碩士論文實戰手冊》，台北：正中，1999。
+
+\bibitem{paper2} 傅袓慧，《科學論文的寫作審查及發表》，台北：中華農學會，1980。
+
+\end{thebibliography}
+
+\cleardoublepage
+
+\chapter*{使用許可證聲明}
+\addcontentsline{toc}{chapter}{使用許可證聲明}
+%begin{latexonly}
+\linespread{1.2}\selectfont
+\colorbox{mygray}{
+%end{latexonly}
+%% 沒有 minipage 的話，不會自動 word wrap
+\begin{minipage}{1.0\textwidth}
+Copyright \copyright~2004 李果正 \htmladdnormallink{Edward G.J.\ Lee}{mailto:edt1023@info.sayya.org}\\
+最後修訂日期：\today\\
+本文件為自由文件（GNU FDL \url{http://www.gnu.org/copyleft/fdl.html}），不明示或暗示有任何的保證。本文件可自由複製、修改、散佈，但請保留使用許可證聲明，文章內所附之 GNU Free Documentation License 一章全文則不可修改其內容。程式碼的部份依其所宣告的 license，不受 GNU FDL 的規範。PDF 格式文件內所嵌入的向量字型資料，為王漢宗博士（Dr. Hann-Tzong Wang）所捐贈，字型 Copyright 屬王漢宗博士，其使用授權為 GNU GPL。因此，此部份的字型資料，亦不屬 FDL 規範範圍。文件內所提及的商標皆屬其合法註冊公司所有。 \end{minipage}}
+
+\printindex
+
+\addcontentsline{toc}{chapter}{索引}
+
+\newpage
+\end{CJK}
+\end{document}

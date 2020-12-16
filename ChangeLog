@@ -1,0 +1,1695 @@
+2004-03-07  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* theend.tex:
+	- Released version 1.0.
+	- Tried to list the not enough topic of this document.
+	- Added the thanks and the url site of this document and it's
+	  source code.
+
+	* table.tex:
+	- Added necessary index.
+
+	* syntax.tex, story.tex:
+	- Forced to use two \cdots to instead Chinese ellipse.
+
+	* start.tex:
+	- Fixed the index of \verb.
+
+	* space.tex:
+	- Fixed a typo, em-sqaure => em-square.
+
+	* preparation.tex:
+	- Forced to use two \cdots to instead Chines ellipse.
+
+	* package.tex:
+	- Fixed the index of AmS-LaTeX.
+
+	* math.tex:
+	- Added necessary index.
+
+	* graphic.tex:
+	- Added necessary index.
+	- Added Andr\'e Heck's MetaPost tutorial url.
+
+	* latex123.tex:
+	- Modified the linespread to 1.2 after license annoucement.
+
+	* abook.tex:
+	- Added necessary index.
+	- We forced to use two \cdots to instead Chinese ellipse, because
+	  we could not let dvipdfmx to embbed U+2026(Big-5 0xa14b) when
+	  we used Unicode Chinese fonts.
+
+	* README:
+	- Modified CLE Project ftp site.
+
+	* Makefile:
+	- Removed the -r option of makeindex, it will cause problem when
+	  too many Chinese index.
+
+2004-03-06  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* abook.tex, example10.tex:
+	- Fixed the font name for CJK.
+
+	* graphic.tex:
+	- Fixed the font name for CJK.
+
+	* latex123.tex:
+	- Modified the license announcement.
+	- Didn't know how to pick up Chinese ellipse from dvipdfmx, still
+	  didn't know where the problem was.
+
+	* math.tex:
+	- Fixed the font for CJK in the example.
+
+	* class.tex, package.tex, space.tex, start.tex, syntax.tex:
+	- Added and fixed the index.
+
+	* Makefile:
+	- Used bg5latex always, the index didn't know how to give
+	  its dependence.
+
+2004-03-05  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* abook.tex:
+	- The usage of bibtex and the format of *.bib file.
+	- Styles of thebibliography environment.
+	- Appendix.
+	- \input and \include and the difference.
+
+	* latex123.tex:
+	- Used hwmm instead aming.
+	- Used hwyk for cover and chapter caption.
+	- Changed the license announcement that we use GNU GPL TTF
+	  contributed by Dr. Hann-Tzong Wang.
+
+	* start.tex:
+	- Changed the notation of an Chinese article.
+
+	* syntax.tex:
+	- Tuned the overfull line.
+
+	* fntsize.tex, latex-flow.tex, cmath.tex, cmath1.tex, example10.tex, example11.tex, example12.tex, example28.tex:
+	- Used hwmm instead aming. This was TTF contributed by
+	  Dr. Hann-Tzong Wang, and release under GNU GPL.
+
+	* README:
+	- Rearranged the typing style.
+
+	* Makefile:
+	- Used latex to compile the *.cjk at sencod time.
+
+2004-03-04  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* abook.tex:
+	- Added an example of thebibliography environment.
+
+	* README:
+	- Fixed the typo in English version.
+
+	* Makefile:
+	- Changed the version to 0.1draft.
+
+	* latex123.tex:
+	- Modified the style in the thebibliography environment.
+	- More clearly(added comments) when \begin{document} start.
+
+2004-03-03  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* abook.tex:
+	- Explained *.idx and *.ind files of index.
+	- How to change indexname.
+
+	* graphic.tex:
+	- Removed the url of test-tricks.tar.gz, added the url of the
+	  source individually.
+
+	* syntax.tex:
+	- Added necessary index key.
+
+	* math.tex:
+	- Added a new example to explain how to tune the space in
+	  math formula.
+
+	* latex123.tex:
+	- Added the option `plainpages=false' to hyperref setting,
+	  this will let index hyper link normal, but still wrong
+	  on page one.
+	- Used taiwan babel for LaTeX2HTML.
+
+	* preparation.tex, story.tex:
+	- Added necessary index keyes.
+
+	* cmath1.tex:
+	- New example that tuned the space between math character.
+
+	* Makefile:
+	- Added cmath1.tex dependence.
+
+	* .latex2html-init:
+	- New file for LaTeX2HTML configuration.
+
+	* taiwan.perl:
+	- New file for LaTeX2HTML to display Traditional Chinese caption/
+	  title, it needed cooperate with taiwan.sty.
+
+	* taiwan.sty:
+	- New file for LaTeX2HTML Traditional Chinese caption/title.
+	- This file was an empty file, should not delete it!
+
+2004-03-02  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* story.tex:
+	- Added some index to be tested.
+
+	* latex123.tex:
+	- Added bibliography and index, but the style of bibliography
+	  needed consistency later, and the hyper link of page 1 of
+	  index seem get wrong position, didn't know why yet.
+
+	* fdl.tex:
+	- Removed linespread command at the end of this chapter, cause
+	  after this chapter we used normal linespread.
+
+	* Makefile:
+	- Added makeindex command, we had index now.
+
+2004-03-01  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* abook.tex:
+	- Explained cross references.
+	- How to change contentsname, listfigurename and listtablename.
+	- The usage of hyperref package.
+	- Index.
+	- The thebibliography, sigh still had trouble with Big-5.
+
+	* syntax.tex:
+	- Added \label{subsec:chapstruc}.
+
+	* math.tex:
+	- Added theorem package, but we didn't talk too much of it.
+
+	* README:
+	- Added Big-5 and UTF-8 encoding version.
+
+2004-02-29  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* ChangeLog:
+	- Added ChangeLog into CVS.
+
+	* cmath.tex:
+	- Fixed the usage of \mathbb.
+
+	* pic.sh:
+	- ps2eps needed -f option to force rewrite the exist eps file.
+
+	* math.tex:
+	- Oopes, so many typos. :(
+	- Fixed the usage of \mathbb.
+	- Fixed the wrong url of `The LaTeX Companion' chapter 8 PDF file.
+	- Added the abbreviation of \rightarrow and \leftarrow.
+	- Theorem environment of LaTeX and amsthm of AMS, we used two
+	  examples, one for `plain LaTeX' one for amsthm and one in
+	  English, one in Chinese.
+	- Space tuning in math mode.
+	- How to change fonts in math mode.
+
+	* start.tex:
+	- Added \label{sec;toc}.
+
+	* latex123.tex:
+	- Added that this document project was subsided partially by
+	  Research Development and Evaluation Commission Executive Yuan.
+
+	* Makefile, cmath.tex:
+	- Added an external LaTeX file, we needed both remark and plain
+	  style of amsthm. If we wrote another macro will not accept by
+	  latex2html.
+
+	* pic.sh:
+	- Used -l(loose) option to produce expand bounding box eps files.
+
+2004-02-28  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* README:
+	- Added the url of MathNet tku, we have a clone site now.
+	  Thanks to ctshieh <ctshieh.bbs@bbs.cs.nthu.edu.tw>.
+
+	* math.tex:
+	- We focus on math typesetting, let chem typesetting in next
+	  release.
+	- Fraction, array, equation, sqrt and amsmath's align environment,
+	  we didn't use eqnarray environment.
+
+	* package.tex:
+	- Added \label{subsec:latexsym}.
+
+2004-02-27  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* math.tex:
+	- Some explanation of AmS LaTeX, we don't intend to discuss
+	  it too much.
+	- More examples of math inline mode.
+	- Rules in math mode.
+
+	* test-yi.mp:
+	- Changed the Chinese character to be test.
+
+	* table.tex:
+	- If we use \tt in the \htmladdnormallink command will casuse
+	  trouble, use \texttt instead.
+
+	* syntax.tex:
+	- Added the name of ~(tie).
+	- Added an example `etc.' that needed a normal interword space after
+	  this abbreviation.
+
+	* package.tex:
+	- Added the CATN url for d/l symbols-a4.pdf.
+
+	* ltxpkg.sh:
+	- Oops, a missing of `then' in if statement.
+	- Fixed the wrong position of grep argument.
+
+	* latex123.tex:
+	- Used Chinese bibname, but thebibliography environment cannot
+	  use if we use hyperref package, need some hack.
+
+	* graphic.tex:
+	- Changed the Chinese character to be test in test-yi.mp.
+
+	* Makefile:
+	- Added *.brf *.bmt to be removed.
+
+2004-02-26  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* math.tex:
+	- Builded the structure of this chapter.
+	- `math inline mode' and some examples.
+
+	* syntax.tex:
+	- Added an example `Dr.' that needed a normal interword space after
+	  the abbreviation.
+
+	* Makefile:
+	- Added `-image_type gif' option to latex2html, will got good
+	  transparent effects.
+
+	* graphic.tex:
+	- Added \label{subsec:rotate}.
+	- Used verbatim instead alltt unless necessary, latex2html will
+	  not indent when used alltt.
+	- CJK package used sans serif.
+
+2004-02-21  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* graphic.tex:
+	- Used latexonly environment to `escape' \tabcolsep.
+
+	* syntax.tex:
+	- Added a comment to explain why use png file.
+
+2004-02-20  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* graphic.tex:
+	- Added the floating environment.
+	- Added ebb to calculate BoundingBox.
+	- Added totalheight option of \includegraphics.
+	- Explained how to set the searching path of images.
+
+	* Makefile:
+	- Added the temp files of MP taht want to rm.
+
+	* syntax.tex:
+	- More detail on em-square.
+	- Used \latexhtml, we used png file for latex2html.
+
+	* test-pdftricks.tex:
+	- Fixed figure caption, used PDFTricks.
+
+	* latex123.tex:
+	- Added the \DeclareGraphicsRule judgement.
+
+	* baseline.mp:
+	- Used lowercase in labels.
+
+	* b5mp.pl:
+	- Added wycc <wycc@iis.sinica.edu.tw> to the author field
+	  of b5mp.pl POD document.
+
+	* baseline.png:
+	- Used lowercase.
+
+2004-02-19  Edward G.J. Lee  <edt1023@info.sayya.org>
+        
+	* graphic.tex:
+	- Added examples for color data type of MP.
+	- Added \graphicspath command.
+	- Added Detail explamnation of \rotatebox/\resizebox/\reflectbox.
+
+	* b5mp.pl:
+	- Needed a blank line before =head1.
+
+	* space.tex: 
+	- Fixed all other Chinese translation of `baseline'.
+
+	* syntax.tex:
+	- Added a new subsection to explain baseline/meanline/cap height/
+	  x-height/reference point of glyph. 
+
+	* baseline.png:
+	- We had trouble to convert the baseline.1 to transparent png file,
+	  so we grab it manually and didn't use latex2html to convert it.
+
+	* Makefile, baseline.mp:
+	- Added a figure to explain baseline/meanline/cap height/x-height
+	  and reference point of glyphs.
+
+2004-02-18  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* Makefile, test-mpcolor.mp:
+	- New example for for loop in MP code.
+
+	* graphic.tex:
+	- Needed not to declare numeric data type of MP in genral use.
+	- Added examples for pair/color data typeof MP.
+	- Added decimal() of MP.
+	- Added examples for fullcircle/unitsquare and some addto
+	  command of MP.
+	- New test-mpcolor.mp to explain how to use for loop in MP.
+
+	* latex123.tex:
+	- Added usenames/dvipsnames optional argument in color
+	  package.
+
+	* test-yi.mp:
+	- Added `;' after beginfig.
+
+2004-02-17  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* graphic.tex:
+	- Added explanation and example for numeric/pair data type.
+	- More explanation for MetaPost command.
+	- Detail example for picture command, label command and added
+	  command and clip command. We didn't learn the syntax but
+	  examples only.
+
+	* syntax.tex:
+	- Fixed typo in 3.4.3 preamble, thanks to,
+	  edwar <edwar.bbs@bbs.sayya.org>.
+
+	* b5mp.pl:
+	- Fixed typo in POD document.
+
+2004-02-15  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* graphic.tex:
+	- Added Java version of xfig for non-Un*x system.
+	- Fixed typo on url of OO.o.
+	- Added the fontname optional argument of b5mp.pl.
+	- Added Big-5 Chinese label in test-yi.mp.
+	- Fixed the typo of compiling mproof.dvi.
+	- We used akai for test-yi.mp.
+	- Fixed the typo of mproof.pdf's url.
+
+2004-02-13  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* start.tex:
+	- Typo fixed. Thanks to  qrtt1 <qrtt1.bbs@bbs.sayya.org>.
+
+	* space.tex:
+	- Modified the baseline Chinese translation, thanks to
+	  qrtt1 <qrtt1.bbs@bbs.sayya.org>.
+
+	* latex123.tex:
+	- pdftitle/pdfsubject should be `LaTeX123'.
+
+	* fdl.tex:
+	- Modified the \bigskip.
+
+	* Makefile:
+	- Changed `%.1: %.mp' to `%.1 %.2: %.mp' GNU make didn't have
+	  `%.[1-9]: %.mp' rules. :)
+
+	* b5mp.pl:
+	- Added font name argument.
+	- Added pod manual.
+	- Try to remove `end', `end;', `bye' and `bye;' in original MP
+	  file.
+	- Added amsmath, amssymb packages.
+
+	* ltxpkg.sh:
+	- Added TODO list.
+
+	* test-yi.mp:
+	- Added more Chinese character to test b5mp.pl.
+
+2004-02-12  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* graphic.tex:
+	- New \label{subsec:b5mp}.
+	- Explained how to proof the mpost output(mproof MP macro).
+	- Datatype of MP.
+	- General command of MP.
+	- How to use MP in LaTeX document.
+	- New example28 and test-yi.mp to explain how to use `b5mp.pl'
+	  and include it in LaTeX document.
+
+	* Makefile, example28.tex, test-yi.mp:
+	- New example28 and test-yi.mp to explain how to use `b5mp.pl'
+	  and how to include it to the LaTeX file.
+	- Sigh, seems Makefile need a new dependency of MP files.
+
+	* b5mp.pl:
+	- Fixed the program name typo.
+	- Used subrouting to write the LaTeX header and tail structure.
+	- Fixed the bug that cannot handle multiple figures.
+
+2004-02-11  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* b5mp.pl:
+	- Insert the necessary structure of CJK environment, so we
+	  can input Big-5 Chinese characters in MetaPost code directly,
+	  b5mp.pl will take over evreything. But the font name is still
+	  a problem. :(
+
+	* b5mp.pl:
+	- A tool to compile MeatPost codes that have Big-5 Chinese
+	  characters in CJK environment. Maybe we need insert LaTeX
+	  code in the MetaPost code.
+
+2004-02-10  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* graphic.tex:
+	- Added the position optional argument of \shortsttack.
+	- New example26 for \shortstack, new example27 for \rotatebox.
+	- The basic structure of MetaPost code.
+
+	* fdl.tex, package.tex, story.tex, syntax.tex, table.tex, test-pstricks.tex:
+	- Typo fixed.
+
+	* example26.tex, example27.tex, Makefile:
+	- New example26 for \shortstack, example27 for \rotatebox.
+	  We used Chinese in CJK environment.
+
+2004-02-09  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* graphic.tex:
+	- Explained why use command line tools to draw image.
+	- Added Roland Bless's ps2eps tool.
+	- Explained how PDFTricks work.
+	- \includegraphics's optional arguments.
+
+	* ltxpkg.sh:
+	- Use /dev/urandom only when on Linux box.
+
+2004-02-08  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* graphic.tex:
+	- Gnuplot can output mp too.
+	- The introduction about Picture environment and `epic' package
+	  command finished.
+	- How to use PDFTricks, New examples(test-pstricks, test-pdftricks).
+	- Do not intent to talk too much about PSTricks, let us focus on
+	  MetaPost.
+	- How to include mps if we didn't have `ifpdf' package.
+
+	* latex123.tex:
+	- Added `alltt' package.
+
+	* test-pdftricks.tex, test-pstricks.tex:
+	- Let \psarc's linewidth be 1pt.
+
+	* ltxpkg.sh:
+	- Removed the -E option of grep.
+
+	* table.tex:
+	- Modified the explanation of the dvipsnames options argument of
+          color package.
+
+	* example25.tex:
+	- Used lowercase for x/y axis name.
+
+	* Makefile, gnuplot-label.dem, test-pdftricks.tex, test-pstricks.tex:
+	- New examples for gnuplot, PSTricks and PDFTricks.
+
+2004-02-07  Edward G.J. Lee  <edt1023@info.sayya.org>
+          
+	* graphic.tex:
+	- Added new plot utils, GNU plotutils and tgif.
+	- Added the url of Urs Oswald's latexgraphics and MetaPost tutorial.
+	  The url of Vincent Zoonekynd's MetaPost exmaples.
+	  The url of Alan U. Kennington's MetaPost exmaples.
+
+	* package.tex:
+	- More explanation about ltxpkg.sh, it's not perfectly.
+
+	* ltxpkg.sh:
+	- Only needed grep one times.
+	- Removed any line that contain `\@' and `\def'.
+	- A typo in grep statement.
+	- Used /dev/urandom to produce random numbers to be temporary
+	  files' name.
+	- Dump the results from grep to temporary files, we need those
+	  temporary files to keep line carriage return.
+	- Avoid searching TeX comments.
+
+2004-02-06  Edward G.J. Lee  <edt1023@info.sayya.org>
+        
+	* Makefile, example25.tex:
+	- New example25 for picture environment.
+          
+	* latex123.tex:
+	- Removed eso-pic package.
+	- Let LaTeX2HTML to take over the mps image convertion, so
+	  we neednot htmlonly environment in the cover page. This
+	  save much code and performed smoothly but we need to do
+	  some modification in the HTML version manually.
+	- Removed \textfraction, \topfraction, \bottomfraction,
+	  \floatpagefraction, we didn't use floating environment.
+
+	* Makefile:
+	- Let LaTeX2HTML to take over the mps image convertion.
+
+2004-02-05  Edward G.J. Lee  <edt1023@info.sayya.org>
+        
+	* graphic.tex:
+	- When TeX start to develop, ps/eps/pdf/jepg/png didn't exist.
+	- mps of MetaPost was a subset of eps, not exactly an eps.
+	- More detail of the original version of grace, e.g., ACE/gr,
+	  added a footnote to explain the history.
+	- More detail about Ipe, because it can edit the eps/pdf produce
+	  from Ipe itself.
+	- Added a new graphic tool, skeneil(aka, sketch).
+	- Introduced the picture environment. 
+          
+	* table.tex:
+	- Changed the footnote of the color storage in the computer,
+	  it's not allways occupied one byte.
+	- Fixed the Chinese translation of `model'. 
+	- Fixed the wrong computing of 256^3.
+        
+	* package.tex:
+	- Added the usage of ltxpkg.sh example.
+
+	* ltxpkg.sh:
+	- Made the variable more clearly.
+	- Fixed my poor English.
+
+2004-02-04  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* graphic.tex:
+	- Modified the explanation of vector image and bitmap image.
+
+	* package.tex:
+	- Added a new tool: ltxpkg.sh. We can query if we installed
+	  a package in the system, and can query if the package has
+	  preloaded another packages.
+
+	* table.tex:
+	- Fixed the wrong explanation about changed \arraystretch.
+	  Seems still wrong.:(
+	- Added how to query the preloaded packages in another package,
+	  we use the bash script tool: ltxpkg.sh.
+
+	* test-tables.tex:
+	- Removed the [t] option in \parbox command.
+
+	* ltxpkg.sh:
+	- A simple(and ugly) package query tool for LaTeX.
+	  1. query if some LaTeX package installed.
+	  2. query if a package preload another packages.
+
+	* ltxins.sh:
+	- Added my name and email address.
+
+2004-02-03  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* graphic.tex:
+	- More detail on bitmap and vector image.
+	- Added \label{sec:graphictools}, \label{sec:picture},
+	  \label{sec:pstricks}, \label{sec:metapost}. 
+	- Introduced graphic tools and its url.
+          
+	* table.tex: 
+	- Replaced {\tt \textbar{}}(didn't work) with \verb+|+.
+	- Booktabs package will tune the value of arraystretch, so we
+	  need not to change it.
+	- More detail on floating environment.
+	- Added \suppressfloats command.
+
+	* example18.tex:
+	- Removed array package.
+
+	* example17.tex:
+	- Removed a testing command.
+
+2004-01-31  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* table.tex:
+	- Modified \label{ch:graphic} to \label{ch:table}.
+	- Added \label{sec:tabbing}, \label{sec:tabular}, \label{sec:array},
+	  \label{sec:tabularx}, \label{sec:booktabs}, \label{subsec:colortbl},
+	  \label{sec:3parttable}, \label{sec:dcolumn}, \label{sec:longtable},
+	  label{sec:float}
+	- Introduced how to rotate a table, and added new example23(rotating
+	  package).
+	- Introduced long table typsetting and added new example24(longtable
+	  package).
+	- An example to explain table environment.
+
+	* preparation.tex, start.tex, story.tex:
+	- Some rhetorical revision.
+
+	* package.tex:
+	- Added \label{subsec:multicol} and replace some old graphic
+	  label with table.
+
+	* example22.tex: 
+	- Used z instead x, avoid confusing with tabularx's X.
+
+	* example21.tex:
+	- Used footnotesize font in tablenotes environment.
+
+	* example20.tex:
+	- Added @{} before >{\sf } if we use array package.
+
+	* example17.tex:
+	- Removed array package.
+
+	* Makefile, example23.tex, example24.tex:
+	- Added new example23 for rotating package.
+	- Added new example24 for longtable package.
+
+2004-01-30  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* table.tex:
+	- Changed some subsubsection to section.
+	- Added argument to the table of booktabs package.
+	- More detail usage of color package.
+	- New example20 for colortbl package.
+	- Url for threeparttable package, we have a new release version.
+	- New example21 for threeparttable package.
+	- Detail usage of dcolumn package, added new example22 for
+	  dcolumn package.
+	- Sigh, it's not enough about longtable and floating environment.
+        
+	* syntax.tex:
+	- Added \label{subsubsec:package}.
+        
+	* Makefile, example20.tex, example21.tex, example22.tex:
+	- Added new example20(color table), example21(threeparttable
+	  package), example22(dcolumn package).
+
+2004-01-29  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* table.tex:
+	- Added new example19 for booktabs package.
+	- Forgot the url of example18.
+
+	* Makefile, example19.tex:
+	- Added new example19.tex(booktabs package).
+
+	* start.tex:
+	- Added T1's another name: Text Companion encoding. 
+          
+	* latex123.tex:
+	- Added table.cjk.
+
+	* graphic.tex:
+	- Split graphic.tex into table.tex and graphic.tex.
+        
+	* example16.tex:
+	- Changed arrayrulewidth to 1pt.
+	- Added \cline, \multicolumn example.
+	- Replaced \textdegree with \textcelsius, \textcelsius got much
+	  compact space between degree notation and C.
+
+	* table.tex:
+	- Split graphic.tex into two chapter, so we have a new
+	  chapter: table.tex.
+	- Added \cline, \multicolumn command in tabular environment.
+	- Introduced textcomp package.
+
+	* Makefile:
+	- Used dvipdfmx always, so remove dvips/ps2pdf, the PDF output
+	  seems look ugly when useing lines/rules in AR4/AR5.
+
+2004-01-28  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* graphic.tex:
+	- Added `row' and `column' explanation in table.
+	- Added \arrayrulewidth, \tabcolsep, \arrayrulewidth,
+	  \doublerulesep, \arraystretch command of tabular
+	  environment.
+	- Added example17.tex/example18.tex.
+	- The extra argument/command of array package of tabular
+	  environment.
+
+	* Makefile, example17.tex, example18.tex:
+	- Added new example17.tex(array package/tabular).
+	- Added new example18.tex(tabularx package/tabular*).
+
+	* example16.tex:
+	- Added \arrayrulewidth=1.2pt and \tabcolsep=12pt.
+
+2004-01-27  Edward G.J. Lee  <edt1023@info.sayya.org>
+        
+	* graphic.tex:
+	- Added new section: kinds of table.
+	- Added new example16.tex and test-tables.tex.
+	- Added new subsection: tabbing environment.
+	- Added bew subsection: tabular environment.
+
+	* syntax.tex:
+	- Keyboard `Enter' use sans serif.
+	- Color package use sans serif.
+        
+	* story.tex:
+	- Added the url of FSF and Free Software.
+	- Added the interview of Dr. Dobb's Journal on 1996.
+	- Added the url of CWEB.
+	- Added the meeting of Knuth and NTG on 1996.
+        
+	* start.tex:
+	- Fixed a typo in example3.tex.
+
+	* space.tex:
+	- Changed \textbackslash to \verb, because of typewriter font.
+
+	* preparation.tex:
+	- Added TeXLive CD and TUG's URL.
+	- Changed `emacs/xemacs' to `Emacs/XEmacs'.
+
+	* package.tex:
+	- Fixed a typo in Palatino spelling.
+	- Explain some symbol in latexsym, they don't exist in other
+	  symbol packages.
+	- Fixed a typo in indentfirst spelling.
+	- Indentfirst package didn't have any command.
+	- Removed tuning and define a command, maybe we need another
+	  chapter.
+
+	* latex123.tex:
+	- Changed \extrarowheight=.5ex to \renewcommand{\arraystretch}{1.2},
+	  \arraystretch need not array package.
+
+	* Makefile, example16.tex, test-tables.tex:
+	- Added new exmaple16.tex(tabular, @{} command).
+	- Added new test-tables.tex.
+
+2004-01-21  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* syntax.tex:
+	- Added ~ in people's name.
+
+	* story.tex:
+	- Added why TAOCP Volumn 4 was delayed(because of TeX).
+	- Added the reward of TeX's bug, frozen when 2^16 pennies.
+	- Added the opinion of Knuth about FSF/GNU and RMS.
+	- Added the humor of Knuth at NTG conference in 1996.
+	- Added the TeX trademark was belong to AMS.
+
+	* space.tex:
+	- Fixed a typo in parbox/minipage subsection.
+
+	* preparation.tex:
+	- Added Knuth's favorite editor: emacs.
+
+	* example15.tex:
+	- Removed quote environment, a big mistake.
+
+2004-01-19  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* syntax.tex, start.tex, package.tex, example1.tex, example3.tex:
+	- Typo fixed.
+
+2004-01-18  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* package.tex:
+	- Added LaTeX relative softwares/tools:
+	  fontsmpl, ftnright, indentfirst, layout, multicol, rawfonts,
+	  somedefs, showkeys, varioref, xr, xspace, theorem.
+	- New section: where to find packages?
+	- Added a sh script(ltxins.sh) to compile packages that didn't
+	  have Makefile or no install document.
+          
+	* syntax.tex:
+	- Added \label{gen:gamerules}.
+          
+	* space.tex: 
+	- Added \label{subsec:layout}.
+
+	* ltxins.sh:
+	- Added a tool to compile package source, and produce *.sty
+	  files and PDF format document.
+
+	* latex123.tex:
+	- Changed chapter caption to use large font in the TOC.
+
+	* abook.tex:
+	- Added \label{ch:abook} and \label{sec:ref}.
+
+2004-01-17  Edward G.J. Lee  <edt1023@info.sayya.org>
+        
+	* package.tex:
+	- More explanation of exscale package and txfonts/pxfonts
+	  package.
+	- LaTeX official tools:
+	  amslatex, babel, cyrillic, graphics, psnfss, array, calc,
+	  dcolumn, delarray, hhline, tabularx, afterpage, bm, longtable,
+	  enumerate, verbatim.
+        
+	* syntax.tex:
+	- Added a space between [ and ], { and }, when explain the argument
+	  of LaTeX command.
+
+	* story.tex:
+	- Fixed a typo.
+
+	* start.tex:
+	- Modified the explanation of the magnication ratio of
+	  a font.
+          
+	* space.tex:
+	- Added \label{subsec:enume}, we have another label for
+	  enumerate package(subsec:enump).
+
+	* math.tex:
+	- Added \label{ch:math}.
+
+	* latex123.tex:
+	- Added \usepackage{amsmath}.
+	- Modified linespread to 1.382.
+	- Modified parskip to 1.618ex.
+	- Changed the Chinese translation about license.
+
+	* Makefile, example15.tex:
+	- Added new example15.tex(enumerate package).
+
+2004-01-16  Edward G.J. Lee  <edt1023@info.sayya.org>
+          
+	* package.tex:
+	- LaTeX standard packages:
+	  alltt, doc, exscale, fontenc, ifthen, inputenc, latexsym,
+	  makeidx, newlfont, oldlfont, showidx, syntonly, tracefnt,
+	- Added New example test-fonts.tex to explain cmr5, cmr10,
+	  cmr12 at 30pt look differently. And the difference between
+	  Type1 font and original Metafont.
+	- Explain the relationship of fontenc and inputenc.
+	- Added new example test-graphpap.tex.
+
+	* start.tex:
+	- Added \label{subsec:font-attr} and \label{subsec:font-command}.
+
+	* abook.tex:
+	- Added \label{sec:index}.
+
+	* Makefile:
+	- Added new example test-graphpap.tex.
+	- Removed -Ppdf options of dvips.
+
+	* test-fonts.tex:
+	- Added cmr10 at 30pt.
+
+	* test-graphpap.tex:
+	- Example for graphpap package.
+
+2004-01-15  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* superman.png:
+	- The image of `\,' example for HTML version.
+
+	* test-fonts.tex:
+	- The example to compare `cmr12 at 30pt' with `cmr5 at 30pt'.
+
+	* package.tex:
+	- Changed the Copyright year to 2004.
+	- Changed the caption of this chapter, we added the explanation
+	  how to redefine the command and how to tune the system default
+	  value.
+	- Added where to find out the document of the standard packages
+	  and tools.
+
+	* example14.tex:
+	- Added \raisebox example.
+
+	* space.tex:
+	- Changed the Copyright year to 2004.
+	- More explanation for rule command.
+	- Added the difference between \frame{} and \fbox{}.
+	- Fixed the typo in the explanation of \depth.
+	- Added the English name for the position argument of \framebox.
+	- Added \raisebox and example.
+	- Modified example14.tex, added \raisebox command.
+	- Added minipage environment and \parbox command.
+
+	* class.tex:
+	- Changed the Copyright year to 2004.
+	- Added minimal class.
+	
+	* abook.tex, graphic.tex, latex123.tex, math.tex, preparation.tex, start.tex, story.tex, syntax.tex, theend.tex:
+	- Changed the Copyright year to 2004.
+	
+2004-01-14  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* space.tex:
+	- Added the options of \width, \height, \depth and \totalheight
+	  inside the \framebox command.
+	- Added new example14.tex(boxes).
+	
+	* Makefile, example14.tex:
+	- Added new example14.tex(boxes).
+
+	* story.tex:
+	- Fixed a typo in Chinese translation of typesetting.
+	
+	* syntax.tex:
+	- Added the explanation of Chinese notation about person
+	  and book.
+	
+	* start.tex:
+	- Added the diffrence between abstract and summary.
+	- Added the footnote about T1 font encoding was nothing
+	  to do with Type1 font.
+	
+	* package.tex:
+	- Plan to add some packages that list in the LaTeX official
+	  document.
+	
+	* space.tex:
+	- Made more clearly about the explanation of eps.
+	- New section about rules and boxes.
+	- New example13.tex for \rule command.
+	- Removed the section of enumerate package.
+	
+	* math.tex:
+	- Added chemtool and GChemPaint subsection.
+	
+	* graphic.tex:
+	- Added \label{ch:graphic}.
+	
+	* latex123.tex:
+	- Moved type1cm package into latexonly environment.
+	
+	* Makefile, example13.tex:
+	- News example13.tex(rules).
+	
+	* example12.tex:
+	- Added more comments.
+
+2004-01-11  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* space.tex:
+	- When includegraphics we use quote environment, coz we didn't
+	  use float.
+	- Some change of comments of example12.
+	- Package name used textsf.
+
+	* class.tex:
+	- Changed the document class name to use typewriter font.
+
+	* blank.png:
+	- Added visible blank to display in HTML version.
+
+	* start.tex:
+	- Sigh, latex2html cannot control visible blank correctly,
+	  it turn \texttt{\char'040} to <tt>&#32;</tt>, and cannot
+	  display correctly on mozilla-1.4. Force to use image.
+
+2004-01-09  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* class.tex:
+	- New section: the five basic document class.
+
+	* latex123.tex:
+	- Added a new pdfkeywords, latex123. 
+        
+	* space.tex:
+	- Added a new example12 to explain titlepage environment and
+          the vertical space command. And explain how to use `mpost'
+          to compile metapost code.
+
+	* syntax.tex:
+	- Used typerwriter font family to display %.
+	- Added `i.e.', `e.g.' as the example of the space control
+          of two sentences.
+
+	* story.tex:
+	- Oops, I miss one of the six myth of LaTeX that from Peter Flynn's
+          `A beginner's introduction to typesetting with LaTeX'. And added
+          more explanation for those myths. Thanks to Ping Yeh
+	  <pyeh@phys.ntu.edu.tw>, his email remind me about this.
+
+	* start.tex:
+	- Changed document class name to use typewriter family font,
+          and package name to use sans serif family font.
+	- Added \label{sec:titlepage}.
+
+	* Makefile, example12.tex:
+	- New examples12.tex(use titlepage environment and space command
+          to design a title page).
+
+2004-01-08  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* class.tex:
+	- Document class options.
+
+	* space.tex:
+	- Added `\,' command and example.
+
+	* latex123.tex:
+	- Modified the Copytright year to 2004.
+
+2004-01-07  Edward G.J. Lee  <edt1023@info.sayya.org>
+          
+	* space.tex:
+	- Typo fixed. 
+        
+	* start.tex, story.tex, syntax.tex:
+	- Fixed typo and rhetorical revision.
+
+	* latex123.tex:
+	- \setcounter{secnumdepth}{3}(subsubsection).
+
+	* example8.tex:
+	- Fixed the typo on author.
+
+2004-01-06  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* Makefile, example11.tex:
+	- Added new example11.tex(horizontal space command and
+          quotation environment).
+
+	* space.tex:
+	- Added \thinspace, \enspace and raggedright/raggedleft can
+          be used as environment.
+	- Explained the diffrence of raggedright/raggedleft between
+          command and environment.
+	- New example11.tex(horizontal space command).
+	- Fixed a typo on parskip.
+	- The explanation of the consistency of typesetting.
+
+2004-01-05  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* latex123.tex:
+	- Modified fdl.tex to fdl.cjk, we had Chinese chapter caption.
+          
+	* fdl.tex:
+	- A typo in the chapter caption.
+        
+	* space.tex:
+	- Fixed the wrong explanation of \hoffset and \voffset.
+	- Saved the rows of papersize table(2 coclumns to 4 coclumns).
+	- Added \centering, \raggedright, \raggedleft, \centerline{}
+          command to horizontal space command table.
+	- Added the difference between command and environment.
+	- Added three quotation environment.
+	- The explanation of \bigskip, \medskip, \smallskip, it might not
+          be the fixed space.
+	- Fixed the big typo in itemize/enumerate environment.
+
+	* start.tex:
+	- Fixed the typo in example10 url.
+	- Explain why use \textbackslash.
+          
+	* syntax.tex:
+	- Added \textbar and breaked \textbraceleft, \textbraceright
+          into two columns in the tabular table.
+
+	* Makefile, fdl.tex:
+	- Added Chinese chapter caption, so we need bg5latex.
+
+	* README:
+	- Added my Chinese name in Big-5 encoding.
+
+2004-01-04  Edward G.J. Lee  <edt1023@info.sayya.org>
+        
+	* description.png, enumerate.png, itemize.png, space.tex:
+	- Sigh, we need png image to display in HTML version.
+          The lists environment cannot display correctly in HTML version.
+
+	* space.tex:
+	- New section: vertical space command.
+	- New section: horizontal space command.
+	- New section: itemize, enumerate, description environment.
+          We need some good examples. 
+        
+	* start.tex:
+	- Used wclsm font be boldface of aming.
+
+	* latex123.tex:
+	- Added fancyvrb package, we need `verbatim environment' in
+          verbatim environment, so we used Verbatim environment.
+
+	* start.tex:
+	- New section: verbatim command and environment.
+	- New section: CJK package/environment.
+        
+	* Makefile, example10.tex, example9.tex:
+	- Added example9.tex(verbatim command and environment).
+	- Added example10.tex(CJK package).
+	- Modified Makefile to include example9.tex/example10.tex.
+          And use bg5latex, we have CJK example now.
+
+	* story.tex:
+	- Added some rhetorical revision.
+	- Added new revision of TAOCP description url.
+	- Added about the first goal(quality) of TeX.
+
+2004-01-02  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* start.tex:
+	- Fixed wrong URI of example8.
+
+	* latex123.tex:
+	- Added GNU Free Documentation License be a invariant section.
+
+	* start.tex:
+	- Rhetorical revision in section 4.1, 4.1.1(newline), 4.1.2(indent),
+          4.4, 4.6.2(footnote), 4.7.3(relative font command).
+
+	* syntax.tex:
+	- Fixed typo in section 3.3.2, 3.4.3.2.
+
+	* README:
+	- Added the URI of CJK package.
+	- Added the URI of ps2eps.
+	- Added the URI of Traditional Chinese TTF(CLE Project).
+	- Added my Chinese name in UTF-8 encoding.
+
+	* latex123.tex, Makefile, fdl.tex:
+	- Added a new chapter for GNU Free Documentation License.
+
+2004-01-01  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* space.tex:
+	- Added \label{sec:units}, \label{sec:layout}.
+	- Let print point and Adobe big point clearly.
+	- More explanation about em unit.
+	- Fixed the explanation of em unit.
+	- Added new section: units, layout, paper size.
+
+	* start.tex:
+	- Some rhetorical revision.
+	- Slanted shape was not only Roman family. So corrected
+          the footnote of italic/slant font.
+	- Typo fixed.
+          
+	* syntax.tex: 
+	- More detail description about the diffrence between \  and
+          ~ for a normal space.
+        
+	* latex123.tex:
+	- Added a newcommand `\drawwidth' to draw the actual length
+          of units.
+          
+	* Makefile, layout-r.tex:
+	- Added layout image because we didn't use the standard
+          class format. We convert to png image via `convert'.
+          
+	* a-units.png, r-units.png:
+	- Absolute units and relative units image for HTML version.
+          We grab via xv. Because we defined a newcommand `drawwidth'
+          to draw the actual length of units.
+
+	* pic.sh:
+	- Used Roland Bless's ps2eps instead ps2epsi to convert ps to eps.
+          Nice tool!
+
+2003-12-30  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* syntax.tex:
+	- Added difference between `Mr.\ Edward' and `Mr.~Edward'.
+
+	* Makefile:
+	- Removed -ta4 option of dvips. Let it be LaTeX default
+          letter paper.
+
+	* Makefile, space.tex:
+	- Added a new chapter to explain space and position in
+          LaTeX document.
+
+	* fntshape.png:
+	- Added fntshape.png in HTML format. LaTeX code still use
+          tabular environment.
+
+	* start.tex:
+	- Some www browser cannot display font shape correctly, so we
+          use fntshape.png in HTML format.
+	- Change the Chinese translation of `font series'.
+	- Fixed many many typos. :(
+
+	* latex123.tex:
+	- Change \sl to \textsl to avoid italic correction.
+
+2003-12-29  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* start.tex:
+	- Some rhetorical revision.
+
+	* example8.tex:
+	- Used \it instead of \itshape.
+
+	* latex123.tex:
+	- Added \titlecontents{subsection} for titlesec package.
+	- Fixed a typo in \titleformat{\subsubsection}.
+
+	* fntsize.png:
+	- Png image of fntsize.eps for HTML format. We didn't use `convert'
+	  to convert it from eps, it looks ugly.
+
+	* fntsize.tex:
+	- Added the comment and CVS Id keyword.
+
+	* fntsize.tex:
+	- Added the font size relative command. Because we use 12pt
+	  as default font, so we need produce another normal 10pt
+	  example and include it as eps image.
+
+	* example8.tex:
+	- Added example8.tex to explain font family, series, shape command
+	  and italic correction.
+
+	* start.tex:
+	- Added subsection of fontsize attribute and relative command
+	  to change font size.
+	- Added subsection of fontsize and type1cm package. Absolute
+	  command to change font size.
+	- Font size explanation fihished.
+
+	* syntax.tex:
+	- Added example of secnumdepth.
+	- Fixed a typo in secnumdepth explanation.
+	- Added \label{sec:struct}
+	- Added \label{subsec:preamble}.
+
+	* Makefile:
+	- Added fntsize.eps dependence.
+	- Added example8.tex.
+
+2003-12-28  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* start.tex:
+	- Font encoding, family, series, shape. Sigh, it's beyond
+	  description about LaTeX's font mechanism. :(
+
+	* abbreviation.png, abbreviation2.png, dots.png, latex-flow.png, quotation.png:
+	- Added the image files with -kb flag.
+
+	* abbreviation.png, abbreviation2.png, dots.png, latex-flow.png, quotation.png:
+	- Sigh, forgot to add image files with -kb flag. So remove it.
+
+	* linebreak.png:
+	- Added linebreak example image(png) for HTML version. We grap
+	  via xv.
+
+	* latex123.tex:
+	- Added draft tag to document info.
+
+	* Makefile:
+	- Let the output of dvips use a4 paper size.
+
+2003-12-27  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* syntax.tex:
+	- We embed Computer Modern Type1 fonts now.
+
+	* Makefile:
+	- Changed the email address to edt1023@info.sayya.org.
+
+	* README:
+	- Added README file.
+
+	* example3.tex, example4.tex, example6.tex, example7.tex:
+	- Remove the text before chapter 1.
+
+	* Makefile:
+	- New target `exam' to produce pdf format examples. We use
+	  latex/dvips/ps2pdf because of compact PostScript output.
+	- Don't fork a subshell when produce latex123.pdf.
+
+2003-12-26  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* start.tex:
+	- Fixed the typo of marginal note.
+
+	* abook.tex, class.tex, graphic.tex, math.tex, package.tex, preparation.tex, story.tex, theend.tex:
+	- Changed the email address to edt1023@info.sayya.org.
+
+	* start.tex:
+	- Examples of \\, \newline, \linebreak, \noindent, \parindent,
+	  \chapter, \section, \subsection, title page, table of contents,
+	  abstract, \footnote, \marginpar.
+
+	* syntax.tex: 
+	- Added \@ command.
+	- Removed \itemsep of all tabular environment, and let the
+	  table in the quote environment.
+	- Changed email address to edt1023@info.sayya.org.
+
+	* latex123.tex: 
+	- Removed dvipdfm option of graphix package, let system
+	  judge automatically.
+
+	* example7.tex: 
+	- Example of marginal note.
+
+	* example6.tex: 
+	- Example of footnote.
+
+	* example5.tex: 
+	- Example of abstract.
+
+	* example4.tex:
+	- Example of Table of Contents.
+
+	* example3.tex:
+	- Example of title page.
+
+2003-12-25  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* example2.tex:
+	- Added example2.tex.
+
+	* example1.tex:
+	- Added example1.tex.
+
+	* exmaple1.tex, start.tex:
+	- Remove exmaple2.tex, wrong filename.
+
+	* exmaple1.tex:
+	- Example1.
+
+	* syntax.tex:
+	- Modified LaTeX argumant of a command.
+
+2003-12-20  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* syntax.tex:
+	- Completed this chapter.
+
+	* latex123.tex:
+	- Set secnumdepth to 4.
+
+2003-12-18  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* package.tex:
+	- Added \label{ch:package}.
+
+	* start.tex:
+	- Fixed a typo of Chinese writting(chapter 4). Thanks to,
+	  qrtt1 <qrtt1.bbs@bbs.sayya.org>
+
+	* syntax.tex:
+	- Added the explanation of the space between English word and
+	  Chinese character.
+	- Added the explanation of wrong useing of ditto marks.
+
+	* preparation.tex:
+	- Added uri of TUG and explain the benefit of a TUG member.
+	  Or buy TeX Live CD to support TUG.
+	- Added plain TeX is the defaut macro of TeX system.
+
+2003-12-17  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* syntax.tex:
+	- A simple example in this chapter.
+
+	* preparation.tex:
+	- Added AUCTeX uri hyperlink.
+
+	* latex123.tex:
+	- Use \today in HTML format.
+
+	* syntax.tex:
+	- Fixed a typo(section 3.3.2). Thanks to plus <plus.bbs@bbs.sayya.org>
+
+	* story.tex:
+	- Fixed a typo(section 1.2). Thanks to qrtt1 <qrtt1.bbs@bbs.sayya.org>.
+
+2003-12-16  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* preparation.tex:
+	- Let the introduction of commercial TeX be a \section.
+
+	* syntax.tex:
+	- Some special typesetting results of LaTeX, we use picture in
+	  HTML version now.
+
+	* pic.sh:
+	- Don't use pic.sh to convert a eps to png. We grab
+	  the png image via gv/xv now.
+
+	* latex123.tex:
+	- Turn off pslatex package and background before we
+	  release a stable version. We need grab some picture
+	  from white background.
+
+	* abbreviation.png, abbreviation2.png, dots.png, quotation.png:
+	- Sigh, some typesetting effects cannot be expressed
+	  in HTML format. We grab a PNG image for HTML version.
+	  I don't like this method. :(
+
+	* latex-flow.png:
+	- It looks ugly if we produce eps from latex-flow.tex and
+	  convert -scale to PNG image. So we grab the PNG picture
+	  via gv/xv and include it when make HTML version.
+
+2003-12-15  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* class.tex:
+	- Added \label{ch:class}.
+
+	* abook.tex:
+	- Rebuild the structure of this chapter, but may be modified
+	  again.
+
+	* start.tex:
+	- Added attention of diffrence between PDF and HTML format.
+
+	* pic.sh:
+	- Still need bg5latex because my ugly makefile dependency.
+
+	* syntax.tex: 
+	- The typesetting rules of punctuation.
+
+	* syntax.tex:
+	- A typo of 3.3. Thanks to dos <dos.bbs@bbs.cs.nthu.edu.tw>.
+	- Rules of LaTeX typesetting.
+
+	* preparation.tex:
+	- Sigh, still a typo on Scientific Word. Thanks to Eric
+	  <ericyu.bbs@twolights.twbbs.org>
+
+	* latex123.tex:
+	- It's a good idea to introduce LaTeX class after we really
+	  writing some practical examples.
+
+	* syntax.tex:
+	- Typo and bug fixed about special characters.
+
+	* latex-flow.tex:
+	- Remove psframebox of the picture, it looks ugly. No box
+	  unless necessary.
+
+	* pic.sh:
+	- Because *.cjk are dependent on *.tex, so we use latex instead
+	  bg5latex on *.cjk now.
+
+	* Makefile:
+	- Added latex-flow.eps dependence. Ugly dependence, sigh.
+
+	* hyperref.cfg:
+	- Some version of hyperref cannot find hyperref.cfg, so we need
+	  a hyperref.cfg in working directory.
+
+2003-12-14  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* preparation.tex:
+	- Ooops, still typo on Scientific spelling. Fixed. :(
+
+	* pic.sh:
+	- Don't use epstopdf to convert epsi to pdf, mv epsi to eps
+	  then include in tex file, latex/dvipdfm can handle it without
+	  *.bb file. But still need to convert to *.png to be included
+	  by latex2html.
+
+	* preparation.tex:
+	- Modified a Chinese word of bundle. Thanks to,
+	  Chun-Chieh Huang <jjhuang@cm.nctu.edu.tw>,
+	  Eric <ericyu.bbs@twolights.twbbs.org>,
+	  descent <descent.bbs@bbs.sayya.org>.
+
+	* latex-flow.tex:
+	- New file, only can compile via latex/dvips to produce eps,
+	  so we make it a standalone picture then include it.
+
+	* Makefile:
+	- Adde pic.sh to produce pdf/png from another LaTeX picture document.
+
+	* pic.sh:
+	- We need pic.sh to produce pdf/png from another LaTeX document.
+	  Because we use dvipdfm[x], cannot accept eps files directly.
+
+	* syntax.tex:
+	- Finished, but not satisfactory. Will modisfy later.
+
+	* latex123.tex:
+	- Change the version to 0.1 draft.
+
+	* preparation.tex:
+	- Added cygwin environment on Windows. Thanks to Seventeen
+	  <Seventeen.bbs@bbs.sayya.org>
+
+	* story.tex:
+	- ATOCP volumn 6-7 may change the name of the book. Thanks to
+	  Chun-Chieh Huang <jjhuang@cm.nctu.edu.tw>
+
+	* preparation.tex:
+	- fixed a typo of Scientific Word. Thanks to Eric
+	  <ericyu.bbs@twolights.twbbs.org>
+
+2003-12-13  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* abook.tex, class.tex, graphic.tex, latex123.tex, math.tex, package.tex, preparation.tex, start.tex, story.tex, syntax.tex, theend.tex:
+	- Change to GNU FDL version 1.2 or later.
+
+	* start.tex:
+	- Don't use bold face on akai, it looks ugly.
+
+	* class.tex, abook.tex:
+	- Build the structure of this chapter.
+
+	* Makefile, class.tex, latex123.tex, math.tex, package.tex, preparation.tex, start.tex, syntax.tex, theend.tex:
+	- Instead book.tex to abook.tex, because LaTeX2HTML will miss
+	  book.tex, don't know why. :(
+	- We need adjust the HTML css BODY's line-height to 160%, because
+	  of the MS IE interpreter line-height behave different with other
+	  WWW browser when we use \sup HTML markup.
+
+	* abook.tex, book.tex:
+	- Instead book.tex of abook.tex, because LaTeX2HTML will miss
+	  book.tex, don't know why. :(
+
+2003-12-12  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* theend.tex:
+	- Added theend chapter. Like movies, we need the end. :-)
+
+	* latex123.tex:
+	- add new chapter.
+
+	* book.tex:
+	- new chapter, explain how to manipulate a whole book.
+
+	* graphic.tex:
+	- new chapter, explain how to manipulate pictures.
+
+	* math.tex: 
+	- new chapter, explain how to use math environment.
+
+	* package.tex:
+	- new chapter, explain howto use packages.
+
+	* start.tex:
+	- new chapter, start to write a LaTeX file.
+
+	* Makefile:
+	- added the whole chapter files.
+
+2003-12-11  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* Makefile:
+	- remove SRCS(*.tex).
+
+	* story.tex:
+	- typo fixed(TAOCP).
+
+	* preparation.tex:
+	- finish this chapter, might need add something.
+
+	* class.tex:
+	- remove \CJKenc{Bg5}, I'm not a emacs user.
+
+	* preparation.tex: 
+	- added commercial support of TeX/LaTeX.
+
+	* latex123.tex: 
+	- tune the cover picture position.
+
+	* story.tex: 
+	- some modifed about the bio of DEK from DEK's homepage.
+	  added description of the author of LaTeX.
+
+	* cover2.mp:
+	- remove text and any other things nothing to do with picture.
+	  let background transparent.
+
+	* Makefile, cover.mp, story.tex:
+	- Change cover picture to cover2.mp, and remove cover.mp.
+
+	* latex123.tex: 
+	- Change cover picture to cover2.mp.
+
+	* cover2.mp:
+	- Change the cover picture. Borrow from Grace example(vmap.agr)
+	  with some modified. Rename to cover2.mp.
+
+2003-12-10  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* README:
+	- add a README file.
+
+	* class.tex, latex123.tex, story.tex, syntax.tex:
+	- typo fixed. begin prepapration.tex.
+
+	* preparation.tex:
+	- begin Chapter preparation.
+
+	* Makefile:
+	- fixed the dependence of relative files in Makefile.
+
+	* latex123.tex:
+	- remove unnecessary packages.
+
+2003-12-09  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* Makefile:
+	- sigh, still a ugly Makefile.
+
+	* latex123.tex:
+	- use wclsm instead wcloo for cover page.
+
+	* story.tex:
+	- finished  chapter 1.
+
+	* cover.mp:
+	- a logo for cover page. borrow from mycjk project, need to
+	  change the figure later.
+
+	* Makefile:
+	- Makefile for compiling latex123.tex.
+	  need to improve the dependence.
+
+	* story.tex:
+	- a story about DEK and TeX/LaTeX.
+
+	* latex123.tex:
+	- use aming as default Chinese font.
+
+2003-12-08  Edward G.J. Lee  <edt1023@info.sayya.org>
+
+	* class.tex, preparation.tex, story.tex, syntax.tex:
+	- every chapter name.
+
+	* latex123.tex:
+	- add CVS Id keyword.
+
+	* class.tex, latex123.tex, preparation.tex, story.tex, syntax.tex:
+	- begin latex123 document project.
+
+	* class.tex, latex123.tex, preparation.tex, story.tex, syntax.tex:
+	New file.
+

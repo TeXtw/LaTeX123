@@ -1,0 +1,19 @@
+% $Id: example25.tex,v 1.2 2004/02/08 09:55:03 edt1023 Exp $
+% example25.tex
+\documentclass{article}
+\usepackage{epic}
+\parindent=0pt
+\begin{document}
+\unitlength=1mm
+\begin{picture}(80, 60)
+\multiput(5, 0)(5, 0){15}{\line(0, 1){60}} % 畫 15 條直線，每隔 5mm 一條
+\multiput(0, 5)(0, 5){11}{\line(1, 0){80}} % 畫 11 條橫線，每隔 5mm 一條
+\thicklines
+\put(0, 0){\vector(0, 1){60}} % 畫 y 軸
+\put(0, 0){\vector(1, 0){80}} % 畫 x 軸
+\put(0, 0){\circle*{1}}       % 畫圓點，實心粗點
+\put(-5, -5){$O(0, 0)$}       % 標上原點的座標
+\put(-5, 60){$y$}             % 標上 Y 軸字樣
+\put(80, -5){$x$}             % 標上 X 軸字樣
+\end{picture}
+\end{document}

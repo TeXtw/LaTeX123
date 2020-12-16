@@ -1,0 +1,78 @@
+% $Id: test-tables.tex,v 1.2 2004/02/04 14:45:24 edt1023 Exp $
+% test-tabes.tex
+\documentclass{article}
+\parindent=0pt        % 各段落不縮排
+\renewcommand{\arraystretch}{1.2}  % 增加 tabular 環境裡頭上下行間距為
+\begin{document}                   % 原來的 1.2 倍
+\centering
+\section*{Table examples\\
+CJK Ideographics Area Character Blocks}
+\vspace{3ex}
+\textbf{Tabbing}\\[-3ex]
+\parbox{\textwidth}{
+\begin{tabbing}
+xxxxxx\=xxxxxx\=CJK Unified Ideographs Extension A \kill
+Start \> End  \> Character Block Name \\
+3400  \> 4DB5 \> CJK Unified Ideographs Extension A \\
+4E00  \> 9FFF \> CJK Unified Ideographs
+\end{tabbing}}
+
+\vspace{2ex}
+\textbf{Tabular-1}\\[1ex]
+\begin{tabular}{lll}
+\hline
+Start & End  & Character Block Name \\
+\hline
+3400  & 4DB5 & CJK Unified Ideographs Extension A \\
+\hline
+4E00  & 9FFF & CJK Unified Ideographs \\
+\hline
+\end{tabular}
+
+\vspace{4ex}
+\textbf{Tabular-2}\\[1ex]
+\begin{tabular}{|l|l|l|}  % | 可以畫縱線
+\hline
+Start & End  & Character Block Name \\
+\hline
+3400  & 4DB5 & CJK Unified Ideographs Extension A \\
+\hline
+4E00  & 9FFF & CJK Unified Ideographs \\
+\hline
+\end{tabular}
+
+\vspace{4ex}
+\textbf{Tabular-3}\\[1ex]
+\begin{tabular}{llll}
+\hline
+Start & End  & Character Block Name \\
+\hline
+3400  & 4DB5 & CJK Unified Ideographs Extension A \\
+4E00  & 9FFF & CJK Unified Ideographs \\
+\hline
+\end{tabular}
+
+\vspace{4ex}
+\textbf{Tabular-4}\\[1ex]
+\begin{tabular}{|l|l|l|}
+\hline
+Start & End  & Character Block Name \\
+\hline\hline
+3400  & 4DB5 & CJK Unified Ideographs Extension A \\
+\hline
+4E00  & 9FFF & CJK Unified Ideographs \\
+\hline
+\end{tabular}
+
+\vspace{4ex}
+\textbf{Tabular-5}\\[1ex]
+\begin{tabular}{|l||l|l|}  % 兩個 || 會畫雙線的縱線
+\hline
+Start & End  & Character Block Name \\
+\hline
+3400  & 4DB5 & CJK Unified Ideographs Extension A \\
+\hline
+4E00  & 9FFF & CJK Unified Ideographs \\
+\hline
+\end{tabular}
+\end{document}

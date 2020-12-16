@@ -1,0 +1,31 @@
+% Edward G.J. Lee <edt1023@info.sayya.org>
+% $Id: latex-flow.tex,v 1.3 2004/03/05 18:15:20 edt1023 Exp $
+%
+\documentclass[12pt]{article}
+\usepackage{CJK}
+\usepackage{pstcol}
+\usepackage{pst-node}
+\definecolor{Pink}{rgb}{1.,0.75,0.8}
+\pagestyle{empty}
+
+\begin{document}
+\begin{CJK}{Bg5}{hwmm}
+\begin{center}
+  \begin{psmatrix}[rowsep=0.5cm,colsep=0.8cm]
+    \psovalbox[fillstyle=solid,fillcolor=yellow]{開始} \\
+    \psframebox{{\tt latex} 可能不只一次} \\
+    \psdiabox[fillstyle=solid,fillcolor=Pink]{\tt your.tex} &
+       \psframebox{\tt dvips} & \psframebox{\tt ps2pdf} \\
+    \psframebox{\tt dvipdfm[x] 或 pdflatex} \\
+    \psovalbox[fillstyle=solid,fillcolor=yellow]{完成} \\
+    \ncline{1,1}{2,1}
+    \ncline{2,1}{3,1}
+    \ncline{3,1}{4,1}<{\textcolor{red}{pdf 檔}}
+    \ncline{4,1}{5,1}
+    \ncline{->}{3,1}{3,2}^{\textcolor{red}{ps 檔}}
+    \ncline{->}{3,2}{3,3}
+    \ncbar[angleA=-90,armB=0,nodesepB=2.5mm]{->}{3,3}{4,1}
+  \end{psmatrix}
+\end{center}
+\end{CJK}
+\end{document}

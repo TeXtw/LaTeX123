@@ -1,0 +1,31 @@
+% $Id: example9.tex,v 1.1 2004/01/04 14:36:39 edt1023 Exp $
+% example9.tex
+\documentclass{article}
+\begin{document}
+The example of \verb|\verb{}| command and \texttt{verbatim} environment.
+
+\section{\textbackslash{}\texttt{verb} command}
+
+When you want to express you home directory, you can \verb|echo $HOME|
+varient to display your home directory in your sh script.
+
+\noindent
+\verb*|This is    4 space here.|
+
+\section{\texttt{verbatim} environment}
+
+Here is a sh script to determine if on GNU/Linux system.
+
+\begin{verbatim}
+#!/bin/sh
+Date=`date '+%y%m%d'`
+if [ `uname` = Linux ]
+then
+  Mail=/var/spool/mail/edt1023
+  Target=/mnt/hd
+else
+  Mail=/var/mail/edt1023
+  Target=/mnt/pub
+fi
+\end{verbatim}
+\end{document}

@@ -1,0 +1,30 @@
+% $Id: example14.tex,v 1.2 2004/01/15 16:04:28 edt1023 Exp $
+% example14.tex
+\documentclass{article}
+\parskip=3ex
+\parindent=0pt
+\begin{document}
+\frame{This is frame.}
+\mbox{This is mbox.}
+\fbox{This is fbox.}
+
+\framebox{This is a framebox with no argumant.}
+
+\framebox[1.5\width]{This is a framebox.}
+
+\framebox[1.5\width][l]{This is a framebox with \texttt{l}.}
+
+\framebox[1.5\width][r]{This is a framebox with \texttt{r}.}
+
+\framebox[1.5\width][s]{This is a framebox with \texttt{s}.}
+
+This is baseline.
+\raisebox{3ex}[5\height]{This is a raisebox which lift 3ex.}
+
+This is baseline.
+\fbox{\raisebox{-3ex}[5\height]{This is a raisebox which lift $-$3ex.}}
+
+\fboxrule=1.5pt
+\fboxsep=8pt
+\framebox[1.5\width][s]{This is a framebox with \texttt{s}.}
+\end{document}

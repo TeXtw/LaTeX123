@@ -1,0 +1,156 @@
+=== Big-5 version ==================================================
+
+½sÄ¶»İ¨D¡G
+===========
+
+  1 - §A»İ­n¦w¸Ë TeX/LaTeX ±Æª©¨t²Î¡A¨Ã¥B»İ­n¦w¸Ë CJK ¥¨¶°®M¥ó¤Î¨ä
+      ¦r«¬¡A¥t¥~»İ­n LaTeX2HTML¡A§A¥i¥H°Ñ¦Ò¡G
+
+      http://edt1023.sayya.org/tex/mycjk.html
+      http://MathNet.math.tku.edu.tw/~edt1023/tex/mycjk.html
+
+  2 - §A¥i¥H¦b¥H¤Uºô­¶§ä¨ì³Ì·sª©¥»ªº CJK ¥¨¶°®M¥ó¡G
+
+      http://cjk.ffii.org/
+
+  3 - §A¥i¥H¦b CLE ftp ¯¸§ä¨ì¤@¨Ç¦³¥Îªº¤¤¤å¦r«¬¡G
+
+      ftp://cle.linux.org.tw/pub/fonts/truetype/
+
+  4 - §Ú­Ì¨Ï¥Î Roland Bless ªº ps2eps ¨Ó±N ps ÀÉÂà¦¨ eps ÀÉ¡G
+
+      http://www.ipv6.tm.uka.de/~bless/ps2eps
+
+  5 - §Ú­Ì¨Ï¥Î ImageMagick(convert) ¨ÓÂà´«¹ÏÀÉ®æ¦¡¡G
+
+      http://www.imagemagick.org/
+
+  6 - ­ì©l½X¤¤¦³¤@­Ó gnuplot ªº¨Ò¤l¡A¦]¦¹§A·|»İ­n gnuplot¡G
+
+      http://www.gnuplot.info/
+
+½sÄ¶¡G
+========
+
+  make         -  «Ø¥ß latex123.pdf¡C
+  make exam    -  «Ø¥ß pdf ®æ¦¡ªº¹ê¨Ò¡C
+  make html    -  «Ø¥ß HTML ®æ¦¡ª©¥»(»İ­n LaTeX2HTML)¡C
+  make htmltar -  «Ø¥ß HTML tarball¡C(broken)
+  make tar     -  «Ø¥ß­ì©l½X tarball¡C(broken)
+  make clean
+
+  §A¥i¥H©¿²¤½sÄ¶®Éªº¿ù»~°T®§¡C
+
+  ¥Ñ©ó¤¤¤åªº·j´M¡B«ş­¶ªº¥\¯à¡A§Ú¨Ï¥Î dvipdfmx ¨Ó²£¥Í PDF ®æ¦¡ÀÉ¡C
+  ¦pªG§A­n¨Ï¥Î pdflatex/dvips ¨Ó½sÄ¶³o­Ó­ì©l½X¡A½Ğ­×§ï Makefile
+  ¤Î latex123.tex ¨Ó¾A¦X§Aªº»İ¨D¡C
+
+
+
+=== English version =============================================
+
+Requirment:
+===========
+
+  1 - You need TeX/LaTeX install on your system.
+      And need CJK package/fonts and LaTeX2HTML. You can refer to,
+
+      http://edt1023.sayya.org/tex/mycjk.html
+      http://MathNet.math.tku.edu.tw/~edt1023/tex/mycjk.html
+
+  2 - You can find the new version of CJK package on,
+
+      http://cjk.ffii.org/
+
+  3 - You can find some useful free Chinese fonts from CLE Project,
+
+      ftp://cle.linux.org.tw/pub/fonts/
+
+  4 - And need Roland Bless's ps2eps to convert ps to eps,
+
+      http://www.ipv6.tm.uka.de/~bless/ps2eps
+
+  5 - I use ImageMagick(convert) to convert image,
+
+      http://www.imagemagick.org/
+
+  6 - there has a gnuplot example, so you will need gnuplot,
+
+      http://www.gnuplot.info/
+
+Compile:
+========
+
+  make         -  build latex123.pdf.
+  make exam    -  build pdf format of examples.
+  make html    -  build HTML version(need LaTeX2HTML).
+  make htmltar -  build HTML tarball.(broken)
+  make tar     -  build source tarball.(broken)
+  make clean
+
+  You can ignore the error messages.
+
+  I use dvipdfmx to produce PDF file, because of the search&copy
+  of Chinese text. If you want use pdflatex/dvips, please change
+  the Makefile/latex123.tex to fit your need.
+
+
+=== UTF-8 version ===================================================
+
+ç·¨è­¯éœ€æ±‚ï¼š
+===========
+    
+  1 - ä½ éœ€è¦å®‰è£ TeX/LaTeX æ’ç‰ˆç³»çµ±ï¼Œä¸¦ä¸”éœ€è¦å®‰è£ CJK å·¨é›†å¥—ä»¶åŠ
+      å…¶å­—å‹ï¼Œå¦å¤–éœ€è¦ LaTeX2HTMLï¼Œä½ å¯ä»¥åƒè€ƒï¼š
+
+      http://edt1023.sayya.org/tex/mycjk.html
+      http://MathNet.math.tku.edu.tw/~edt1023/tex/mycjk.html
+
+  2 - ä½ å¯ä»¥åœ¨ä»¥ä¸‹ç¶²é æ‰¾åˆ°æœ€æ–°ç‰ˆæœ¬çš„ CJK å·¨é›†å¥—ä»¶ï¼š
+
+      http://cjk.ffii.org/
+
+  3 - ä½ å¯ä»¥åœ¨ä»¥ä¸‹ç«™æ‰¾åˆ°ä¸€äº›æœ‰ç”¨çš„ä¸­æ–‡å­—å‹ï¼š
+
+      ftp://cle.linux.org.tw/pub/fonts/truetype/
+
+  4 - æˆ‘å€‘ä½¿ç”¨ Roland Bless çš„ ps2eps ä¾†å°‡ ps æª”è½‰æˆ eps æª”ï¼š
+
+      http://www.ipv6.tm.uka.de/~bless/ps2eps
+
+  5 - æˆ‘å€‘ä½¿ç”¨ ImageMagick(convert) ä¾†è½‰æ›åœ–æª”æ ¼å¼ï¼š
+
+      http://www.imagemagick.org/
+
+  6 - åŸå§‹ç¢¼ä¸­æœ‰ä¸€å€‹ gnuplot çš„ä¾‹å­ï¼Œå› æ­¤ä½ æœƒéœ€è¦ gnuplotï¼š
+
+      http://www.gnuplot.info/
+
+ç·¨è­¯ï¼š
+========
+
+  make         -  å»ºç«‹ latex123.pdfã€‚
+  make exam    -  å»ºç«‹ pdf æ ¼å¼çš„å¯¦ä¾‹ã€‚
+  make html    -  å»ºç«‹ HTML æ ¼å¼ç‰ˆæœ¬(éœ€è¦ LaTeX2HTML)ã€‚
+  make htmltar -  å»ºç«‹ HTML tarballã€‚(broken)
+  make tar     -  å»ºç«‹åŸå§‹ç¢¼ tarballã€‚(brolen)
+  make clean
+
+  ä½ å¯ä»¥å¿½ç•¥ç·¨è­¯æ™‚çš„éŒ¯èª¤è¨Šæ¯ã€‚
+
+  ç”±æ–¼ä¸­æ–‡çš„æœå°‹ã€æ‹·é çš„åŠŸèƒ½ï¼Œæˆ‘ä½¿ç”¨ dvipdfmx ä¾†ç”¢ç”Ÿ PDF æ ¼å¼æª”ã€‚
+  å¦‚æœä½ è¦ä½¿ç”¨ pdflatex/dvips ä¾†ç·¨è­¯é€™å€‹åŸå§‹ç¢¼ï¼Œè«‹ä¿®æ”¹ Makefile
+  åŠ latex123.tex ä¾†é©åˆä½ çš„éœ€æ±‚ã€‚
+
+
+  Have fun! :)
+
+
+
+Edward G.J. Lee
+UTF-8 : ææœæ­£
+Big-5 : §õªG¥¿
+edt1023@info.sayya.org
+edt1023@MathNet.math.tku.edu.tw
+
+$Id: README,v 1.9 2004/03/07 12:09:24 edt1023 Exp $

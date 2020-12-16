@@ -1,0 +1,31 @@
+% $Id: example28.tex,v 1.2 2004/03/05 18:15:19 edt1023 Exp $
+% example28.tex
+\documentclass{article}
+\usepackage{graphicx,CJK,mflogo}
+\parindent=0pt
+\ifx\pdfoutput\undefined
+  \DeclareGraphicsRule{*}{eps}{*}{}
+\else
+  \DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+\begin{document}
+\begin{CJK}{Bg5}{hwmm}
+這是一個 \MP\ 文稿中使用中文的例子，經由 {\tt b5mp.pl} 編譯後引入 \LaTeX\ 文稿當中。圖中的「太極陰陽魚」字樣是 \MP\ 文稿中就有，不是這裡鍵入的。但其實圖檔裡頭並沒有真正的字型，而是引入文稿，經 {\tt latex} 編譯後，才「合作」真正產生的。
+
+\vspace{10ex}
+
+\begin{figure}[h]
+\centering
+\includegraphics{test-yi.1}
+\caption{太極生兩儀}
+\end{figure}
+
+\vspace{10ex}
+
+\begin{figure}[h]
+\centering
+\includegraphics{test-yi.2}
+\caption{英文字是數學斜體}
+\end{figure}
+\end{CJK}
+\end{document}

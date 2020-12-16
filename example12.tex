@@ -1,0 +1,28 @@
+% $Id: example12.tex,v 1.3 2004/03/05 18:15:19 edt1023 Exp $
+% example12.tex
+\documentclass[12pt,a4paper]{report}
+\usepackage{CJK}     % 引入所需要的 packages
+\usepackage{graphicx}
+\newcommand{\hwyk}{\CJKfamily{hwyk}}
+\begin{document}
+\begin{CJK}{Bg5}{hwmm}
+\begin{titlepage}    % 使用 titlepage 環境
+\vspace*{5ex}
+  \begin{flushright} % 大標題靠右
+    \Huge{\hwyk 大家來學 \textbf{\LaTeX}}
+  \end{flushright}
+  \rule{\textwidth}{.256ex}
+  \begin{flushleft}  % 版本號碼及日期靠左，和大標題之間以一橫線隔開
+    Version 0.1 draft\\
+    \today
+  \end{flushleft}    % 圖檔位於中央偏左
+  \vspace{8ex}       % 空出 8ex 的垂直空間
+  \hspace{2em}\includegraphics[scale=.75]{cover2.1} % 引入圖檔，並將這個
+  \vspace{8ex}                                      % 圖檔橫向右移 2em
+  \begin{flushright} % 作者資訊靠右
+    By Edward G.J. Lee 李果正\\
+    Email：\texttt{edt1023@info.sayya.org}
+  \end{flushright}
+\end{titlepage}
+\end{CJK}
+\end{document}

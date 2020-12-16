@@ -1,0 +1,82 @@
+% $Id: example11.tex,v 1.2 2004/03/05 18:15:19 edt1023 Exp $
+% example11.tex
+\documentclass{article}
+\usepackage{CJK}
+\begin{document}
+\begin{CJK}{Bg5}{hwmm}
+\section{hspace}
+\hspace*{2em}這是一個橫向空間調整的測試。\\
+這是一個\hspace{2em}橫向空間調整的測試。\\
+這是一個 \hspace{2em} 橫向空間調整的測試。
+\section{hfill}
+這是一個\hfill{}橫向空間調整的測試。
+\section{quad}
+這是一個\quad{}橫向空間調整的測試。\\
+這是一個 \quad{} 橫向空間調整的測試。\\
+這是一個\qquad{}橫向空間調整的測試。
+\section{dotfill}
+這是一個\dotfill{}橫向空間調整的測試。\\
+這是一個 \dotfill{} 橫向空間調整的測試。
+\section{hrulefill}
+這是一個\hrulefill{}橫向空間調整的測試。
+\section{center}
+\begin{center}
+這是一個橫向空間調整的測試。
+\end{center}
+\section{flushleft}
+\begin{flushleft}
+這是一個橫向空間調整的測試。
+\end{flushleft}
+\section{flushright}
+\begin{flushright}
+這是一個橫向空間調整的測試。
+\end{flushright}
+\section{quote}
+這是節錄自伊索寓言的節錄故事：
+\begin{quote}
+An antwent to the bank of a river to quench its thirst, and
+being carried away by the rush of the stream, was on the
+point of drowning.
+
+A Dove sitting on a tree overhanging the water plucked a
+leaf and let it fall into the stream close to her. The Ant
+climbed onto it and floated in safety to the bank.
+\end{quote}
+\section{quotation}
+這是節錄自伊索寓言的節錄故事：
+\begin{quotation}
+An antwent to the bank of a river to quench its thirst, and
+being carried away by the rush of the stream, was on the
+point of drowning.
+
+A Dove sitting on a tree overhanging the water plucked a
+leaf and let it fall into the stream close to her. The Ant
+climbed onto it and floated in safety to the bank.
+\end{quotation}
+\section{verse}
+這是節錄自伊索寓言的節錄故事，這是節錄自伊索寓言的節錄故事，%
+這是節錄自伊索寓言的節錄故事，這是節錄自伊索寓言的節錄故事：
+\begin{verse}
+An antwent to the bank of a river to quench its thirst, and
+being carried away by the rush of the stream, was on the
+point of drowning.
+
+A Dove sitting on a tree overhanging the water plucked a
+leaf and let it fall into the stream close to her. The Ant
+climbed onto it and floated in safety to the bank.
+\end{verse}
+\section{centering}
+\centering
+這是一個橫向空間調整的測試。\\ % 這裡要換行，否則會是 \raggedright 的作用
+\raggedright
+\section{centerline}
+\centerline{這是一個橫向空間調整的測試。}
+\section{raggedright}
+\raggedright
+這是一個橫向空間調整的測試。
+\section{raggedleft}
+\raggedleft
+這是一個橫向空間調整的測試。
+
+\end{CJK}
+\end{document}

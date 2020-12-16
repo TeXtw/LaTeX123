@@ -1,0 +1,27 @@
+% $Id: example21.tex,v 1.2 2004/01/31 15:02:08 edt1023 Exp $
+% This example borrows from Donald Arseneau's threeparttable.sty,
+% and modified it to fit booktabs package.
+% example21.tex
+\documentclass{article}
+\usepackage{booktabs,threeparttable}
+\parindent=0pt
+\begin{document}
+\centering
+\begin{threeparttable}
+\caption{The Skewing Angles ($\beta$) for $\fam0 Mu(H)+X_2$ and
+   $\fam0 Mu(H)+HX$~\tnote{a}}  % 以 \tnote{} 標記要做註的地方
+\begin{tabular}{rlcc}
+\toprule
+&   & $\fam0 H(Mu)+F_2$ & $\fam0 H(Mu)+Cl_2$ \\
+\midrule
+&$\beta$(H)  & $80.9^\circ\tnote{b}$ & $83.2^\circ$ \\
+&$\beta$(Mu) & $86.7^\circ$ & $87.7^\circ$ \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}  % 由 tablenotes 環境來寫註解內容
+\footnotesize
+\item[a] for the abstraction reaction, $\fam0 Mu+HX \rightarrow MuH+X$.
+\item[b] 1 degree${} = \pi/180$ radians.
+\end{tablenotes}
+\end{threeparttable}
+\end{document}

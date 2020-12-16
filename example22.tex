@@ -1,0 +1,17 @@
+% $Id: example22.tex,v 1.2 2004/01/31 15:03:12 edt1023 Exp $
+% example22.tex
+\documentclass{article}
+\usepackage{booktabs,dcolumn}
+\newcolumntype{z}[1]{D{.}{.}{#1}}
+\begin{document}
+%\begin{tabular}{lD{.}{.}{-3}D{.}{.}{-3}D{.}{.}{-3}D{.}{.}{-3}D{.}{.}{-3}}
+\begin{tabular}{lz{3}z{3}z{3}z{3}}
+\toprule
+      & $headA$ & $headB$ & $headC$ & $headD$ \\
+\midrule
+test1 & 7.879  & 921.661 & 1382.81 & 998.98 \\
+test2 & 1.97   & 35.21   & 321.3   & 4791112.11 \\
+test3 & 211.97 & 5.2     & 213.629 & 748261594.106 \\
+\bottomrule
+\end{tabular}
+\end{document}

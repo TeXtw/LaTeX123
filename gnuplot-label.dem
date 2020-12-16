@@ -1,0 +1,7 @@
+# $Id: gnuplot-label.dem,v 1.1 2004/02/08 09:51:53 edt1023 Exp $
+# gnuplot-label.dem
+set term pslatex color rotate
+set output "gp-test.tex"
+set xlabel "$x$ axis"
+set ylabel "$y$ axis"
+plot [-pi:8*pi] sin(x) with lines

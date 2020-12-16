@@ -1,0 +1,28 @@
+% $Id: example18.tex,v 1.2 2004/02/03 16:40:23 edt1023 Exp $
+% example18.tex
+\documentclass{article}
+\usepackage{tabularx}
+\parindent=0pt
+\renewcommand{\arraystretch}{1.2}
+\begin{document}
+\centering
+\section*{\texttt{tabular*} environment}
+\begin{tabular*}{8cm}{lll}
+\hline
+Start & End  & Character Block Name \\
+\hline
+3400  & 4DB5 & CJK Unified Ideographs Extension A \\
+4E00  & 9FFF & CJK Unified Ideographs \\
+\hline
+\end{tabular*}
+
+\section*{\textsf{tabularx} package}
+\begin{tabularx}{8cm}{llX}  % 8cm 減去前兩個欄位寬度後，剩下的通通給
+\hline                      % 第三欄位使用，文字超出的部份會自動折行
+Start & End  & Character Block Name \\
+\hline
+3400  & 4DB5 & CJK Unified Ideographs Extension A \\
+4E00  & 9FFF & CJK Unified Ideographs \\
+\hline
+\end{tabularx}
+\end{document}
