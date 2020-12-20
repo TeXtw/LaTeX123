@@ -1,0 +1,512 @@
+% !TeX root = ../main.tex
+
+\chapter{巨集套件}
+\label{ch:package}\index{巨集套件}
+
+\LaTeX{} 系統已經好久沒有更新，有些部份可能會跟不上實際的腳步，而且有些內定的巨集定義，經過大家的使用，發覺並不是那麼的順手，尤其是功能的強化方面，因此這章談談如何引用他人已經寫好的巨集，這很重要，盡量避免重複製造輪子，寫 \TeX{}/\LaTeX{} macro\index{macro} 可說是很專業的工作，要避免破壞了整體的結構，所以先找看看有什麼巨集套件可以使用。
+
+% %萬一找不到適合的巨集套件，或這些巨集套件的定義仍不符所需，這時我們就得自行修改定義，甚至是重新定義來符合所需，這也是這一章準備探討的一個主題。但是，不是每一個人都有充裕的時間去學習 \TeX/\LaTeX{} 的巨集語言，所以這裡探討的以實用、簡單的定義方法為主，稍微複雜的已不符合一般使用的原則，也和這篇文章的構想範圍不符。
+
+\section{一般套件的使用}
+
+我們曾在第 \ref{subsec:preamble} 小節，頁 \pageref{subsec:preamble}，提到過簡單巨集的引用，事實上，有些巨集含有許多的參數來做微調，但是每個巨集套件的參數都不會一樣，因此，使用套件之前要先看一看他所附上的使用手冊。幾乎大部份的巨集套件都有使用手冊，如果是系統上就有的巨集，那麼這些文件通常會放在：
+
+\begin{quote}
+  \begin{verbatim}
+$TEXMF/doc  => Unix-like 系統
+$TEXMF\doc  => DOS/Windows 系統
+\end{verbatim}
+\end{quote}
+
+這些目錄底下，這些文件會有原始 \TeX/\LaTeX{} 文稿，也有編譯好的 \texttt{*.dvi} 或 \textsc{PostScript}\index{PostScript@\textsc{PostScript}} 檔可以閱覽，為求方便的話，可以將他們轉成 pdf 格式來閱覽，原因是可以以關鍵字來搜尋全文，在查指令、環境時會比較方便。在 Unix-like\index{Unix-like} 系統或 Windows\index{Windows} 下的 cygwin\index{cygwin} 環境的話，可以使用 \texttt{texdoc}\index{texdoc@\texttt{texdoc}} 這個指令來閱覽，例如：
+
+\begin{quote}
+  \begin{verbatim}
+texdoc amsguide  => 閱覽 amsguide.dvi 這個檔的說明
+texdoc -s ams    => 查系統上所有含 ams 字樣的文件
+\end{verbatim}
+\end{quote}
+
+
+\section{\LaTeX{} 官方文件中的標準巨集套件}
+
+底下是 \LaTeX{} 官方文件中所附的標準巨集套件。雖然是標準巨集套件，但一般情形下，使用這些 packages 的機會並不多，都是有特殊需要時才會引入。
+
+\subsection{alltt}\index{alltt@\textsf{alltt}}
+
+這個巨集套件提供 \texttt{alltt}\index{alltt@\texttt{alltt}} 環境，和 \texttt{verbatim}\index{verbatim@\texttt{verbatim}} 環境的作用相同，只是 \textbackslash{}，\{，\} 的作用和一般文章中相同會被 \LaTeX{} 解讀。這有什麼用呢？這樣一來 \LaTeX{} 這個特殊標誌也可以使用，也可以讓環境中的文字具有顏色，或做其他變化，當然，裡頭的文字預設仍然是使用打字機字族\index{打字機字族}的。
+
+\subsection{doc}\index{doc@\textsf{doc}}
+
+這是用來寫 \LaTeX{} 文件的巨集套件，這在使用 \texttt{ltxdoc}\index{ltxdoc@\texttt{ltxdoc}} 這個 class 的同時就會載入 \textsf{doc} package。由於這不是用於一般的文件使用場合，所以，這裡就不多談，有興趣的話可自行參考他的文件說明。
+
+\subsection{exscale}\index{exscale@\textsf{exscale}}
+
+由於原先的 Computer Modern font\index{Computer Modern font} 中的數學延伸符號（\texttt{cmex}\index{cmex@\texttt{cmex}}）只有 10pt 大小的字型（\texttt{cmex10}），內文放大到 \texttt{large} 以上的字型時，例如放大到 \texttt{Large} 時，有些數學符號仍然會維持一定的大小，這時可以使用這個套件，讓這些數學符號也跟著放大，例如積分符號。\textsf{exscale} 只有字型縮放的定義，因此只要把這個套件在 preamble\index{preamble} 區引用就可以了，無需任何指令。
+
+不過，這裡要說明一下，在 \TeX/\LaTeX{} 裡字型放大，有時可能會造成表現失真的情形，尤其是數學式子，為了顧及數學式子中各個字母間的空間安排，\texttt{cmex10} 的設計並不適合拿來放大，可以把 \texttt{cmr5} 放大成 10pt 和真正的 \texttt{cmr10} 來比較就會知道表現出來會不一樣，因此，如果考慮精確配合的問題，放大數學式子的字型時可能要考慮一下使用場合，尤其目前採用向量字更是如此。請試試以下的例子，我們把 \texttt{cmr5}、\texttt{cmr10} 及 \texttt{cmr12} 同樣放大到 30pt 來看看結果會不會一樣：
+
+\begin{quote}
+  \begin{verbatim}
+% test-fonts.tex
+\font\largecmr=cmr12 at 30pt
+\largecmr
+This is cmr12 at 30pt.
+\font\largecmr=cmr10 at 30pt
+\largecmr
+This is cmr10 at 30pt.
+\font\largecmr=cmr5 at 30pt
+\largecmr
+This is cmr5 at 30pt.
+\bye
+\end{verbatim}
+\end{quote}
+
+請注意，這是 \TeX\ 文稿，不是 \LaTeX{} 文稿，所以要使用 \texttt{tex}\index{tex@\texttt{tex}} 或 \texttt{pdftex}\index{pdftex@\texttt{pdftex}} 來編譯，他的結果如下，大家可很清楚的看得出來，雖然同樣是向量字，但放大時的表現並不會一樣：
+
+\begin{quote}
+  \url{http://edt1023.sayya.org/tex/latex123/test-fonts.tex}\\
+  \url{http://edt1023.sayya.org/tex/latex123/test-fonts.pdf}
+\end{quote}
+
+根據 Knuth\index{Knuth} 教授當初設計 \MF\index{metafont@\MF}，他的理念是一個同樣的字型在放大的時候，同一個字，他的筆劃置放的相對位置應該要隨放大的倍數而稍加調整。因此，假如我們只使用一種向量字型\index{向量字型}，用在不同的放大倍率的時候，文字符號間的空間配合會產生不一樣的結果，尤其是用在數學式子\index{數學式子}的時候，更加明顯。
+
+當然，實用上 \MF\ 雖然也是一種向量字型，但由於太過於複雜，不適合拿來螢幕顯示上用，所以才會退而求其次，轉成 pk 點陣字型來使用。這也就是為什麼同樣是 \texttt{cmr} 的字型，會有幾種不同點數的獨立字型的原因，縱使是向量字也是如此。\TeX\ 已經 20 幾歲了，但是，我們的字型技術似乎還是沒有完全趕上當初 Knuth 教授的理念。
+
+\subsection{fontenc}\index{fontenc@\textsf{fontenc}}
+
+在第 \ref{subsec:font-attr} 小節，頁 \pageref{subsec:font-attr}，曾提到字型編碼的問題。要改變字型編碼，可以使用這個 \textsf{fontenc} package。以 T1 font encoding\index{T1} 來說：
+
+\begin{quote}
+  \begin{verbatim}
+  ...
+\usepackage[T1]{fontenc}
+  ...
+\end{verbatim}
+\end{quote}
+
+這樣就可以了，但由於一些字型，例如歐洲字元，在原來的 Computer modern Type1 字型中安排不一樣，所以，有些部份會使用原始的 \MF\ 字型所轉換成的 pk 點陣字，這樣的話，一般印表機印出來是差異不大，但如果是想製作成 PDF 格式在螢光幕閱覽的話，字型的表現會變得很醜。理想的話，要安裝 \texttt{cm-super}\index{cm-super@\texttt{cm-super}} Type1 字型，但是一般使用者恐怕自行安裝字型會有困難。這在 te\TeX\ 2.x\index{tetex@te\TeX} 以後的版本，已經有附上 \textsf{pxfonts}\index{pxfonts@\textsf{pxfonts}} 及 \textsf{txfonts}\index{txfonts@\textsf{txfonts}} package 及其字型，所以，如果是新近版本的 te\TeX\ 的話，可以由以下的方式來使用：
+
+\begin{quote}
+  \begin{verbatim}
+  ...
+\usepackage{txfonts}
+\usepackage[T1]{fontenc}
+  ...
+\end{verbatim}
+\end{quote}
+
+其中 \textsf{txfonts} 是模擬 Times 系列的字型，\textsf{pxfonts} 是模擬 Palatino 系列的字型。當然，這裡關於字型的問題有點複雜，這不在這篇文章的討論範圍，只能做簡單的說明，如果沒有特殊需要，例如，歐洲字元、一些有重音符號的字母，那使用預設的 OT1 編碼就行了，因為這些套件所附的有些字型，只有一種大小的 Type1 字型在縮放，因此使用上恐怕會有失真\index{失真}的情形。
+
+\subsection{graphpap}\index{graphpap@\textsf{graphpap}}
+
+這是產生方格紙的巨集。他提供了一個指令，可以畫方格，可以配合 \texttt{picture}\index{picture@\texttt{picture}} 環境來使用，他的語法是：
+
+\begin{quote}
+  \begin{verbatim}
+  ...
+\usepackage{graphpap}
+  ...
+\graphpaper[n](x,y)(x1,y1)
+  ...
+\end{verbatim}
+\end{quote}
+
+其中的 \texttt{n} 如果省略的話，預設是 10，他指的是方格紙的最小刻度單位。\texttt{(x,y)} 及 \texttt{(x1,y1)} 指的是左下角及右上角的座標值，例如：
+
+\begin{quote}
+  \begin{verbatim}
+\documentclass{article}
+\usepackage{graphpap}
+\begin{document}
+\graphpaper(0,0)(360,360)
+\end{document}
+\end{verbatim}
+\end{quote}
+
+這樣會畫出以 10 為最小刻度的方格，編譯好的例子如下：
+
+\begin{quote}
+  \url{http://edt1023.sayya.org/tex/latex123/test-graphpap.tex}\\
+  \url{http://edt1023.sayya.org/tex/latex123/test-graphpap.pdf}
+\end{quote}
+
+\subsection{ifthen}\index{ifthen@\textsf{ifthen}}
+
+\TeX\ 本身是一種排版程式語言，當然會有條件判斷式\index{條件判斷式}來方便寫巨集，但如果文稿中也充滿了條件判斷式，將會使文稿複雜化，難以閱讀、維護，因此，一般條件判斷式大多數使用在巨集定義，而不是寫在文稿當中。這個 package 就是在簡化條件判斷式，以便也可以方便使用在文稿當中。
+
+\textsf{ifthen} package 提供了 \verb|\ifthenelse|\index{ifthenelse@\verb=\ifthenelse=} 指令來做條件判斷。他後面有三個參數，第一個是條件式，第二個是條件為真的時候要執行的內容，第三個是條件為偽的時候要執行的內容。這裡不多談他的使用，底下只提供一個實例片段：
+
+\begin{quote}
+  \begin{verbatim}
+  ...
+\usepackage{ifthen}
+  ...
+\ifthenelse{\isodd{\thepage}}%
+  {\setlength{\leftmargin}{10pt}}%
+  {\setlength{\leftmargin}{0pt}}
+  ...
+\end{verbatim}
+\end{quote}
+
+這樣奇數頁時，\texttt{leftmargin} 會設為 10pt，偶數頁時則為 0pt。後面加 \texttt{\%} 代表，這三行是一整行，其間沒有空白。
+
+\subsection{inputenc}\index{inputenc@\textsf{inputenc}}
+
+由於 \textsf{fontenc} package 的一些字型編碼安排，和一般所謂的 Latin-1\index{Latin-1} 這些編碼（input encoding），他們的內容不一定相符，所以，\textsf{fontenc}\index{fontenc@\textsf{fontenc}} package 常會和 \textsf{inputenc} package 互相配合使用，以確保在使用歐洲字元、符號時能正確取得到字。例如：
+
+\begin{quote}
+  \begin{verbatim}
+  ...
+\usrpackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+  ...
+\inputencoding{ascii} % 也可以在文稿內文變換
+  ...
+\inputencoding{latin2}
+  ...
+\inputencoding{latin1}
+  ...
+\end{verbatim}
+\end{quote}
+
+當然，我們的文稿如果只是英美語系的文章，那這些都可以不必理會。
+
+\subsection{latexsym}
+\label{subsec:latexsym}\index{latexsym@\textsf{latexsym}}
+
+這是 \LaTeX{} 額外提供的符號。在新版的 \LaTeXe\ 並不會自動載入，要自行引入這個獨立出來的 package。這主要是提供 \texttt{lasy*} 這些字型裡頭的符號。如果有使用 \textsf{amsfonts}\index{amsfonts@\textsf{amsfonts}} 或 \textsf{amssymb}\index{amssymb@\textsf{amssymb}} package 的話，這些 \textsf{latexsym}\index{latexsym@\textsf{latexsym}} 符號應該是可以無需引入（有少數符號是 \LaTeX{} 特有的）。至於各種符號的 package 有哪些內容，可以參考系統上的 \texttt{symbols*} 這些檔案，他可能存在的形式是：
+
+\begin{quote}
+  \begin{verbatim}
+symbols.dvi
+symbols-a4.ps[pdf]
+symbols-letter.ps[pdf]
+\end{verbatim}
+\end{quote}
+
+或者，也可以從 CTAN\index{CTAN} 下載最新的版本：
+
+\begin{quote}
+  \url{ftp://cam.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf}
+\end{quote}
+
+\subsection{makeidx}\index{makeidx@\textsf{makeidx}}
+
+這是在製作索引\index{索引}時要引入的 package，我們會在第 \ref{sec:index} 節，頁 \pageref{sec:index} 再來討論。
+
+\subsection{newlfont}
+\index{newlfont@\textsf{newlfont}}
+
+這是模擬舊版 \LaTeX{} 的字型用法，讓他使用新的取字機制的 package。也就是我們在第 \ref{subsec:font-command}，頁 \pageref{subsec:font-command} 所提到的用法。為免麻煩，我們盡量避免使用舊用法，而使用字型的標準指令。
+
+\subsection{oldlfont}
+\index{oldlfont@\textsf{oldlfont}}
+
+這是模擬舊版 \LaTeX{} 的字型用法的 package。
+
+\subsection{showidx}
+\index{showidx@\textsf{showidx}}
+
+這個 package 會顯示，\verb|\index|\index{index@\verb=\index=} 指令下在什麼地方。這也會在第 \ref{sec:index} 節來討論。
+
+\subsection{syntonly}
+
+\textsf{syntonly}\index{syntonly@\textsf{syntonly}} package 提供 \verb|\syntaxonly|\index{syntaxonly@\verb=\syntaxonly=} 指令，他可以檢查語法是否正確，並不會有 {\ttfamily *.dvi} 檔的輸出。但這個 \verb|\syntaxonly| 指令一定要放在 preamble 區。
+
+\subsection{tracefnt}
+\index{tracefnt@\textsf{tracefnt}}
+
+這是追蹤字型使用情形的 package。通常編譯時所產生的資訊已經很足夠，但如果希望有更詳細的字型使用資訊的話，可以使用這個 package：
+
+\begin{quote}
+  \begin{verbatim}
+  ...
+\usepackage[debugshow]{tracefnt}
+  ...
+\end{verbatim}
+\end{quote}
+
+請注意，這樣會增加編譯的時間，而且 {\ttfamily *.log} 檔會很大。
+
+\section{\LaTeX{} 官方文件中的工具組}
+
+這些巨集套件，\LaTeX{} 官方文件是歸類在相關軟體（relative software）中，可能會比上一節提到的標準巨集套件來得實用些。但也同時可以看得出來 \LaTeX{} 非內建的套件不少，加上其他外來的巨集套件，那真的是套件滿天飛，我們很希望在可能的情形下 \LaTeX{} team 可以考慮將一些必要的套件納入內建，更加落實版面處理和文稿寫作分開的理念。
+
+\subsection{\AmS-\LaTeX}
+\index{AmS-LaTeX@\AmS-\LaTeX}
+
+\LaTeX{} 本身就有排版數學式子的能力，但在比較專業使用時，可能會需要增強他的功能，\AmS-\LaTeX{} 是美國數學協會（American Mathematical Society, AMS\index{AMS}\index{American Mathematical Society}\index{美國數學協會}）所發展的一個增強 \LaTeX{} 數學式子編輯的巨集組，是由 \AmS-\TeX\\index{amstex@\AmS-\TeX} 移植過來給 \LaTeX{} 使用的，他主要分成兩個部份：\textsf{amscls}\index{amscls@\textsf{amscls}} 及 \textsf{amsmath}\index{amsmath@\textsf{amsmath}}，前者提供符合 AMS 的文件規格的文稿類別，後者可加強原來 \LaTeX{} 的數學模式。我們會在第 \ref{ch:math} 章，頁 \pageref{ch:math} 加以介紹。
+
+\subsection{babel}
+\index{babel@\textsf{babel}}
+
+如果想排版英文以外的其他歐洲國家的語文，例如：德文、法文，那可以利用 \textsf{babel} 巨集套件。
+
+\subsection{cyrillic}
+\index{cyrillic@\textsf{cyrillic}}
+
+這是專為排版斯拉夫民族語文，例如：俄文，那可以使用這個套件。
+
+\subsection{graphics}
+\index{graphics@\textsf{graphics}}
+
+這是處理圖形要用到的巨集套件\index{巨集套件}。但目前一般都使用功能較完善的 \textsf{graphicx}\index{graphicx@\textsf{graphicx}} 巨集套件來取代 \textsf{graphics}\index{graphics@\textsf{graphics}} 了，事實上，引用 \textsf{graphicx} 會自動的引用 \textsf{graphics}，而在指令使用的方便性上，\textsf{graphicx} 較佳，因此我們往後都是以 \textsf{graphicx} 為主來說明的。這兩個套件屬於 \LaTeX{} 的圖形工具組，這個工具組包括了和顏色、圖形相關的各種巨集，我們會在第 \ref{ch:graphic} 章，頁 \pageref{ch:graphic} 來討論。
+
+\subsection{psnfss}
+\index{psnfss@\textsf{psnfss}}
+
+這是 Type1 字型的巨集套件組，例如：\textsf{times}, \textsf{charter}, \textsf{mathptmx}\index{mathptmx@\textsf{mathptmx}} 等等，他會去使用這些 Type1 字型\index{Type1 字型}。但通常這些字型有許多是商業字型，系統上不一定會有，如果沒有的話，會去使用 free 的代替字型，或者就不嵌入這些字型了。如果沒有這些商業字型，又想要嵌入替代的 Type1 字型的話，可以考慮使用 \textsf{txfonts} 或 \textsf{pxfonts} 巨集套件及其所附字型。當然，如果專業使用的話，可能得考慮購買專業的商業字型來使用。
+
+\subsection{array}
+\index{array@\textsf{array}}
+
+這是加強原來的 \texttt{array}, \texttt{tabular} 環境的巨集套件，可增許多細部微調的功能。這在第 \ref{sec:array} 節，頁 \pageref{sec:array}，時會討論到。
+
+\subsection{calc}
+\index{calc@\textsf{calc}}
+
+這個套件可以讓 \LaTeX{} 接受一些簡單的代數運算。主要用於微調一些原始預設的長度及計數器（counter\index{計數器}\index{counter}）。
+
+\subsection{dcolumn}
+\index{dcolumn@\textsf{dcolumn}}
+
+這是讓表格中具有小數點的數字對齊的巨集套件。我們會在第 \ref{sec:dcolumn} 節，頁 \pageref{sec:dcolumn} 中詳細討論。
+
+\subsection{delarray}
+\index{delarray@\textsf{delarray}}
+
+這是加強 \textsf{array}\index{array@\textsf{array}} 巨集套件的功能，讓矩陣或行列式的大分界符號可以使用較簡單的指令。這個套件要配合 \textsf{array} 巨集套件來使用。通常在 \textsf{array} 巨集套件中，這些矩陣或行列式的大分界符號是由 \verb|\left| 及 \verb|\right| 來引導才會出來，但使用 \textsf{delarray} 巨集則不必如此麻煩。這在第 \ref{ch:math} 章會討論到。
+
+\subsection{hhline}
+\index{hhline@\textsf{hhline}}
+
+這個巨集套件會方便在畫橫線時也可以插入表格的縱線。
+
+\subsection{longtable}
+
+\textsf{longtable}\index{longtable@\textsf{longtable}} 是用在跨頁表格。通常在 \LaTeX{} 中的 \texttt{tabular} 表格是當做一個 box\index{box} 來處理，因此無法再分割，所以無法跨頁來表現。這也會在第 \ref{sec:longtable}，頁 \pageref{sec:longtable} 談到表格時提及。
+
+\subsection{tabularx}
+\index{tabularx@\textsf{tabularx}}
+
+這是 \texttt{tabular}\index{tabular@\texttt{tabular}} 表格環境\index{表格環境}的加強版，他可以方便的排版指定寬度的表格。同樣的，這會在第 \ref{sec:tabular} 節，頁 \pageref{sec:tabular} 時提及。
+
+\subsection{afterpage}
+\index{afterpage@\textsf{afterpage}}
+
+這個件主要在調整 \LaTeX{} 的浮動環境（floating environment）\index{浮動環境}\index{floating environment}時，置放浮動物件，例如：圖、表的位置。
+
+\subsection{bm}
+
+\textsf{bm}\index{bm@\textsf{bm}} 的意思，就是 bold math(symbol)，這會讓數學式子以粗體的方式來顯示。這個巨集套件，提供一個 \verb|\bm{}| 指令，只要把數學式子置於大括號中就會由粗體來顯示。
+
+\subsection{enumerate}
+\label{subsec-enump}\index{enumerate@\textsf{enumerate}}
+
+這是加強 \texttt{enumerate}\index{enumerate@\texttt{enumerate}} 列舉式條列環境\index{列舉式條列環境}的巨集套件。他可以很方便的指定要使用什麼方式來起頭，原始的 \texttt{enumerate} 環境，預設第一層是阿拉伯數目字，雖然也可變更，但要重新定義，不是很方便。這裡舉個例子：
+
+\begin{quote}
+  \begin{verbatim}
+% example15.tex
+\documentclass{article}
+\usepackage{enumerate}
+\begin{document}
+\begin{enumerate}[Example-1.]
+\item This is a item 1.
+\item This is a item 2.
+  \begin{enumerate}[(1)]
+  \item This is a item (1).
+  \item This is a item (2).
+  \end{enumerate}
+\item This is a item 3.
+\item This is a item 4.
+\end{enumerate}
+\end{document}
+\end{verbatim}
+\end{quote}
+
+可以指定會順延顯示的有：\texttt{A, a, I, i, 1}，如果這些是屬於固定顯示的部份，則要以大括號括起來，否則他會順序計算顯示。請試著和第 \ref{subsec:enume} 小節，頁 \pageref{subsec:enume} 的標準 \texttt{enumerate} 環境比較一下。編譯後的結果如下：
+
+\begin{quote}
+  \url{http://edt1023.sayya.org/tex/latex123/example15.tex}\\
+  \url{http://edt1023.sayya.org/tex/latex123/example15.pdf}
+\end{quote}
+
+這裡請注意一下一些同名的環境、巨集套件，例如 \textsf{array} 巨集套件及 \texttt{array} 環境，這裡的 \texttt{enumerate} 巨集套件也是一樣。
+
+\subsection{fontsmpl}
+\index{fontsmpl@\textsf{fontsmpl}}
+
+這是字型 sample 測試 package，他可以是互動的，也可以引用這個 package 後直接使用 \verb|\fontsample| 這個指令來印出目前使用的字型 sample。
+
+互動的話，要自行輸入字族名稱。sample 檔在 \texttt{\$TEXMF/tex/latex/tools} 目錄下，只要下：
+
+\begin{quote}
+  \begin{verbatim}
+latex fontsmpl.tex
+\end{verbatim}
+\end{quote}
+
+就可以了，他會出現：
+
+\begin{quote}
+  \begin{verbatim}
+This is TeX, Version 3.14159 (Web2C 7.4.5)
+(./fontsmpl.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french,
+german, ngerman, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo)) (./fontsmpl.sty)
+Please enter a family name (for example `cmr').
+\family=
+\end{verbatim}
+\end{quote}
+
+只要輸入要測試的字型字族，例如 \texttt{cmr}，他就會產生 \texttt{fontsmpl.dvi} 這個檔，然後就可以使用 \texttt{dvips}\index{dvips@\texttt{dvips}} 或 \texttt{dvipdfm[x]}\index{dvipdfmx@\texttt{dvipdfm[x]}} 把他轉成 ps/pdf 格式的檔案。他只會測試 OT1\index{OT1} 及 T1\index{T1} 兩種字型編碼。
+
+\subsection{ftnright}
+\index{ftnright@\textsf{ftnright}}
+
+\LaTeX{} 在兩欄式排版（two-column mode）\index{兩欄式排版（two-column mode）}時，他的腳註是置放在各自欄位底部。\textsf{ftnright} 會將兩欄式排版時，把所有的腳註都置放在右欄底部。這樣可以將腳註集中，看起來不會那麼凌亂。
+
+\subsection{indentfirst}
+
+通常，\LaTeX{} 的章節開頭的第一個段落是不縮排的，在第二個段落起才會縮排。如果習慣每個段落都有縮排，可以使用 \textsf{indentfirst}\index{indentfirst@\textsf{indentfirst}} package。這個套件也是引入就可以了，無需任何指令。
+
+\subsection{layout}
+\index{layout@\textsf{layout}}
+
+這是顯示目前版面配置\index{版面配置}的 package。引入這個 package 後，只要在本文區下 \verb|\layout| 指令，他就會畫出目前的版面配置，也會將各種數據顯示出來。我們在第 \ref{subsec:layout} 小節，頁 \pageref{subsec:layout}，裡頭所顯示的版面圖，就是這樣畫出來的。
+
+
+\subsection{multicol}
+\label{subsec:multicol}\index{multicol}
+
+在 \LaTeX{} 宣告文稿類別的同時，我們可以選用 \texttt{twocolumn} 來選擇兩欄式的排版，再多則不行。在兩欄式的排版時，我們可以使用 \verb|\onecolumn|\index{onecolumn@\verb=\onecolumn=} 及 \verb|\twocolumn|\index{twocolumn@\verb=\twocolumn=} 指令，在單欄及兩欄間變換，但這有一個很嚴重的缺點，那就是欄位變換也會迫使換新頁，原來的頁面將會顯得空曠。
+
+\textsf{multicol} 的目的，不僅突破兩欄，可以做多欄式的排版（最多可至十欄的排版），也可以在變換欄位編排時在同一頁面變換，而不必換新頁。他提供了 \texttt{multicols}\index{multicols@\texttt{multicols}} 環境來做欄位的變換。他的使用方法很簡單，欄位數目及變換完全由環境來控制：
+
+\begin{quote}
+  \begin{verbatim}
+  ...
+\usepackage{multicol}
+  ...
+\begin{multicols}{欄數}
+  ...
+  內容，依正常單欄方式書寫即可
+  ...
+\end{multicols}
+\end{verbatim}
+\end{quote}
+
+請注意，引入時 \textsf{multicol} 是沒有 `s' 的，而環境中的 \texttt{multicols} 是有 `s' 的。\textsf{multicol} package 處理腳註的方式，和單欄排版相同，就是通通置於本頁底部，不分左右欄位。
+
+\subsection{rawfonts}
+\index{rawfonts@\textsf{rawfonts}}
+
+這是模擬 \LaTeX{} 2.09 舊版的低階字型指令，例如 \verb|\texrm| 代表 10pt 的羅馬字族的字。在新版的 \LaTeXe\ 並沒有定義這些指令。
+
+\subsection{somedefs}
+\index{somedefs@\textsf{somedefs}}
+
+這是寫 \LaTeX{} 巨集的一些範例定義，可以很容易的更改其中設定來寫自己的 package。這不在這篇文章的討論範圍，因此就不多談了。
+
+\subsection{showkeys}
+\index{showkeys@\textsf{showkeys}}
+
+這個 package 會把 \verb|\label|, \verb|\ref|, \verb|\pageref| 等交互參照的指令內容，或文獻引用內容，在指令所在處印出來。
+
+\subsection{varioref}
+\index{varioref@\textsf{varioref}}
+
+這是加強型的交互參照\index{交互參照}的方式，我們會在第 \ref{ch:abook} 章來討論。
+
+\subsection{verbatim}
+\index{verbatim@\textsf{verbatim}}
+
+這是加強 \LaTeX{} 原來的 \texttt{verbatim} 環境的同名套件。可以在裡頭使用註解，也可以利用 \verb|\verbatiminput{檔案名}|\index{verbatiminput@\verb=\verbatiminput=} 指令來引入外來檔案，當然，引入後會自動進入 \texttt{verbatim} 環境中。
+
+\subsection{xr}
+
+\textsf{xr}\index{xr@\textsf{xr}} 是 eXternal References 的縮寫，意思就是交互參照外部的檔案。這會在第 \ref{sec:ref} 節，頁 \pageref{sec:ref} 來討論。
+
+\subsection{xspace}
+\index{xspace@\textsf{xspace}}
+
+這個 package 會在一個巨集結束時聰明的插入適當的空白。我們在第 \ref{gen:gamerules}，頁 \pageref{gen:gamerules}，時曾談到 \LaTeX{} 指令的結束的問題，所以，我們得在指令後加 `\verb|\ |' 或者 `\verb|{}|' 來結束一個指令。但如果巨集定義時使用了 \textsf{xspace} 巨集套件的一個指令 \verb|\xspace|，那麼他就會自動判斷指令何時結束，而不必自行插入 `\verb|\ |' 或 `\verb|{}|' 了。
+
+\subsection{theorem}
+\index{theorem@\textsf{theorem}}
+
+這是 \LaTeX{} 內建的 \texttt{theorem} 環境的加強型巨集套件。我們會在第 \ref{ch:math}，頁 \pageref{ch:math}，再來討論。
+
+
+\section{巨集套件何處尋？}
+\label{sec:pkgwhere}
+
+重複發明輪子要盡量避免，所以，如果需要些功能，而 \LaTeX{} 似乎沒有，那可以先找看看是不是別人已經有寫好類似的功能的巨集套件，首先要找的應該是 FAQ\index{FAQ} 文件：
+
+\begin{quote}
+  \url{http://www.tex.ac.uk/faq}
+\end{quote}
+
+在 \url{news://tw.bbs.comp.tex} 也有一篇 Chun-Chieh Huang\index{Chun-Chieh Huang} 所維護的中文 FAQ\index{中文 FAQ} 可以參考。另外 \url{news://comp.text.tex} 則是英文討論群組，可以多多利用。如果已經知道套件名或關鍵字，那可以到：
+
+\begin{quote}
+  \url{http://tug.ctan.org/CTANfind.html}
+\end{quote}
+
+去搜尋，搜尋到後可以抓整個目錄的壓縮檔。通常，安裝 package，他裡頭會說明如何安裝，萬一沒有的話，可以到 bbs/news 上發問，或者下載以下這個 sh script：
+
+\begin{quote}
+  \url{http://edt1023.sayya.org/tex/latex123/ltxins.sh}
+\end{quote}
+
+他的使用方法很簡單，把他置於執行路徑可及之處：
+
+\begin{quote}
+  \begin{verbatim}
+ltxins.sh your.dtx(or your.ins)
+\end{verbatim}
+\end{quote}
+
+這樣就行了，他會產生必要的 \texttt{*.sty} 或 \texttt{*.tex} 及 pdf 格式的說明文件。這裡頭使用的是 \texttt{dvipdfm[x]}，所以要有安裝這兩種工具才行。當然，他不會自動安裝，你還是要手動把一些檔案拷貝到 \LaTeX{} 找得到的地方。這只是一個很簡單的工具，因此不保證能成功編譯出文件出來。
+
+如果想知道某個套件在系統上是否已安裝，安裝在什麼地方，可使用以下的小工具：
+
+\begin{quote}
+  \url{http://edt1023.sayya.org/tex/latex123/ltxpkg.sh}
+\end{quote}
+
+把他拷貝至路徑所及之處，使用方法如下：
+
+\begin{quote}
+  \begin{verbatim}
+ltxpkg.sh package-name[.sty]
+\end{verbatim}
+\end{quote}
+
+這會列出所查詢的套件是否已安裝，及安裝在什麼目錄下，及這個 package 是否有預先載入其他的 package(s)。當然，這兩個小工具都是 bash script 寫的，你的系統要有安裝 bash，一般的 Unix-like 系統應該沒有問題，Mac OS X 及 Windows/cygwin 環境就不敢保證了。這也是個很簡單的小工具，如果是由 \verb|\input| 指令所載入的其他 {\ttfamily .tex} 檔，可能就會偵測不出來了，許多特殊細節也是沒有去考慮到，因此實際上要以 package 的原始 macro\index{macro} 內容為準。以下為一個使用實例：
+
+\begin{quote}
+  \begin{verbatim}
+edt1023:~$ ltxpkg.sh colortbl
+The position of this package is at:
+/usr/share/texmf/tex/latex/carlisle/colortbl.sty
+The preloaded package(s) of `colortbl.sty' is(are):
+array,color
+\end{verbatim}
+\end{quote}
+
+所以，得知 {\sffamily colortbl} package，系統上已經安裝，而且他會在引入的同時也引入 {\sffamily array} 及 {\sffamily color} 這兩個 packages，除非要變更這兩個 package 引入時的選項參數，不然就可以不必引入這兩個 packages 了。
+
+
+
+%\section{微調與自行定義}
+
+%這裡所談的微調，指的是對一些 \LaTeX{} 的預設值做變更或自行定義一些簡單方便的指令、環境。雖然，我們有些處理還沒有學習到，這沒有關係，我們只是瞭解如何調整就行了，一些還沒談到的預設值，等討論到時會再提出來。
+
+%在 \LaTeX{} 裡頭有許多固定的值，例如：

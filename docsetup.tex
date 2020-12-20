@@ -1,0 +1,67 @@
+% --------------------------------------------------
+% 加載套件（Include Packages）
+% --------------------------------------------------
+
+\usepackage[CJKbookmarks, plainpages=false, hyperindex]{hyperref}
+\usepackage{mflogo}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{array}
+\usepackage{alltt}
+\usepackage{fancyvrb}
+\usepackage{makeidx}
+% \usepackage{imakeidx}
+% \usepackage[pagecolor={none}]{pagecolor}
+
+% --------------------------------------------------
+% 套件設定（Packages Settings）
+% --------------------------------------------------
+
+% \appendgraphicspath{{./figures/chapter01/}}
+% \appendgraphicspath{{./figures/chapter02/}}
+\appendgraphicspath{{./figures/chapter03/}}
+\appendgraphicspath{{./figures/chapter04/}}
+\appendgraphicspath{{./figures/chapter05/}}
+\appendgraphicspath{{./figures/chapter10/}}
+
+% --------------------------------------------------
+% 自訂命令（Packages Settings）
+% --------------------------------------------------
+
+\hypersetup{
+    colorlinks  = true,
+    linkcolor   = blue,
+    pdfauthor   = {李果正 Edward G.J. Lee},
+    pdftitle    = {大家來學 LaTeX Version 1.0},
+    pdfsubject  = {大家來學 LaTeX Version 1.0},
+    pdfkeywords = {大家來學 LaTeX, CJK, LaTeX, latex123}
+}
+
+% 設定小節深度
+\setcounter{secnumdepth}{3}
+
+% 啟用頁眉格式
+\pagestyle{fancy}
+
+% 繪製線段長度
+\newcommand{\drawwidth}[1]{\rule{0.3pt}{1.3ex}\rule[1mm]{#1}{0.3pt}\rule{0.3pt}{1.3ex}}
+
+% 中文顯示日期
+\renewcommand{\today}{\number\year~年~\number\month~月~\number\day~日}
+
+% 中文刪節符號
+\newcommand{\chdots}{$\cdots\cdots$}
+\newtheorem{defi}{Definition}
+
+% 設置中文標題
+\renewcommand\contentsname{目~錄~}
+\renewcommand\bibname{參~考~資~料}
+\renewcommand\indexname{索~引}
+\renewcommand\chaptermark[1]{\markboth{第\ \thechapter\ 章\  #1}{}}
+
+% 創建索引頁面
+\let\oldprintindex\printindex
+\renewcommand{\printindex}{
+  \addcontentsline{toc}{chapter}{索引}
+  \oldprintindex
+}
+\makeindex

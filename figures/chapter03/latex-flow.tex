@@ -1,0 +1,31 @@
+% \documentclass[12pt]{article}
+\documentclass[crop=true]{standalone}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{pstricks}
+\usepackage{pst-node}
+\definecolor{Pink}{rgb}{1.00, 0.75, 0.80}
+\pagestyle{empty}
+
+\setCJKmainfont{HanWangMingMedium}[
+  Path = ../../fonts/chinese/ ,
+  Extension = .ttf ,
+  BoldFont = HanWangMingHeavy , ]
+
+\begin{document}
+\begin{psmatrix}[rowsep=0.5cm, colsep=0.8cm]
+   \psovalbox[fillstyle=solid, fillcolor=yellow]{開始}         \\
+   \psframebox{{\ttfamily latex} 可能不只一次}                       \\
+   \psdiabox[fillstyle=solid, fillcolor=Pink]{\ttfamily your.tex} &
+   \psframebox{\ttfamily dvips} & \psframebox{\ttfamily ps2pdf}         \\
+   \psframebox{\ttfamily dvipdfm[x] 或 pdflatex}                     \\
+   \psovalbox[fillstyle=solid, fillcolor=yellow]{完成}
+   \ncline{1,1}{2,1}
+   \ncline{2,1}{3,1}
+   \ncline{3,1}{4,1}<{\textcolor{red}{pdf 檔}}
+   \ncline{4,1}{5,1}
+   \ncline{->}{3,1}{3,2}^{\textcolor{red}{ps 檔}}
+   \ncline{->}{3,2}{3,3}
+   \ncbar[angleA=-90, armB=0, nodesepB=2.5mm]{->}{3,3}{4,1}
+\end{psmatrix}
+\end{document}

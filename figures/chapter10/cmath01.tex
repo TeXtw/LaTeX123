@@ -1,0 +1,27 @@
+% cmath01.tex
+\documentclass[12pt]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{amssymb, amsmath,amsthm}
+\pagestyle{empty}
+
+\setCJKmainfont{HanWangMingMedium}[
+  Path = ../../fonts/chinese/ ,
+  Extension = .ttf , 
+  BoldFont = HanWangMingHeavy , ]
+
+\theoremstyle{remark}
+\newtheorem{cdefi}{\bfseries 定義}
+\renewcommand\CJKglue{\hskip -0.3pt plus 0.08\baselineskip}
+
+\begin{document}
+
+\begin{cdefi}
+設函數 $f:[a,b]\rightarrow{\mathbb R}$ 為可微分，且 $(f')^2$ 為可積，則稱
+\[
+L(s)=\int^b_a\sqrt{1+(f'(x))^2}dx
+\]
+為 $f$ 之圖形自點 $(a,f(a))$ 至點 $(b,f(b))$ 之弧 $s$ 的弧長。
+\end{cdefi}
+
+\end{document}

@@ -1,0 +1,50 @@
+% --------------------------------------------------
+% 《大家來學 LaTeX》版權聲明
+% --------------------------------------------------
+% Copyright (c) 2004 Edward G.J. Lee <edt1023@info.sayya.org>
+%
+% 在不違反 GNU Free Documentation License 1.2 或以後的版本規範之下，
+% 允許拷貝、散佈或修改。但原版權、授權聲明不得移除。
+%
+% 本散佈版本，含有 fdl.tex，內容為 GNU FDL 的規範原文。如果遺失，可由
+% http://www.gnu.org 取得，或寫信至自由軟體基金會(Free Software Fundation)
+% 索取。
+%
+\documentclass{latex123}
+
+\input{docsetup}
+
+\begin{document}
+
+% 封面
+% Cover
+\makecover
+
+% 目錄
+% Contents of Tables
+\maketableofcontents
+
+% 正文
+% Contents
+\mainmatter
+\input{contents/chapter01}  % story.tex
+\input{contents/chapter02}  % preparation.tex
+\input{contents/chapter03}  % syntax.tex
+\input{contents/chapter04}  % start.tex
+\input{contents/chapter05}  % space.tex
+\input{contents/chapter06}  % class.tex
+\input{contents/chapter07}  % package.tex
+\input{contents/chapter08}  % table.tex
+\input{contents/chapter09}  % graphic.tex
+\input{contents/chapter10}  % math.tex
+\input{contents/chapter11}  % abook.tex
+\input{contents/chapter12}  % theend.tex
+\input{contents/chapter13}  % fdl.tex
+\input{contents/references}
+\input{contents/license}
+
+% 索引
+% Index
+\printindex
+
+\end{document}
