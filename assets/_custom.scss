@@ -1,0 +1,207 @@
+/* You can add custom styles here. */
+
+// @import "plugins/numbered";
+// @import "plugins/scrollbars";
+@import url('//cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Noto Sans TC', serif;
+}
+
+.markdown {
+  font-family: 'Noto Serif TC', serif;
+}
+
+.book-brand {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+}
+
+article h1 + blockquote,
+article h1 + h2,
+article h1 + h3,
+article h1 + h4,
+article h1 + h5,
+article h1 + h6,
+article h1 + ol,
+article h1 + p,
+article h1 + section > blockquote:first-child,
+article h1 + section > h2:first-child,
+article h1 + section > h3:first-child,
+article h1 + section > h4:first-child,
+article h1 + section > h5:first-child,
+article h1 + section > h6:first-child,
+article h1 + section > ol:first-child,
+article h1 + section > p:first-child,
+article h1 + section > ul:first-child,
+article h1 + ul,
+article h2 + blockquote,
+article h2 + h2,
+article h2 + h3,
+article h2 + h4,
+article h2 + h5,
+article h2 + h6,
+article h2 + ol,
+article h2 + p,
+article h2 + section > blockquote:first-child,
+article h2 + section > h2:first-child,
+article h2 + section > h3:first-child,
+article h2 + section > h4:first-child,
+article h2 + section > h5:first-child,
+article h2 + section > h6:first-child,
+article h2 + section > ol:first-child,
+article h2 + section > p:first-child,
+article h2 + section > ul:first-child,
+article h2 + ul,
+article h3 + blockquote,
+article h3 + h3,
+article h3 + h4,
+article h3 + h5,
+article h3 + h6,
+article h3 + ol,
+article h3 + p,
+article h3 + section > blockquote:first-child,
+article h3 + section > h3:first-child,
+article h3 + section > h4:first-child,
+article h3 + section > h5:first-child,
+article h3 + section > h6:first-child,
+article h3 + section > ol:first-child,
+article h3 + section > p:first-child,
+article h3 + section > ul:first-child,
+article h3 + ul,
+article h4 + blockquote,
+article h4 + h4,
+article h4 + h5,
+article h4 + h6,
+article h4 + ol,
+article h4 + p,
+article h4 + section > blockquote:first-child,
+article h4 + section > h4:first-child,
+article h4 + section > h5:first-child,
+article h4 + section > h6:first-child,
+article h4 + section > ol:first-child,
+article h4 + section > p:first-child,
+article h4 + section > ul:first-child,
+article h4 + ul,
+article h5 + blockquote,
+article h5 + h5,
+article h5 + h6,
+article h5 + ol,
+article h5 + p,
+article h5 + section > blockquote:first-child,
+article h5 + section > h5:first-child,
+article h5 + section > h6:first-child,
+article h5 + section > ol:first-child,
+article h5 + section > p:first-child,
+article h5 + section > ul:first-child,
+article h5 + ul,
+article h6 + blockquote,
+article h6 + h6,
+article h6 + ol,
+article h6 + p,
+article h6 + section > blockquote:first-child,
+article h6 + section > h6:first-child,
+article h6 + section > ol:first-child,
+article h6 + section > p:first-child,
+article h6 + section > ul:first-child,
+article h6 + ul {
+  margin-top: 0em;
+}
+
+// https://github.com/auth0/kbd
+kbd {
+  font-family: Consolas, 'Lucida Console', monospace;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0px 4px;
+  box-shadow: 1px 1px 1px #777;
+  margin: 2px;
+  font-size: small;
+  vertical-align: text-bottom;
+  background: #eee;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  font-variant: small-caps;
+  font-weight: 600;
+
+  /* This two work */
+  /* letter-spacing: 0.5px; */
+  letter-spacing: 1px;
+
+  /* Prevent selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+kbd:hover,
+kbd:hover * {
+  color: black;
+  /* box-shadow: 1px 1px 1px #333; */
+}
+kbd:active,
+kbd:active * {
+  color: black;
+  box-shadow: 1px 1px 0px #ddd inset;
+}
+
+kbd kbd {
+  padding: 0px;
+  margin: 0 1px;
+  box-shadow: 0px 0px 0px black;
+  vertical-align: baseline;
+  background: none;
+}
+
+kbd kbd:hover {
+  box-shadow: 0px 0px 0px black;
+}
+
+kbd:active kbd {
+  box-shadow: 0px 0px 0px black;
+  background: none;
+}
+
+/* Deep blue */
+kbd.deep-blue,
+.deep-blue kbd {
+  background: steelblue;
+  color: #eee;
+}
+
+kbd.deep-blue:hover,
+kbd.deep-blue:hover *,
+.deep-blue kbd:hover {
+  color: white;
+}
+
+/* Dark apple */
+kbd.dark-apple,
+.dark-apple kbd {
+  background: black;
+  color: #ddd;
+}
+
+kbd.dark-apple:hover,
+kbd.dark-apple:hover *,
+.dark-apple kbd:hover {
+  color: white;
+}
+
+/* Type writer */
+kbd.type-writer,
+.type-writer kbd {
+  border-radius: 10px;
+  background: #333;
+  color: white;
+}
