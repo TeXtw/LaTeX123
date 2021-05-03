@@ -1,0 +1,15 @@
+{
+  "name": "大家來學 LaTeX",
+  "short_name": "大家來學 LaTeX",
+  "start_url": "/LaTeX123/",
+  "scope": "/LaTeX123/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/LaTeX123/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}

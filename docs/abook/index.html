@@ -1,0 +1,195 @@
+<!doctype html><html lang=zh-tw dir=ltr><head><meta name=generator content="Hugo 0.83.1"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="11. 一篇文章、一本書的完整結構 #  好了，寫文章最後也要整理成冊，這也是排版系統要負責的部份。如果只是簡單幾百、幾千字的小文章，那很容易，只要個文章題目，章節標題，那也就夠了。但如果是較正式的論文，那可能還有目錄、參考文獻、索引……等等，甚至一本書籍的話，也要有個封面，及送印刷廠時要用到的裁切記號（crop marks）。如果要置放在網頁上的，那還得注意網路超連結互動的問題，所以，這些細節算是滿瑣碎的，但卻是必要的。
+當然，個人也並不是什麼排版、印刷的專家，只能談談我所知道的事項，如果需要補充或修正，請有這方面經驗的朋友，不吝提供心得及指正。個人出版，這實際上不是夢，尤其網路發達的今日。
+11.1 目錄（Contents） #  目錄的問題，如果不講究的話，使用   \(\LaTeX\)  預設的就行了。就像第 4.4 節所舉的例子一樣。但如果要做調整的話，除非熟悉  \(\LaTeX\)  巨集的寫法、定義，否則就得使用現成的巨集套件，例如 minitoc 可讓目錄更緊湊，titletoc 更可做相當幅度的調整及美化。
+在  \(\LaTeX\)  文稿內，\tablofcontents 可以排版一般的章節目錄。\listoffigures 指令可以排版圖目錄，\listoftables 指令則可排版表目錄。但圖表的話是指有進入浮動環境，使用 \caption 指令，有編號的圖表而言。請注意，這些目錄指令的置放位置會影響實際目錄出現的順序，沒有特殊需求的話，一般的順序是文、圖、表。
+11.1.1 更改目錄標題名稱 #  預設的情形下，在目錄開頭都會有個標題來引導，例如：Contents、List of Figueres 及 List of Tables 等，但是這在中文的情形看起來會不相稱，我們可以去更改預設值。更改  \(\LaTeX\)  預設值得視原來這個值是以什麼形式出現，在目錄是以指令定義的形式出現，所以我們要使用 \renewcommand 這個指令去重定義他。
+原來的這些 Contents 標題是怎麼「弄」出來的呢？如果手頭上沒有相當的參考書籍，可以參考他的原始定義，例如這篇文章是使用 report class，那麼找一下：
+/usr/share/texmf/tex/latex/base/report.cls % Unix-like 系統 C:\texmf\tex\latex\base\report.cls % DOS/Windows 系統 這個檔（依安裝的地方不同，可能會有不同的路徑），搜尋 Contents 這個關鍵字，就可以發現，他們原來的定義是："><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="第 11 章：一篇文章、一本書的完整結構"><meta property="og:description" content="11. 一篇文章、一本書的完整結構 #  好了，寫文章最後也要整理成冊，這也是排版系統要負責的部份。如果只是簡單幾百、幾千字的小文章，那很容易，只要個文章題目，章節標題，那也就夠了。但如果是較正式的論文，那可能還有目錄、參考文獻、索引……等等，甚至一本書籍的話，也要有個封面，及送印刷廠時要用到的裁切記號（crop marks）。如果要置放在網頁上的，那還得注意網路超連結互動的問題，所以，這些細節算是滿瑣碎的，但卻是必要的。
+當然，個人也並不是什麼排版、印刷的專家，只能談談我所知道的事項，如果需要補充或修正，請有這方面經驗的朋友，不吝提供心得及指正。個人出版，這實際上不是夢，尤其網路發達的今日。
+11.1 目錄（Contents） #  目錄的問題，如果不講究的話，使用   \(\LaTeX\)  預設的就行了。就像第 4.4 節所舉的例子一樣。但如果要做調整的話，除非熟悉  \(\LaTeX\)  巨集的寫法、定義，否則就得使用現成的巨集套件，例如 minitoc 可讓目錄更緊湊，titletoc 更可做相當幅度的調整及美化。
+在  \(\LaTeX\)  文稿內，\tablofcontents 可以排版一般的章節目錄。\listoffigures 指令可以排版圖目錄，\listoftables 指令則可排版表目錄。但圖表的話是指有進入浮動環境，使用 \caption 指令，有編號的圖表而言。請注意，這些目錄指令的置放位置會影響實際目錄出現的順序，沒有特殊需求的話，一般的順序是文、圖、表。
+11.1.1 更改目錄標題名稱 #  預設的情形下，在目錄開頭都會有個標題來引導，例如：Contents、List of Figueres 及 List of Tables 等，但是這在中文的情形看起來會不相稱，我們可以去更改預設值。更改  \(\LaTeX\)  預設值得視原來這個值是以什麼形式出現，在目錄是以指令定義的形式出現，所以我們要使用 \renewcommand 這個指令去重定義他。
+原來的這些 Contents 標題是怎麼「弄」出來的呢？如果手頭上沒有相當的參考書籍，可以參考他的原始定義，例如這篇文章是使用 report class，那麼找一下：
+/usr/share/texmf/tex/latex/base/report.cls % Unix-like 系統 C:\texmf\tex\latex\base\report.cls % DOS/Windows 系統 這個檔（依安裝的地方不同，可能會有不同的路徑），搜尋 Contents 這個關鍵字，就可以發現，他們原來的定義是："><meta property="og:type" content="article"><meta property="og:url" content="https://textw.github.io/LaTeX123/docs/abook/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2021-05-02T07:53:24+08:00"><title>第 11 章：一篇文章、一本書的完整結構 | 大家來學 LaTeX</title><link rel=manifest href=/LaTeX123/manifest.json><link rel=icon href=/LaTeX123/favicon.png type=image/x-icon><link rel=stylesheet href=/LaTeX123/book.min.da7f271a4d03f8b2c42426ccfbf48cdf8113e0396bdeb5f7c0bbc7078637740a.css integrity="sha256-2n8nGk0D+LLEJCbM+/SM34ET4Dlr3rX3wLvHB4Y3dAo="><script defer src=/LaTeX123/zh-tw.search.min.6be650216e51cc5dccc547cb6a169ad13f3e363aa68d477428d9a28b0ce6e271.js integrity="sha256-a+ZQIW5RzF3MxUfLahaa0T8+NjqmjUd0KNmiiwzm4nE="></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a href=/LaTeX123><img src=/LaTeX123/logo.png alt=Logo><span>大家來學 LaTeX</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><strong>目錄</strong></li><li><a href=/LaTeX123/docs/story/>01. 先來說一些故事</a></li><li><a href=/LaTeX123/docs/preparation/>02. 行前準備</a></li><li><a href=/LaTeX123/docs/syntax/>03. TeX/LaTeX 語法概說</a></li><li><a href=/LaTeX123/docs/start/>04. 實際上排版玩看看</a></li><li><a href=/LaTeX123/docs/space/>05. 空間與位置</a></li><li><a href=/LaTeX123/docs/class/>06. LaTeX 的標準文稿類別</a></li><li><a href=/LaTeX123/docs/package/>07. 巨集套件</a></li><li><a href=/LaTeX123/docs/table/>08. 表格的處理</a></li><li><a href=/LaTeX123/docs/graphic/>09. 圖形的處理</a></li><li><a href=/LaTeX123/docs/math/>10. 數學排版</a></li><li><a href=/LaTeX123/docs/abook/ class=active>11. 一篇文章、一本書的完整結構</a></li><li><a href=/LaTeX123/docs/theend/>12. 後記</a></li><li><a href=/LaTeX123/docs/fdl/>13. GNU 自由文件許可證原文</a></li></ul><p><br></p><ul><li><strong>社群連結</strong></li><li><a href=https://github.com/TeXtw>開源倉庫 (<code>@TEXTW</code>)</a></li><li><a href=https://t.me/TWTUG>討論群組 (<code>@TWTUG</code>)</a></li></ul></nav><script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/LaTeX123/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>第 11 章：一篇文章、一本書的完整結構</strong>
+<label for=toc-control><img src=/LaTeX123/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#111-目錄contents>11.1 目錄（Contents）</a><ul><li><a href=#1111-更改目錄標題名稱>11.1.1 更改目錄標題名稱</a></li><li><a href=#1112-目錄的深度>11.1.2 目錄的深度</a></li><li><a href=#1113-額外的目錄>11.1.3 額外的目錄</a></li></ul></li><li><a href=#112-交互參照cross-references>11.2 交互參照（Cross References）</a><ul><li><a href=#1121-一般的交互參照>11.2.1 一般的交互參照</a></li><li><a href=#1122-超連結交互參照hyperlink>11.2.2 超連結交互參照（hyperlink）</a></li></ul></li><li><a href=#113-索引index>11.3 索引（index）</a><ul><li><a href=#1131-索引的結構及編譯>11.3.1 索引的結構及編譯</a></li><li><a href=#1132-索引值的製作>11.3.2 索引值的製作</a></li><li><a href=#1133-更改索引標題>11.3.3 更改索引標題</a></li></ul></li><li><a href=#114-參考文獻bibliography>11.4 參考文獻（Bibliography）</a><ul><li><a href=#1141-thebibliography-環境>11.4.1 thebibliography 環境</a></li><li><a href=#1142-更改標題名稱>11.4.2 更改標題名稱</a></li><li><a href=#1143-bibtex-簡介>11.4.3 BibTeX 簡介</a></li></ul></li><li><a href=#115-附錄appendix>11.5 附錄（Appendix）</a><ul><li><a href=#1151-改變附錄的標題>11.5.1 改變附錄的標題</a></li></ul></li><li><a href=#116-大型文稿的維護>11.6 大型文稿的維護</a><ul><li><a href=#1161-input-和-include-的差異>11.6.1 input 和 include 的差異</a></li></ul></li><li><a href=#117-裁切記號crop-marks>11.7 裁切記號（crop marks）</a></li></ul></nav></aside></header><article class=markdown><h1 id=11-一篇文章一本書的完整結構>11. 一篇文章、一本書的完整結構
+<a class=anchor href=#11-%e4%b8%80%e7%af%87%e6%96%87%e7%ab%a0%e4%b8%80%e6%9c%ac%e6%9b%b8%e7%9a%84%e5%ae%8c%e6%95%b4%e7%b5%90%e6%a7%8b>#</a></h1><p>好了，寫文章最後也要整理成冊，這也是排版系統要負責的部份。如果只是簡單幾百、幾千字的小文章，那很容易，只要個文章題目，章節標題，那也就夠了。但如果是較正式的論文，那可能還有目錄、參考文獻、索引……等等，甚至一本書籍的話，也要有個封面，及送印刷廠時要用到的裁切記號（crop marks）。如果要置放在網頁上的，那還得注意網路超連結互動的問題，所以，這些細節算是滿瑣碎的，但卻是必要的。</p><p>當然，個人也並不是什麼排版、印刷的專家，只能談談我所知道的事項，如果需要補充或修正，請有這方面經驗的朋友，不吝提供心得及指正。個人出版，這實際上不是夢，尤其網路發達的今日。</p><h2 id=111-目錄contents>11.1 目錄（Contents）
+<a class=anchor href=#111-%e7%9b%ae%e9%8c%84contents>#</a></h2><p>目錄的問題，如果不講究的話，使用
+<link rel=stylesheet href=/LaTeX123/katex/katex.min.css><script defer src=/LaTeX123/katex/katex.min.js></script><script defer src=/LaTeX123/katex/auto-render.min.js onload=renderMathInElement(document.body)></script><span>\(\LaTeX\)</span>
+預設的就行了。就像第 4.4 節所舉的例子一樣。但如果要做調整的話，除非熟悉 <span>\(\LaTeX\)</span>
+巨集的寫法、定義，否則就得使用現成的巨集套件，例如 <code>minitoc</code> 可讓目錄更緊湊，<code>titletoc</code> 更可做相當幅度的調整及美化。</p><p>在 <span>\(\LaTeX\)</span>
+文稿內，<code>\tablofcontents</code> 可以排版一般的章節目錄。<code>\listoffigures</code> 指令可以排版圖目錄，<code>\listoftables</code> 指令則可排版表目錄。但圖表的話是指有進入浮動環境，使用 <code>\caption</code> 指令，有編號的圖表而言。請注意，這些目錄指令的置放位置會影響實際目錄出現的順序，沒有特殊需求的話，一般的順序是文、圖、表。</p><h3 id=1111-更改目錄標題名稱>11.1.1 更改目錄標題名稱
+<a class=anchor href=#1111-%e6%9b%b4%e6%94%b9%e7%9b%ae%e9%8c%84%e6%a8%99%e9%a1%8c%e5%90%8d%e7%a8%b1>#</a></h3><p>預設的情形下，在目錄開頭都會有個標題來引導，例如：Contents、List of Figueres 及 List of Tables 等，但是這在中文的情形看起來會不相稱，我們可以去更改預設值。更改 <span>\(\LaTeX\)</span>
+預設值得視原來這個值是以什麼形式出現，在目錄是以指令定義的形式出現，所以我們要使用 <code>\renewcommand</code> 這個指令去重定義他。</p><p>原來的這些 Contents 標題是怎麼「弄」出來的呢？如果手頭上沒有相當的參考書籍，可以參考他的原始定義，例如這篇文章是使用 report class，那麼找一下：</p><pre><code>/usr/share/texmf/tex/latex/base/report.cls  % Unix-like 系統
+C:\texmf\tex\latex\base\report.cls          % DOS/Windows 系統
+</code></pre><p>這個檔（依安裝的地方不同，可能會有不同的路徑），搜尋 Contents 這個關鍵字，就可以發現，他們原來的定義是：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#66d9ef>\newcommand\contentsname</span>{Contents}
+<span style=color:#66d9ef>\newcommand\listfigurename</span>{List of Figures}
+<span style=color:#66d9ef>\newcommand\listtablename</span>{List of Tables}
+</code></pre></div><p>這樣就清楚了，我們要重指定的是 contentsname、listfigurename 及 listtablename。其他的情形請依此類推。現在我們來把他改成中文：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#66d9ef>\renewcommand\contentsname</span>{目~錄~}
+<span style=color:#66d9ef>\renewcommand\listfigurename</span>{圖~目~錄}
+<span style=color:#66d9ef>\renewcommand\listtablename</span>{表~目~錄}
+</code></pre></div><p>這裡以 CJK 巨集為例，由於我們需要中文環境，所以這些更改要放在 CJK 環境中，如果只是更改成其他英文字樣，那我們置於 preamble 區就可以了。</p><h3 id=1112-目錄的深度>11.1.2 目錄的深度
+<a class=anchor href=#1112-%e7%9b%ae%e9%8c%84%e7%9a%84%e6%b7%b1%e5%ba%a6>#</a></h3><p>通常，有編號的章節或有 caption 的圖表才會編入目錄中，但如果想讓目錄的結構更細，那麼我們就得更改列入目錄的深度。目錄深度的表現形式是一種計數器（counter），他的名稱是 <code>tocdepth</code>。以這篇文章的 report class 為例，他的預設值是（請自行查一下 <code>report.cls</code>）：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#66d9ef>\setcounter</span>{tocdepth}{2}
+</code></pre></div><p>所以會計算到 <code>subsection</code>，以下的就不列入了（請參考第 3.4.4 小節的章節深度標號）。我們只要在 preamble 區，使用 <code>\setcounter</code> 指令去重新指定，就會改變他的目錄深度。</p><h3 id=1113-額外的目錄>11.1.3 額外的目錄
+<a class=anchor href=#1113-%e9%a1%8d%e5%a4%96%e7%9a%84%e7%9b%ae%e9%8c%84>#</a></h3><p>這是指沒有編入目錄，但想自行加進去的情形，例如：章節指令使用了星號就不會編號，圖表目錄沒有使用 <code>\caption</code> 指令，也不編入目錄了，這時我們可以使用 <code>\addcontentsline</code> 指令來把他們手動加進去。我們來看看文圖表的三種不同情況：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#66d9ef>\addcontentsline</span>{toc}{章節名}{標題}
+<span style=color:#66d9ef>\addcontentsline</span>{lof}{figure}{標題}
+<span style=color:#66d9ef>\addcontentsline</span>{lot}{table}{標題}
+</code></pre></div><p>這樣就會把這些納入目錄，但是，這還是沒有編號的。目錄中所顯示的頁數，就是這些指令（圖表）所在的頁數。</p><h2 id=112-交互參照cross-references>11.2 交互參照（Cross References）
+<a class=anchor href=#112-%e4%ba%a4%e4%ba%92%e5%8f%83%e7%85%a7cross-references>#</a></h2><p>所謂的參照，指的是在文章某處提及某個其他的章節，或某個頁數，甚至是某個圖表，某個數學式子及某個列舉項目，排版系統必需要有這樣的功能來自動達成這種效果，而 <span>\(\LaTeX\)</span>
+本身提供了三個簡單易用的指令來自動處理，他會自動計算相對的章節、頁數。</p><p>當然，由於網路的發達，超連結上的交互參照也變得是不可或缺，但 <span>\(\TeX/\LaTeX\)</span>
+畢竟是平面排版系統，並沒有這樣的原始功能，但我們可以經由巨集套件來達成這樣的目的，<code>hyperef</code> 巨集套件就是為此而寫的，這樣就可以讓 <span>\(\LaTeX\)</span>
+排版的結果去轉換成 PDF/HTML 格式的時候，也有超連結的功能。</p><p>廣義的來說，包括目錄的參照、文獻參照、註解的參照及外部檔案的參照（例如，參照某個外部檔案的某個章節）都是屬於交互參照的一部份，但這些議題我們另外單獨討論，因為他不在 <span>\(\LaTeX\)</span>
+所提供的三個基本參照的指令範圍內。</p><h3 id=1121-一般的交互參照>11.2.1 一般的交互參照
+<a class=anchor href=#1121-%e4%b8%80%e8%88%ac%e7%9a%84%e4%ba%a4%e4%ba%92%e5%8f%83%e7%85%a7>#</a></h3><p><span>\(\LaTeX\)</span>
+提供了三組基本參照的指令：</p><pre><code>  \label{名稱}    % 置放於要被引用之處，以一個名稱來標記他
+  \ref{名稱}      % 引用 \label 所標記處的章節
+  \pageref{名稱}  % 引用 \label 所標記處的頁數
+</code></pre><p>這裡頭的名稱都是自行取名的，但為了避免重複，個人使用上一般使用上會加入章節或圖表的代號，例如：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex> ...
+<span style=color:#66d9ef>\section</span>{<span style=color:#66d9ef>\LaTeX\ </span>的文稿結構}
+<span style=color:#66d9ef>\label</span>{sec:struct}
+ ...
+<span style=color:#66d9ef>\begin</span>{figure}
+<span style=color:#66d9ef>\includesgrapics</span>{fontstruct}
+<span style=color:#66d9ef>\caption</span>{字型的結構}
+<span style=color:#66d9ef>\label</span>{fig:struct}
+<span style=color:#66d9ef>\end</span>{figure}
+ ...
+請參考第 <span style=color:#66d9ef>\ref</span>{sec:struct} 節，頁 <span style=color:#66d9ef>\pageref</span>{sec:struct}。
+請參考圖 <span style=color:#66d9ef>\ref</span>{fig:struct}，頁 <span style=color:#66d9ef>\pageref</span>{fig:struct}。
+ ...
+</code></pre></div><p>這兩個 <code>struct</code> 代表不同的參照處，當然，盡量避免這種情形發生，可加入 <code>fontstruct</code> 之類的來區別，但前面冠上章節、圖表的簡名，有助於看文稿時清楚區別。請注意，其中 <code>sec:</code>、<code>fig:</code> 都不是必要的，只是這樣比較容易辨識，而且不容易名稱重複。</p><p>要非常注意的的幾個重點是：</p><ol><li>有參照的文稿一定要編譯兩次才能正常顯示。</li><li>能編號的章節、圖表、列舉項目、數學式、定理才能參照，雖然他們不一定要編號。</li><li>圖表的參照 <code>\label</code> 一定要在 <code>\caption</code> 之後，不能在前。</li></ol><h3 id=1122-超連結交互參照hyperlink>11.2.2 超連結交互參照（hyperlink）
+<a class=anchor href=#1122-%e8%b6%85%e9%80%a3%e7%b5%90%e4%ba%a4%e4%ba%92%e5%8f%83%e7%85%a7hyperlink>#</a></h3><p>這當然是要像 PDF/HTML 格式的檔案才有超連結交互參照的可能，像 <code>*.dvi</code>、<code>*.ps</code> 這類格式的檔案，先天上並沒有這種設計。而 <span>\(\LaTeX\)</span>
+本身並沒有內建這種功能，我們可以使用 <code>hyperref</code> 巨集套件來達成這個目的。現在一般的 <span>\(\TeX\)</span>
+發行版本應該都會附上這個巨集，如果沒有話，可以在以下網站下載、安裝：</p><p><a href=ftp://ftp.tug.org/pub/tex/hyperref/>ftp://ftp.tug.org/pub/tex/hyperref/</a></p><p>這個套件會讓原本 <span>\(\LaTeX\)</span>
+有交互參照的地方，在製作成 PDF 格式時也會有超連結的功能。他的設定檔是 <code>hyperref.cfg</code>，為了各種文稿使用上的彈性，可以把這個檔在工作目錄上建立一個，這樣會依這個設定檔來執行，可參考本文文稿的原始碼，裡頭會有一個設定檔供參考。當然也是可以在 preamble 區來設定，但這就只能使用在特殊的文稿上了。</p><p>他的使用方法，這裡不多做說明，可以參考本文的原始碼裡頭的使用方法，或參考〈由 TeX/LaTeX製作中文 PDF 檔〉一文：</p><p><a href=http://www.study-area.org/tips/latex/chpdf.html>http://www.study-area.org/tips/latex/chpdf.html</a>
+<a href=http://www.study-area.org/tips/latex/chpdf.pdf>http://www.study-area.org/tips/latex/chpdf.pdf</a></p><p>及 <code>hyperref</code> 所附的使用手冊。</p><h2 id=113-索引index>11.3 索引（index）
+<a class=anchor href=#113-%e7%b4%a2%e5%bc%95index>#</a></h2><p>索引的排版方法上並不算困難，困難的是要選出哪個字詞需要索引，及把各個字詞加入索引指令。我們引用 <span>\(\LaTeX\)</span>
+的標準巨集 <code>makeidx</code>，並在其他加上一個 <code>makeindex</code> 指令，然後在文稿結束前印出索引，下 <code>printindex</code> 就可以了。我們在需要編入索引的名詞後加上 <code>\index{名詞}</code> 經過編譯後就會自動把索引及其相對的頁數計算出來。</p><h3 id=1131-索引的結構及編譯>11.3.1 索引的結構及編譯
+<a class=anchor href=#1131-%e7%b4%a2%e5%bc%95%e7%9a%84%e7%b5%90%e6%a7%8b%e5%8f%8a%e7%b7%a8%e8%ad%af>#</a></h3><p>我們來看看文稿裡頭要加入什麼要件：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex> ...
+<span style=color:#66d9ef>\usepackage</span>{makeidx}
+<span style=color:#66d9ef>\makeindex</span>
+ ...
+要索引的名詞<span style=color:#66d9ef>\index</span>{要索引的名詞}
+ ...
+<span style=color:#66d9ef>\printindex</span>        <span style=color:#75715e>% 一定要有這個指令才會印出索引
+</span><span style=color:#75715e></span><span style=color:#66d9ef>\addcontentsline</span>{toc}{chapter}{索引}  <span style=color:#75715e>% 把他加入目錄
+</span><span style=color:#75715e></span> ...
+</code></pre></div><p>編譯的的程序如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ latex your.tex
+$ makeindex your.idx
+$ latex your.tex
+</code></pre></div><h3 id=1132-索引值的製作>11.3.2 索引值的製作
+<a class=anchor href=#1132-%e7%b4%a2%e5%bc%95%e5%80%bc%e7%9a%84%e8%a3%bd%e4%bd%9c>#</a></h3><p>索引值（key）裡頭 <code>|</code>、<code>@</code> 及 <code>!</code> 有特殊的意義，要索引他們時前面要加 <code>"</code> 來 escape 他。我們來看這些符號實際上有什麼作用：</p><pre><code>  abc\index{abc}	這是一般正常的索引
+  xyz\index{abc!xyz}	表示 xyz 是 abc 下的一個子索引
+  abc\index{abc|textit}	表示這個索引值的頁數使用 italic 斜體排版
+  abc\index{abc@\textbf{abc}	表示索引值是 abc，但使用粗體排版
+  \'abc\index{abc@\'abc}	表示依 abc 來排序索引，而不是後面的 ábc
+</code></pre><p>製作索引是需要細心與耐心的，這方面更詳細的資料可以參考系統上的 <code>makeindex.dvi</code> 及 <code>manpages.dvi</code>。要注意的是 <code>\index{}</code> 最理想是緊接在要索引的名詞後，前後都不留空白，有多個 <code>\index{}</code> 相連時亦同，這會讓文件維護增加困難，因此，視每個人的習慣，可以考慮索引在整篇文稿最後才加進去。這份文件也製作了簡單的索引，但這只是當個例子供參考，在製作上有點粗糙，因此，實際上可能會漏掉很多，而且，中文的處理仍有待加強。</p><p>製作索引的時候，他的表示法要細心的注意一下，前後相同索引值的表示法要一樣，例如 <code>\index{abc@\textbf{abc}</code> 和 <code>\index{abc@{\bf abc}</code> 這會造成兩個不同的索引，雖然印出來的是一樣。而且，<code>\verb|abc|</code> 這種方式就行不通，因為 <code>|</code> 這個符號在索引指令內有他的特殊作用，要改用其他的符號代替。如果是和 <code>hyperref</code> 配合的話，<code>abc\index{abc|textit}</code> 也會行不通，因為 <code>hyperref</code> 對超連結的索引是自動加上 <code>|hyperpage</code>，如果已經有 <code>|textit</code> 了的話，就不會加上去了，這樣一來超連結的部份會被忽略，解決的方法只能去重定義索引方法，或在編譯出來的 <code>*.idx</code> 或 <code>*.ind</code> 上做另外處理。例如：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex>abc<span style=color:#66d9ef>\index</span>{abc|textit}
+latex 編譯後的情形是：
+<span style=color:#66d9ef>\indexentry</span>{abc|textit}{143}          <span style=color:#75715e>% *.idx 檔
+</span><span style=color:#75715e></span>經 makeindex 編譯後的情形是：
+<span style=color:#66d9ef>\item</span> abc, <span style=color:#66d9ef>\textit</span>{143}               <span style=color:#75715e>% *.ind 檔
+</span><span style=color:#75715e></span>這樣只編號改變字體，並沒有超連結。而我們要的是：
+<span style=color:#66d9ef>\item</span> abc, <span style=color:#66d9ef>\textit</span>{<span style=color:#66d9ef>\hyperpage</span>{143}}   <span style=color:#75715e>% 這樣才能又變更編號字體又能超連結
+</span></code></pre></div><p>這個議題比較深入一點，解決的方式可能需要大家一同來研究、研究，不是不能解決，而是方式在使用上是否方便的問題。</p><p>索引的處理，他的資訊實際上是產生在編譯後的 <code>*.idx</code> 檔裡頭，然後經由 makeindex 外部程式編譯後，轉換成 <code>*.ind</code>，然後 <code>latex</code> 再次編譯的時候，才把這個 <code>*.ind</code> 引進來，這個 <code>*.ind</code> 其實就是一個 <span>\(\LaTeX\)</span>
+的文稿，他把所有的索引值及頁數，包在一個 <code>theindex</code> 環境中來引入排版的。</p><p>說明這些的用意就是暗示，我們可以由外部處理程式去動手腳，把索引的部份再「加工」，包括中文資料的處理也是一樣，下一節要談到的參考文獻的處理機制也是類似的情形，而這也就是為什麼 <code>latex</code> 要執行好幾次的原因，也正因為這樣，我們才有動手腳的機會，例如 <code>makeindex</code> 就有 <code>-s</code> 參數，可以接受外部的 style 檔，或者，如果工作目錄上有 <code>*.mst</code>（makeindex style）這個檔，也會優先去參考錈，這樣就可以產生不同形式的索引結果。當然，參考文獻可以另單獨的一個文獻外部檔，索引的話，目前則沒有辦法這樣做，是否可以比照參考文獻的做法，由外部檔案來處理呢？就請大家腦筋急轉彎一下了，這樣也可以讓文稿更容易維護。</p><h3 id=1133-更改索引標題>11.3.3 更改索引標題
+<a class=anchor href=#1133-%e6%9b%b4%e6%94%b9%e7%b4%a2%e5%bc%95%e6%a8%99%e9%a1%8c>#</a></h3><p>預設的索引標題是 Index，我們可以在 preamble 區來更改他（中文的話，請放在本文區 CJK 環境內），例如，設要中文名稱的話，可更改為中文：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#66d9ef>\renewcommand\indexname</span>{索~引}
+</code></pre></div><h2 id=114-參考文獻bibliography>11.4 參考文獻（Bibliography）
+<a class=anchor href=#114-%e5%8f%83%e8%80%83%e6%96%87%e7%8d%bbbibliography>#</a></h2><p>參考文獻可以經由 <span>\(\LaTeX\)</span>
+內建的 <code>thebibliography</code> 環境來製作。長篇文稿，也可以使用 BibTeX 由外部檔案來製作。至於參考文獻的格式，就要符合邀稿單位的規格了，這裡不多做說明。</p><h3 id=1141-thebibliography-環境>11.4.1 thebibliography 環境
+<a class=anchor href=#1141-thebibliography-%e7%92%b0%e5%a2%83>#</a></h3><p>在進入 <code>thebibliography</code>，編譯後他會自成一個獨立的章節，如果是 <code>article</code> 類別的文稿，他會自動印出 Referrences 的字樣為標題，如果是 <code>report</code> 或 <code>book</code> 類別的文稿，他會印出 Bibliography 的字樣為標題。</p><p>在 <code>thebibliography</code> 環境裡頭，他是由 <code>\bibitem</code> 指令來列出資料的，我們來看一下他的語法：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#66d9ef>\begin</span>{thebibliography}{99}  <span style=color:#75715e>% 參考文獻印出之編號最寬為兩個字母寬
+</span><span style=color:#75715e></span><span style=color:#66d9ef>\bibitem</span><span style=color:#a6e22e>[標記一]</span>{鍵值一} 參考資料一
+<span style=color:#66d9ef>\bibitem</span><span style=color:#a6e22e>[標記二]</span>{鍵值二} 參考資料二
+ ...
+<span style=color:#66d9ef>\edn</span>{thebibliography}
+</code></pre></div><p>所謂的「標記」這是選項參數，如果沒有的話，則正常引用後會在甲用處使用阿拉伯數字外加方括號來顯示；如果有加入的話，引用後會使用所加入的標記來顯示。那個「鍵值」指的就是引用時的關鍵字，後面所接的「參考資料」就是書籍、論文等資訊。其中的 <code>{99}</code> 只表示在最後的參考文獻印出來的時候，最開始的編號統一在兩個字母寬，如果都沒有使用「標記」，那麼就是兩個數目字寬，如果有使用「標記」，那麼要設在最長標記的字母寬，否則印出時會無法對齊。</p><p>我們引用的時候是使用 <code>\cite{鍵值}</code> 這個指令，他會顯示參考資料中的編號值，且以方括號括起來。我們來看看一些設定及引用的例子，：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#66d9ef>\begin</span>{thebibliography}{KDE}  <span style=color:#75715e>% 參考文獻中印出的編號最寬為三個字母寬
+</span><span style=color:#75715e></span><span style=color:#66d9ef>\bibitem</span>{KDEt} Knuth, D.E., <span style=color:#66d9ef>\textit</span>{The <span style=color:#66d9ef>\TeX</span>{}book},
+Reading, Massachusetts: Addison-Wesley, 1989.
+<span style=color:#66d9ef>\bibitem</span><span style=color:#a6e22e>[KDE]</span>{KDEm} Knuth, D.E., <span style=color:#66d9ef>\textit</span>{The <span style=color:#66d9ef>\MF</span>{}book},
+Reading, Massachusetts: Addison-Wesley, 1986.
+ ...
+<span style=color:#66d9ef>\end</span>{thebibliography}
+</code></pre></div><p>參考文獻印出的結果請參考本文件後面關於參考資料的部份。至於引用方式及其引用情形如下（顏色的部份是因為使用 <code>hyperref</code> 套件的超連結）：</p><p>引用方式 引用結果
+請參考 \cite{KDEt} 請參考 [1]
+請參考 \cite[1989]{KDEt} 請參考 [1, 1989]
+請參考 \cite{KDEm} 請參考 [KDE]
+請參考 \cite[1986]{KDEm} 請參考 [KDE, 1986]
+請參考 \cite{KDEt,KDEm} 請參考 [1,KDE]</p><p>如果你現在是在觀看 PDF 格式的檔案，那在 Xpdf 或 Adobe Acrobat Reader 都可以使用滑鼠來點一下，看看真正在後面印出時是什麼樣子。再次強調，參考文獻的規格請依邀稿單位的要求，這裡所列出來的不是「標準」。</p><h3 id=1142-更改標題名稱>11.4.2 更改標題名稱
+<a class=anchor href=#1142-%e6%9b%b4%e6%94%b9%e6%a8%99%e9%a1%8c%e5%90%8d%e7%a8%b1>#</a></h3><p>前面已提到過更改目錄及索引的標題，同樣的方法，我們也可以更改參考資料的標題，只是要注意引用的文稿類別是什麼。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#66d9ef>\renewcommand\refname</span>{參~考~資~料}  <span style=color:#75715e>% article 類別文稿
+</span><span style=color:#75715e></span><span style=color:#66d9ef>\renewcommand\bibname</span>{參~考~文~獻}  <span style=color:#75715e>% report/book 類別文稿
+</span></code></pre></div><h3 id=1143-bibtex-簡介>11.4.3 BibTeX 簡介
+<a class=anchor href=#1143-bibtex-%e7%b0%a1%e4%bb%8b>#</a></h3><p>如果常常有寫論文的機會，整理出自己的一份參考文獻資料庫可以節省許多時間，正常情況下，使用 <code>bibtex</code> 來處理外部文獻檔案的情形，只有引用到的文獻才會印出來，這樣也就不必擔心印出一堆不相關的文獻了。另外一個好處是，這個參考文獻資料庫可以另外獨立維護，所有的文章都用這一份資料庫，這在維護上會很方便，也減少錯誤的機會。</p><p>BibTeX 本身提供一個外部的 <code>bibtex</code> 工具程式，在 <code>latex</code> 編譯過文稿後，再利用 <code>bibtex</code> 編譯一次文稿，最後再使用 <code>latex</code> 重編譯過。而參考文獻資料庫是按一定的格式寫於 <code>*.bib</code> 檔案裡頭，在文稿中則以 <code>\bibliogrphy</code> 指令來引入，編譯過程中自然會去參考這個外部考文獻資料庫。他的使用情形如下（以 <code>your.bib</code> 為例）：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex> ...
+<span style=color:#66d9ef>\begin</span>{document}
+<span style=color:#66d9ef>\bibliographystyle</span>{plain}  <span style=color:#75715e>% 指定 style 檔
+</span><span style=color:#75715e></span> ...
+<span style=color:#66d9ef>\bibliography</span>{your.bib}    <span style=color:#75715e>% *.bib 延伸檔名可以省略
+</span><span style=color:#75715e></span> ...
+<span style=color:#66d9ef>\end</span>{document}
+</code></pre></div><p>編譯過程：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ latex example
+$ bibtex example
+$ latex example
+</code></pre></div><h4 id=11431-bib-檔的格式>11.4.3.1 *.bib 檔的格式
+<a class=anchor href=#11431-bib-%e6%aa%94%e7%9a%84%e6%a0%bc%e5%bc%8f>#</a></h4><p><code>*.bib</code> 檔的格式自成一格，和寫在原來文稿裡頭的不同，視資料的性質，要把他標明出來，例如書籍類是 <code>@book</code> 來開頭，期刊文章使用 <code>@article</code> 來起頭，我們來看一個例子：</p><pre><code>@book{ KDEt,
+  author      = &quot;Knuth, Donald E.&quot;,
+  year        = &quot;1989&quot;,
+  title       = &quot;The {\TeX}book&quot;,
+  publisher   = &quot;Addison-Wesley&quot;,
+  address     = &quot;Reading, Massachusetts&quot;,
+  volumn      = &quot; &quot;,
+  edition     = &quot; &quot;,
+  month       = &quot; &quot;,
+  series      = &quot; &quot;,
+  note        = &quot; &quot;,
+}
+@article{ somekey,
+  author      = &quot;Someone&quot;,
+  year        = &quot;2004&quot;,
+  title       = &quot;The {\TeX} Journal&quot;,
+  journal     = &quot;SayYa-Publisher&quot;,
+  volumn      = &quot; &quot;,
+  number      = &quot; &quot;,
+  pages       = &quot; &quot;,
+  month       = &quot; &quot;,
+  note        = &quot; &quot;,
+}
+</code></pre><p>每行後的逗點是必要的，名字的話 Knuth, Donald E. 或 Donald E. Knuth 這兩種方式，<code>bibtex</code> 都能認得，但姓擺在前面的時候其後要加個逗點，如果是兩位以上的作者時要以 <code>and</code> 來連接。雖然可以使用 <span>\(\LaTeX\)</span>
+的語法，這時他整個要由大括號括起來，而且，註解符號 <code>%</code> 不被接受。紅色的項目是必要的項目，其他項目可以列進去，也可以省略，要加進去的話，則以 空出來，這樣以後有這方面的資料時再填進去。</p><p>顯現的形式是受 <code>*.bst</code> 格式檔在控制的，所以，不必要的標點符號不要自行加進去，書名的字體顯示也無需加進去。</p><p>引用的方式同樣是使用 <code>\cite</code> 指令，一般只要要引用到的資料才會印出來，如果要全部 <code>*.bib</code> 裡頭的資料都印出來的話，可以加個 <code>\nocite{*}</code> 指令。</p><p>在使用中文的情形下，<code>bibtex</code> 程式認不得中文，在 CJK 環境下編譯會出問題，我們可以先編輯一個 <code>*.cbib</code> 檔，然後再使用 <code>bg5conv</code> 來把他轉成 <code>*.bib</code> 檔：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ bg5conv &lt; some.cbib &gt; some.bib
+</code></pre></div><p>這樣，在文稿裡頭引入 <code>some.bib</code> 就可以了。</p><h4 id=11432-格式檔>11.4.3.2 格式檔
+<a class=anchor href=#11432-%e6%a0%bc%e5%bc%8f%e6%aa%94>#</a></h4><p>BibTeX 的格式檔是 <code>*.bst</code>（bibliography style），我們上面所引用的是 <code>plain</code> 其實就是引用 <code>plain.bst</code> 這個格式檔，這是最基本的格式，在編譯時期會依這個格式檔來印出參考文獻的顯現形式。其他尚有：</p><ul><li><code>plain</code> 依字母的順序印出，比較順序為 <code>author</code>, <code>year</code>, <code>title</code></li><li><code>unsrt</code> 依引用的先後次序印出</li><li><code>abbrv</code> 與 <code>plain</code> 相同，但 <code>first name</code>, <code>month</code>, <code>title</code>, <code>journal</code> 以縮寫印出</li><li><code>alpha</code> 引用處顯示 [作者年份] 來取代數目字。</li></ul><p>已經有許多人發表過特定的格式檔，但這些對於中文則無法完全合乎我們的使用習慣，例如標點符號及書名號，但我們可以去更改他們的格式，這方面的資料請參考系統上的 <code>btxdoc.dvi</code> 及 <code>btxhak.dvi</code> 這兩個說明檔。</p><p>這也算是目前的一個值得去研究的空間，尤其是中文及 Unciode 編碼文件索引、排序及排版的問題，這在英文語系算是比較容易解決，都有現成的格式範例可以運用，但中文就比較缺乏這方面的範例。在吳聰敏教授的《cwTeX 排版系統》[5] 一書裡頭，有對這方面做過努力，使用的是外部程式工具 <code>cwbibtex</code>，再和 <code>cw.bst</code> 格式檔配合的話，有不錯的結果。</p><h2 id=115-附錄appendix>11.5 附錄（Appendix）
+<a class=anchor href=#115-%e9%99%84%e9%8c%84appendix>#</a></h2><p>排版附錄使用的是 <code>\appendix</code> 指令，這個指令以後和正常一般編輯即可，不同的附錄以 <code>\chapter</code> 來區隔，但印出來的時候會標上大寫字母，而不是原來的 Chapter 字樣。也是可以有 <code>\section</code> 指令，這資了大寫英文字母外，會緊接著附上阿拉伯數字，例如 A.1、B.2 等等。</p><h3 id=1151-改變附錄的標題>11.5.1 改變附錄的標題
+<a class=anchor href=#1151-%e6%94%b9%e8%ae%8a%e9%99%84%e9%8c%84%e7%9a%84%e6%a8%99%e9%a1%8c>#</a></h3><p>在英文環境，附錄是以 Appendix 為標題來開始的，在中文環境下我們要把他改成中文：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#66d9ef>\renewcommand\appendixname</span>{附~錄}
+</code></pre></div><p><code>article</code> 類別的文稿並不印出 Appendix 字樣，因此也就沒有 <code>appendixname</code> 來更改。</p><h2 id=116-大型文稿的維護>11.6 大型文稿的維護
+<a class=anchor href=#116-%e5%a4%a7%e5%9e%8b%e6%96%87%e7%a8%bf%e7%9a%84%e7%b6%ad%e8%ad%b7>#</a></h2><p>通常我們寫一篇文章，大概都是一個文稿寫到底，但如果超過一百頁的文稿的時候，維護起來會比較困難，所以 <span>\(\LaTeX\)</span>
+提供了 <code>\input</code> 及 <code>\include</code> 指令來將外部檔案引進來，當做是文稿的一部份來編譯，這樣就可以按章節來把文稿分開處理、維護。</p><p>他們的使用方法很簡單，一個是含主要正常結構的主檔，其他的則沒有 preamble 區，只有本文區，就是按照一般文稿中的章節的部份來書寫就可以了。以這一篇文件的例子來說，他的主檔是 <code>latex123.tex</code>，主要的內容如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#66d9ef>\documentclass</span><span style=color:#a6e22e>[12pt,a4paper]</span>{report}
+ ...
+ 這裡是 preamble 區的內容
+ ...
+<span style=color:#66d9ef>\begin</span>{document}
+<span style=color:#66d9ef>\begin</span>{CJK}{Bg5}{hwmm}
+ ...
+<span style=color:#75715e>%
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>\input</span>{story}
+<span style=color:#66d9ef>\input</span>{preparation}
+<span style=color:#66d9ef>\input</span>{syntax}
+<span style=color:#66d9ef>\input</span>{start}
+<span style=color:#66d9ef>\input</span>{space}
+<span style=color:#66d9ef>\input</span>{class}
+<span style=color:#66d9ef>\input</span>{package}
+<span style=color:#66d9ef>\input</span>{table}
+<span style=color:#66d9ef>\input</span>{graphic}
+<span style=color:#66d9ef>\input</span>{math}
+<span style=color:#66d9ef>\input</span>{abook}
+<span style=color:#66d9ef>\input</span>{theend}
+<span style=color:#66d9ef>\input</span>{fdl}
+...
+<span style=color:#66d9ef>\end</span>{CJK}
+<span style=color:#66d9ef>\end</span>{document}
+</code></pre></div><p>這裡分成兩段來處理是因為要使用 <code>bg5latex</code> 來編譯文稿，但 <code>latex2html</code> 本身已經可以處理未經前置處理的 <span>\(\LaTeX\)</span>
+中文文稿，所以分成兩個部份來分別處理。<code>\input{}</code> 裡頭的案名，如果沒有加附檔名的話，預設他的延伸檔名是 <code>*.tex</code>。CJK package 另外提供了 <code>\CJKinput</code> 及 <code>\CJKinclude</code> 兩個指令，也可以用來引入中文文稿。</p><h3 id=1161-input-和-include-的差異>11.6.1 input 和 include 的差異
+<a class=anchor href=#1161-input-%e5%92%8c-include-%e7%9a%84%e5%b7%ae%e7%95%b0>#</a></h3><p>這兩個指令都可以用來引進外部文稿，但有一些細節不一樣。<code>\input</code> 的情形，他可以另外指定延伸檔名，<code>\include</code> 則不行，他一定要是 <code>*.tex</code> 的延伸檔名。在引入的時候 <code>\include</code> 會起新頁，<code>\input</code> 則不一定，要視文稿類別而定。最重要的差異在於 <code>\include</code> 可以在 preamble 區和 <code>\includeonly{}</code> 指令配合，這樣就不必每次都要編譯整份文稿，只編譯新文稿就可以了，頁數、參照還是會正確顯示，這在排版大型書籍的時候就很好用了。</p><h2 id=117-裁切記號crop-marks>11.7 裁切記號（crop marks）
+<a class=anchor href=#117-%e8%a3%81%e5%88%87%e8%a8%98%e8%99%9fcrop-marks>#</a></h2><p>裁切記號是用在排版完成，送印後會有個標記符號，讓印刷廠可以跟據這些標記符號來做截切、剪裁的工作。<span>
+\(\LaTeX\)</span>
+本身並沒有內建這種功能，這得和 <code>crop</code> 套件來配合。</p><p>由於個人也並沒有這方面的實際經驗，因此這裡不多做說明，請自行參考 <code>crop</code> 巨集套件的說明。</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/TeXtw/LaTeX123//commit/1f2339c690c0343d91048ad1e9fbf0ea1c1be9fc title="最後修改者 Hsins | May 1, 2021" target=_blank rel=noopener><img src=/LaTeX123/svg/calendar.svg class=book-icon alt=Calendar>
+<span>May 1, 2021</span></a></div><div><a class="flex align-center" href=https://github.com/TeXtw/LaTeX123//edit/docs/content/docs/abook.md target=_blank rel=noopener><img src=/LaTeX123/svg/edit.svg class=book-icon alt=Edit>
+<span>編輯頁面</span></a></div></div></footer><div class=book-comments><script src=https://utteranc.es/client.js repo=TeXtw/utter-comments issue-term=pathname theme=github-light crossorigin=anonymous async></script></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#111-目錄contents>11.1 目錄（Contents）</a><ul><li><a href=#1111-更改目錄標題名稱>11.1.1 更改目錄標題名稱</a></li><li><a href=#1112-目錄的深度>11.1.2 目錄的深度</a></li><li><a href=#1113-額外的目錄>11.1.3 額外的目錄</a></li></ul></li><li><a href=#112-交互參照cross-references>11.2 交互參照（Cross References）</a><ul><li><a href=#1121-一般的交互參照>11.2.1 一般的交互參照</a></li><li><a href=#1122-超連結交互參照hyperlink>11.2.2 超連結交互參照（hyperlink）</a></li></ul></li><li><a href=#113-索引index>11.3 索引（index）</a><ul><li><a href=#1131-索引的結構及編譯>11.3.1 索引的結構及編譯</a></li><li><a href=#1132-索引值的製作>11.3.2 索引值的製作</a></li><li><a href=#1133-更改索引標題>11.3.3 更改索引標題</a></li></ul></li><li><a href=#114-參考文獻bibliography>11.4 參考文獻（Bibliography）</a><ul><li><a href=#1141-thebibliography-環境>11.4.1 thebibliography 環境</a></li><li><a href=#1142-更改標題名稱>11.4.2 更改標題名稱</a></li><li><a href=#1143-bibtex-簡介>11.4.3 BibTeX 簡介</a></li></ul></li><li><a href=#115-附錄appendix>11.5 附錄（Appendix）</a><ul><li><a href=#1151-改變附錄的標題>11.5.1 改變附錄的標題</a></li></ul></li><li><a href=#116-大型文稿的維護>11.6 大型文稿的維護</a><ul><li><a href=#1161-input-和-include-的差異>11.6.1 input 和 include 的差異</a></li></ul></li><li><a href=#117-裁切記號crop-marks>11.7 裁切記號（crop marks）</a></li></ul></nav></div></aside></main></body></html>

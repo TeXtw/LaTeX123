@@ -1,0 +1,226 @@
+<!doctype html><html lang=zh-tw dir=ltr><head><meta name=generator content="Hugo 0.83.1"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="10. 數學排版 #  好啦！這章是   \(\LaTeX\)  的拿手把戲了。就讓我們就來見識一下  \(\LaTeX\)  的威力吧！光這一章的內容就可以寫一本厚厚的書了，所以，只能點到為止，先小酌一番。這一章的內容，他們排版精確性，以 PDF 格式的內容為準，HTML 格式的內容，僅供參考。
+對於較複雜的數學式子，除非是自行定義巨集，否則  \(\LaTeX\)  內建所提供的排版數學式子的能力可能會有不足，這時可以使用美國數學協會所開發的 AmS-LaTeX 巨集套件，目前所有的  \(\TeX\)  發行版本應該都會附上，而且也會附上另一套 AMSFonts 巨集套件及其字型。這個套件的使用，這裡並不做詳細的說明，只在必要的時候附帶提及，可以另外參考系統上所附的 amsldoc.dvi 文件及 The LaTeX Companion 這本書第八章，這個部份網路上可以抓得到，檔名是 ch8.pdf，CTAN 有收錄：
+ http://www.ctan.org/tex-archive/info/companion-rev/ch8.pdf  10.1 進入數學模式（math mode）的方法 #  我們平常寫文章的模式無法正確處理數學式子間的空間位置，而且要鍵入次方、方根、積分……等等符號，會有困難，因此，所有的數學式子都得進入數學模式來處理。在數學模式下，不僅大部份文字、符號會採用斜體字，而且空間會另做安排，額外的空白會被  \(\LaTeX\)  忽略，在數學模式中要鍵入一般的正常文字，要退出數學模式，或者由 \mbox{} 或 \textmr{} 包圍起來才行。
+ \(\LaTeX\)  的數學模式有兩種，一種是和內文排列在一起的隨文數式（math inline mode），他是和一般正常文字混在一起排版的；另外一種是獨立的展式數式（math display mode），他會單獨成一行，而且上下會和正常文字有一定的空間來區隔。
+10.1.1 隨文數式（math inline mode） #  這是在夾雜在一般文章內的數學式子，是隨著整個文章段落一起排版的。"><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="第 10 章：數學排版"><meta property="og:description" content="10. 數學排版 #  好啦！這章是   \(\LaTeX\)  的拿手把戲了。就讓我們就來見識一下  \(\LaTeX\)  的威力吧！光這一章的內容就可以寫一本厚厚的書了，所以，只能點到為止，先小酌一番。這一章的內容，他們排版精確性，以 PDF 格式的內容為準，HTML 格式的內容，僅供參考。
+對於較複雜的數學式子，除非是自行定義巨集，否則  \(\LaTeX\)  內建所提供的排版數學式子的能力可能會有不足，這時可以使用美國數學協會所開發的 AmS-LaTeX 巨集套件，目前所有的  \(\TeX\)  發行版本應該都會附上，而且也會附上另一套 AMSFonts 巨集套件及其字型。這個套件的使用，這裡並不做詳細的說明，只在必要的時候附帶提及，可以另外參考系統上所附的 amsldoc.dvi 文件及 The LaTeX Companion 這本書第八章，這個部份網路上可以抓得到，檔名是 ch8.pdf，CTAN 有收錄：
+ http://www.ctan.org/tex-archive/info/companion-rev/ch8.pdf  10.1 進入數學模式（math mode）的方法 #  我們平常寫文章的模式無法正確處理數學式子間的空間位置，而且要鍵入次方、方根、積分……等等符號，會有困難，因此，所有的數學式子都得進入數學模式來處理。在數學模式下，不僅大部份文字、符號會採用斜體字，而且空間會另做安排，額外的空白會被  \(\LaTeX\)  忽略，在數學模式中要鍵入一般的正常文字，要退出數學模式，或者由 \mbox{} 或 \textmr{} 包圍起來才行。
+ \(\LaTeX\)  的數學模式有兩種，一種是和內文排列在一起的隨文數式（math inline mode），他是和一般正常文字混在一起排版的；另外一種是獨立的展式數式（math display mode），他會單獨成一行，而且上下會和正常文字有一定的空間來區隔。
+10.1.1 隨文數式（math inline mode） #  這是在夾雜在一般文章內的數學式子，是隨著整個文章段落一起排版的。"><meta property="og:type" content="article"><meta property="og:url" content="https://textw.github.io/LaTeX123/docs/math/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2021-05-02T07:53:24+08:00"><title>第 10 章：數學排版 | 大家來學 LaTeX</title><link rel=manifest href=/LaTeX123/manifest.json><link rel=icon href=/LaTeX123/favicon.png type=image/x-icon><link rel=stylesheet href=/LaTeX123/book.min.da7f271a4d03f8b2c42426ccfbf48cdf8113e0396bdeb5f7c0bbc7078637740a.css integrity="sha256-2n8nGk0D+LLEJCbM+/SM34ET4Dlr3rX3wLvHB4Y3dAo="><script defer src=/LaTeX123/zh-tw.search.min.6be650216e51cc5dccc547cb6a169ad13f3e363aa68d477428d9a28b0ce6e271.js integrity="sha256-a+ZQIW5RzF3MxUfLahaa0T8+NjqmjUd0KNmiiwzm4nE="></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a href=/LaTeX123><img src=/LaTeX123/logo.png alt=Logo><span>大家來學 LaTeX</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><strong>目錄</strong></li><li><a href=/LaTeX123/docs/story/>01. 先來說一些故事</a></li><li><a href=/LaTeX123/docs/preparation/>02. 行前準備</a></li><li><a href=/LaTeX123/docs/syntax/>03. TeX/LaTeX 語法概說</a></li><li><a href=/LaTeX123/docs/start/>04. 實際上排版玩看看</a></li><li><a href=/LaTeX123/docs/space/>05. 空間與位置</a></li><li><a href=/LaTeX123/docs/class/>06. LaTeX 的標準文稿類別</a></li><li><a href=/LaTeX123/docs/package/>07. 巨集套件</a></li><li><a href=/LaTeX123/docs/table/>08. 表格的處理</a></li><li><a href=/LaTeX123/docs/graphic/>09. 圖形的處理</a></li><li><a href=/LaTeX123/docs/math/ class=active>10. 數學排版</a></li><li><a href=/LaTeX123/docs/abook/>11. 一篇文章、一本書的完整結構</a></li><li><a href=/LaTeX123/docs/theend/>12. 後記</a></li><li><a href=/LaTeX123/docs/fdl/>13. GNU 自由文件許可證原文</a></li></ul><p><br></p><ul><li><strong>社群連結</strong></li><li><a href=https://github.com/TeXtw>開源倉庫 (<code>@TEXTW</code>)</a></li><li><a href=https://t.me/TWTUG>討論群組 (<code>@TWTUG</code>)</a></li></ul></nav><script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/LaTeX123/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>第 10 章：數學排版</strong>
+<label for=toc-control><img src=/LaTeX123/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#101-進入數學模式math-mode的方法>10.1 進入數學模式（math mode）的方法</a><ul><li><a href=#1011-隨文數式math-inline-mode>10.1.1 隨文數式（math inline mode）</a></li><li><a href=#1012-展式數式math-display-mode>10.1.2 展式數式（math display mode）</a></li><li><a href=#1013-在數學模式中的一些遊戲規則>10.1.3 在數學模式中的一些遊戲規則</a></li></ul></li><li><a href=#102-數學符號>10.2 數學符號</a></li><li><a href=#103-各種數學式子的書寫方法>10.3 各種數學式子的書寫方法</a><ul><li><a href=#1031-分式fraction>10.3.1 分式（fraction）</a></li><li><a href=#1032-上下標>10.3.2 上下標</a></li><li><a href=#1033-根號>10.3.3 根號</a></li><li><a href=#104-矩陣array>10.4 矩陣（array）</a></li><li><a href=#1041-矩陣方程式>10.4.1 矩陣方程式</a></li></ul></li><li><a href=#105-定理>10.5 定理</a><ul><li><a href=#1051-原始-latex-的定義>10.5.1 原始 LaTeX 的定義</a></li><li><a href=#1052-amsthm-巨集套件>10.5.2 amsthm 巨集套件</a></li></ul></li><li><a href=#106-數學模式中的字型及空間調整>10.6 數學模式中的字型及空間調整</a><ul><li><a href=#1061-數學字體的改變>10.6.1 數學字體的改變</a></li><li><a href=#1062-數學模式中調整間距>10.6.2 數學模式中調整間距</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=10-數學排版>10. 數學排版
+<a class=anchor href=#10-%e6%95%b8%e5%ad%b8%e6%8e%92%e7%89%88>#</a></h1><p>好啦！這章是
+<link rel=stylesheet href=/LaTeX123/katex/katex.min.css><script defer src=/LaTeX123/katex/katex.min.js></script><script defer src=/LaTeX123/katex/auto-render.min.js onload=renderMathInElement(document.body)></script><span>\(\LaTeX\)</span>
+的拿手把戲了。就讓我們就來見識一下 <span>\(\LaTeX\)</span>
+的威力吧！光這一章的內容就可以寫一本厚厚的書了，所以，只能點到為止，先小酌一番。這一章的內容，他們排版精確性，以 PDF 格式的內容為準，HTML 格式的內容，僅供參考。</p><p>對於較複雜的數學式子，除非是自行定義巨集，否則 <span>\(\LaTeX\)</span>
+內建所提供的排版數學式子的能力可能會有不足，這時可以使用美國數學協會所開發的 AmS-LaTeX 巨集套件，目前所有的 <span>\(\TeX\)</span>
+發行版本應該都會附上，而且也會附上另一套 AMSFonts 巨集套件及其字型。這個套件的使用，這裡並不做詳細的說明，只在必要的時候附帶提及，可以另外參考系統上所附的 <code>amsldoc.dvi</code> 文件及 The LaTeX Companion 這本書第八章，這個部份網路上可以抓得到，檔名是 ch8.pdf，CTAN 有收錄：</p><ul><li><a href=http://www.ctan.org/tex-archive/info/companion-rev/ch8.pdf>http://www.ctan.org/tex-archive/info/companion-rev/ch8.pdf</a></li></ul><h2 id=101-進入數學模式math-mode的方法>10.1 進入數學模式（math mode）的方法
+<a class=anchor href=#101-%e9%80%b2%e5%85%a5%e6%95%b8%e5%ad%b8%e6%a8%a1%e5%bc%8fmath-mode%e7%9a%84%e6%96%b9%e6%b3%95>#</a></h2><p>我們平常寫文章的模式無法正確處理數學式子間的空間位置，而且要鍵入次方、方根、積分……等等符號，會有困難，因此，所有的數學式子都得進入數學模式來處理。在數學模式下，不僅大部份文字、符號會採用斜體字，而且空間會另做安排，額外的空白會被 <span>\(\LaTeX\)</span>
+忽略，在數學模式中要鍵入一般的正常文字，要退出數學模式，或者由 <code>\mbox{}</code> 或 <code>\textmr{}</code> 包圍起來才行。</p><p><span>\(\LaTeX\)</span>
+的數學模式有兩種，一種是和內文排列在一起的隨文數式（math inline mode），他是和一般正常文字混在一起排版的；另外一種是獨立的展式數式（math display mode），他會單獨成一行，而且上下會和正常文字有一定的空間來區隔。</p><h3 id=1011-隨文數式math-inline-mode>10.1.1 隨文數式（math inline mode）
+<a class=anchor href=#1011-%e9%9a%a8%e6%96%87%e6%95%b8%e5%bc%8fmath-inline-mode>#</a></h3><p>這是在夾雜在一般文章內的數學式子，是隨著整個文章段落一起排版的。</p><ol><li><p><code>$ 數學式子 $</code><br>其實，我們在前面的章節的例子裡，就已經常常在使用了，只是沒有詳細說明。由兩個錢字符號 <code>$</code> 所包圍的內容就會進入隨文的數學模式，在一般文字段落內要使用到一些數學式子的話，這是最方便的方法。為什麼是使用錢字符號？因為 Knuth 教授認為數學是很「昂貴」的！真正文章中要寫錢字符號時，要把他 escape，寫成 <code>\$</code>，大概是指，平常不必把錢看得太重的意思吧（這是我猜的）！:-)</p></li><li><p><code>\begin{math} 數學式子 \end{math}</code><br>如果數學式子很長，那麼使用環境的方式亦可。但是這個環境和一般的環境不同的是，他不會在上下行區隔出來，而是隨著其他正常文字一起排版的。要非常注意的是，在這個環境的上下行不要留空白行，否則會另起段落排版，那就不是我們所要的隨文數式了。</p></li><li><p><code>\( 數學式子 \)</code><br>這是 <code>\begin{math} 數學式子 \end{math}</code> 省略寫法。</p></li></ol><p>我們來試試看，到底進入數學模式和不進入數學模式會有什麼不同：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex>f(x,y)=3x+4y                 <span style=color:#75715e>% 不進入數學模式
+</span><span style=color:#75715e></span>f(x, y) = 3x + 4y            <span style=color:#75715e>% 不進入數學模式，空白是有作用的
+</span><span style=color:#75715e></span><span style=color:#e6db74>$</span>f<span style=color:#f92672>(</span>x,y<span style=color:#f92672>)=</span><span style=color:#ae81ff>3</span>x<span style=color:#f92672>+</span><span style=color:#ae81ff>4</span>y<span style=color:#e6db74>$</span>               <span style=color:#75715e>% 進入數學模式
+</span><span style=color:#75715e></span><span style=color:#e6db74>$</span>f<span style=color:#f92672>(</span>x, y<span style=color:#f92672>)</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span>x<span style=color:#f92672>+</span>  <span style=color:#ae81ff>4</span>y<span style=color:#e6db74>$</span>          <span style=color:#75715e>% 數學模式中留不留空白，及留幾個空白，作用都一樣
+</span><span style=color:#75715e></span>sin(2x)=-sin x cos x         <span style=color:#75715e>% 這樣排版出來會慘不忍睹喔！
+</span><span style=color:#75715e></span><span style=color:#e6db74>$</span>\sin <span style=color:#f92672>(</span><span style=color:#ae81ff>2</span>x<span style=color:#f92672>)</span> <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>\sin x \cos x<span style=color:#e6db74>$</span>
+f(x,y) = 3(x+y)y / (2xy-7)   <span style=color:#75715e>% 這樣排版出來也是會慘不忍睹！
+</span><span style=color:#75715e></span><span style=color:#e6db74>$</span>f<span style=color:#f92672>(</span>x,y<span style=color:#f92672>)</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span><span style=color:#f92672>(</span>x<span style=color:#f92672>+</span>y<span style=color:#f92672>)</span>y <span style=color:#f92672>/</span> <span style=color:#f92672>(</span><span style=color:#ae81ff>2</span>xy<span style=color:#f92672>-</span><span style=color:#ae81ff>7</span><span style=color:#f92672>)</span><span style=color:#e6db74>$</span>
+</code></pre></div><p>排版出來的結果會是：</p><p>誤 正
+f(x,y)=3x+4y $ f(x,y)=3x+4y$
+f(x, y) = 3x + 4y $ f(x,y)=3x+4y$
+sin(2x)=-sin x cos x $ \sin (2x) = -\sin x \cos x$
+f(x,y) = 3(x+y)y / (2xy-7) $ f(x,y) = 3(x+y)y / (2xy-7)$</p><p>可以看得出來，英文字的部份變成斜體字了，而且加號、逗點、等號前後的空白也不一樣。但是函數名則還是使用正常字體，這在後面第 10.1.3 會談到數學模式中的遊戲規則。</p><h3 id=1012-展式數式math-display-mode>10.1.2 展式數式（math display mode）
+<a class=anchor href=#1012-%e5%b1%95%e5%bc%8f%e6%95%b8%e5%bc%8fmath-display-mode>#</a></h3><p>通常獨立的數學式子，我們不會使用一般文章一樣的做法去換行，而是讓他進入展式數式的數學模式，他會獨立成一行，有需要的話也可以加入編號，以方便在文章中引用。和隨文數式另一個很大的不同是，展示數式會適當的選用較大的數學符號及字體，尤其是較複雜的數學式子的時候。</p><ol><li><p><code>\begin{displaymath} 數學式子 \end{displaymath}</code><br>這會使數學式子獨立成一行。</p></li><li><p><code>\[ 數學式子 \]</code><br>這種方式也可以，也比較常用。這兩種的展示數式都不會編號。</p></li><li><p><code>\begin{equation} 數學式子 \end{equation}</code><br>這種使用方式，亦會獨立成一行，而且會附上編號。<code>equation*</code> 則不附編號。</p></li></ol><p>使用展式數式要注意的是和上下文章不要空出空白行出來，裡頭也不要空出空白行。請不要使用 <span>\(\TeX\)</span>
+裡頭的 <code>$$</code> 指令，這在 LaTeX 並沒有完整去重定義他，這在某些 <span>\(\LaTeX\)</span>
+指令的效果上會沒有作用。</p><h3 id=1013-在數學模式中的一些遊戲規則>10.1.3 在數學模式中的一些遊戲規則
+<a class=anchor href=#1013-%e5%9c%a8%e6%95%b8%e5%ad%b8%e6%a8%a1%e5%bc%8f%e4%b8%ad%e7%9a%84%e4%b8%80%e4%ba%9b%e9%81%8a%e6%88%b2%e8%a6%8f%e5%89%87>#</a></h3><p>在數學模式中，由於一些空間的安排和一般文章段落不一樣，因此在編輯文稿時，會有一些地方需要注意。</p><ol><li><p>關於標點符號<br>在數學模式中，我們要注意一下標點符號的問題，一般而言，數學式後面如果有標點符號，在隨文數式，這個標點符號不能納入數學模式中；反之，在展式數式的場合，這些標點符號則要納入數學模式中。例如：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex>Let <span style=color:#e6db74>$</span>f<span style=color:#f92672>(</span>x<span style=color:#f92672>)=</span>\sqrt<span style=color:#f92672>[</span><span style=color:#ae81ff>4</span><span style=color:#f92672>]</span>{x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>}<span style=color:#e6db74>$</span> and <span style=color:#e6db74>$</span>g<span style=color:#f92672>(</span>x<span style=color:#f92672>)=</span>\sqrt{<span style=color:#ae81ff>9</span><span style=color:#f92672>-</span>x^<span style=color:#ae81ff>2</span>}<span style=color:#e6db74>$</span>,... <span style=color:#75715e>% 逗點不納入數學模式
+</span><span style=color:#75715e></span>Let
+<span style=color:#e6db74>\[</span>
+f<span style=color:#f92672>(</span>x<span style=color:#f92672>)=</span>\sqrt<span style=color:#f92672>[</span><span style=color:#ae81ff>4</span><span style=color:#f92672>]</span>{x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>}
+<span style=color:#e6db74>\]</span>
+and
+<span style=color:#e6db74>\[</span>
+g<span style=color:#f92672>(</span>x<span style=color:#f92672>)=</span>\sqrt{<span style=color:#ae81ff>9</span><span style=color:#f92672>-</span>x^<span style=color:#ae81ff>2</span>},        <span style=color:#75715e>% 逗點納入數學模式，標點符號也獨立成行
+</span><span style=color:#75715e></span><span style=color:#e6db74>\]</span>
+...
+</code></pre></div><p>所以，展式數式，如果數學式最後有個句點或逗點的話，請不要懷疑，你搞對了！:-)</p></li><li><p>數學模式的斜體字<br>數學模式裡頭，預設會使用斜體字，但這些斜體字是數學斜體，和一般文章中的斜體是不一樣的，他字母間的距離比較寬，也沒有所謂的連體字（ligature），因此，如果需要這些效果，可以指定要使用斜體字，這樣就會表現和一般文章一樣的斜體了。例如：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex><span style=color:#66d9ef>\textit</span>{proffer normal italic.}  <span style=color:#75715e>% 正常文章的斜體
+</span><span style=color:#75715e></span><span style=color:#e6db74>$</span>proffer\ math\ mode\ iatlic.<span style=color:#e6db74>$</span>   <span style=color:#75715e>% 數學斜體
+</span><span style=color:#75715e></span><span style=color:#e6db74>$</span>\textit{proffer\ math\ mode\ normal\ italic.}<span style=color:#e6db74>$</span> <span style=color:#75715e>% 指定為正常斜體
+</span></code></pre></div><p>表現出來會是：</p><p><span>\(\textit{proffer normal italic.}\)</span><br><span>\(proffer\ math\ mode\ iatlic.\)</span><br><span>\(\textit{proffer\ math\ mode\ normal\ italic.}\)</span></p><p>當然，這種情形很少發生，正常排版的話，無需特別去指定使用一般文章的斜體。</p></li><li><p>例外不使用斜體字的情形<br>一般函數名是不使用斜體字的，例如 log、三角函數名……等等，為了避免失誤打錯，可以直接使用指令的方式，例如 <code>\log</code>、<code>\sin</code>、<code>\tan</code>……等等，這樣雖然是在數學模式中，也會使用一般的正常字體。<span>
+\(\TeX/\LaTeX\)</span>
+系統提供了預先定義好的 32 種函數名供使用：</p><pre><code>\arccos \cos  \csc  \exp  \ker    \limsup \min
+\arcsin \cosh \deg  \gcd  \lg     \ln     \Pr
+\arctan \cot  \det  \hom  \lim    \log    \sec
+\arg    \coth \dim  \inf  \liminf \max    \sin
+\sinh   \sup  \tan  \tanh
+</code></pre><p>這樣往後只要是函數名就直接在數學模式中使用這些現成的指令就行了。當然，如果是這裡沒有涵蓋的函數名，就得自行加以注意了。</p><p>另外，單位名、化學元素、數字、簡寫縮寫文字等都不使用斜體字。但例外的例外，物理中的常數名則仍然是要使用斜體字，例如光速 <span>\(c\)</span>
+。</p></li><li><p>不要加入換行指令或插入空白行<br>一個數學式子，在 <span>\(\LaTeX\)</span>
+是視為一個單獨的單位或段落，而且，在這個特殊的段落裡，<span>
+\(\LaTeX\)</span>
+會抑制 line break 及 page break 的機制，所以，除非是矩陣及矩陣方程式外，不能去強迫換行也不能插入空白行。</p></li></ol><h2 id=102-數學符號>10.2 數學符號
+<a class=anchor href=#102-%e6%95%b8%e5%ad%b8%e7%ac%a6%e8%99%9f>#</a></h2><p>我們打字，通常是無法打出一些特殊數學符號，縱使字型裡頭有這種符號，但由於要和其他符號、文字調整他們的相對位置，因此，除了一些常用的運算符號外，數學符號通常是使用指令的方式來鍵入。我們在第 7.2.8 小節裡頭曾提到 symbols-a4.pdf 符號表，這個總表非常重要，幾乎羅列了目前所有可用的現成符號，並且會標明需要引入什麼 package，所以，這裡就不把符號表列出來，以節省篇幅。</p><p>當然，有些編輯器的巨集會設定好方便的按鈕方式來插入這些數學符號，但建議開始接觸的時候，多花點時間親自鍵入，等熟悉以後再來使用這種方便的設定來增加生產力。理由是，編譯錯誤或校稿修改時才知道要改什麼地方，連 <code>\sum</code>、<code>\infty</code>、<code>\int</code> 是什麼符號都不知道的話，那麼要微調就變成很困難了，而且什麼地方錯誤也常會搞不清楚，這些後續的動作所花的時間，可能會比你剛開始學指令所花的時間還多。</p><h2 id=103-各種數學式子的書寫方法>10.3 各種數學式子的書寫方法
+<a class=anchor href=#103-%e5%90%84%e7%a8%ae%e6%95%b8%e5%ad%b8%e5%bc%8f%e5%ad%90%e7%9a%84%e6%9b%b8%e5%af%ab%e6%96%b9%e6%b3%95>#</a></h2><p>我們這裡就正式來看看數學式子到底是如何書寫，這裡不做符號的列表，直接舉例子，如對相關符號指令的書寫有疑問，請自行查閱 symbols-a4.pdf。</p><h3 id=1031-分式fraction>10.3.1 分式（fraction）
+<a class=anchor href=#1031-%e5%88%86%e5%bc%8ffraction>#</a></h3><p>書寫方式 排版結果
+$f(x,y)=3(x+y)y/(2xy-7)$ $ f(x,y) = 3(x+y)y / (2xy-7)$
+$f(x,y)=\frac{3(x+y)y}{(2xy-7)}$ $ f(x,y)=\frac{3(x+y)y}{(2xy-7)}$
+簡單的分式，直接使用 / 就可以了，否則就要使用 \frac{分子}{分母} 這個分式的的指令。我們可以看到，隨文數式為了和前後文配合，分式的情形會把字母、符號縮小，如果太複雜的分式，就不適合使用隨文數式了，要把他單獨列出來：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#e6db74>\[</span>
+f<span style=color:#f92672>(</span>x,y<span style=color:#f92672>)=</span>\frac{<span style=color:#ae81ff>3</span><span style=color:#f92672>(</span>x<span style=color:#f92672>+</span>y<span style=color:#f92672>)</span>y}{<span style=color:#f92672>(</span><span style=color:#ae81ff>2</span>xy<span style=color:#f92672>-</span><span style=color:#ae81ff>7</span><span style=color:#f92672>)</span>}
+<span style=color:#e6db74>\]</span>
+<span style=color:#66d9ef>\begin</span>{equation}  <span style=color:#75715e>% 有編號的情形
+</span><span style=color:#75715e></span>f(x,y)=<span style=color:#66d9ef>\frac</span>{3(x+y)y}{(2xy-7)}
+<span style=color:#66d9ef>\end</span>{equation}
+</code></pre></div><p>這樣，排版出來的結果是：</p><span>\[f(x,y)=\frac{3(x+y)y}{(2xy-7)}\]</span>
+<span>\[\begin{equation}
+f(x,y)=\frac{3(x+y)y}{(2xy-7)}
+\end{equation}\]</span><p>請注意，和上下行的原來文字不要有空白行，展式數式會自動處理。更複雜的分式的例子：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#e6db74>\[</span>
+\frac{\frac{a}{x<span style=color:#f92672>-</span>y}<span style=color:#f92672>+</span>\frac{b}{x<span style=color:#f92672>+</span>y}}{\frac{x<span style=color:#f92672>-</span>y}{x<span style=color:#f92672>+</span>y}<span style=color:#f92672>+</span>\frac{a<span style=color:#f92672>-</span>b}{a<span style=color:#f92672>+</span>b}}
+<span style=color:#e6db74>\]</span>
+</code></pre></div><p>排版出來的結果是：</p><span>\[\frac{\frac{a}{x-y}+\frac{b}{x+y}}{\frac{x-y}{x+y}+\frac{a-b}{a+b}}\]</span><p>如果覺得，字體似乎太小了，可以指定字體：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#e6db74>\[</span>
+\frac{\frac{\displaystyle a}{\displaystyle x<span style=color:#f92672>-</span>y}<span style=color:#f92672>+</span>
+\frac{\displaystyle b}{\displaystyle x<span style=color:#f92672>+</span>y}}
+{\frac{\displaystyle x<span style=color:#f92672>-</span>y}{\displaystyle x<span style=color:#f92672>+</span>y}<span style=color:#f92672>+</span>
+\frac{\displaystyle a<span style=color:#f92672>-</span>b}{\displaystyle a<span style=color:#f92672>+</span>b}}
+<span style=color:#e6db74>\]</span>
+</code></pre></div><p>排版出來的結果是：</p><span>\[\frac{\frac{\displaystyle a}{\displaystyle x-y}+
+\frac{\displaystyle b}{\displaystyle x+y}}
+{\frac{\displaystyle x-y}{\displaystyle x+y}+
+\frac{\displaystyle a-b}{\displaystyle a+b}}\]</span><p>可指定的字體大小有：</p><pre><code>  \displaystyle       展示數式的標準字體大小
+  \textstyle          隨文數式的標準字體大小
+  \scriptstyle        第一層上下標字體大小
+  \scriptscriptstyle  第二層上下標字體大小
+</code></pre><h3 id=1032-上下標>10.3.2 上下標
+<a class=anchor href=#1032-%e4%b8%8a%e4%b8%8b%e6%a8%99>#</a></h3><table><thead><tr><th style=text-align:left>書寫方式</th><th style=text-align:left>排版結果</th></tr></thead><tbody><tr><td style=text-align:left><code>$(a+b)^2=a^2+2ab+b^2$</code></td><td style=text-align:left><span>\((a+b)^2=a^2+2ab+b^2\)</span></td></tr><tr><td style=text-align:left><code>$\cos 2x=\cos^2x-\sin^2x$</code></td><td style=text-align:left><span>\(\cos 2x=\cos^2x-\sin^2x\)</span></td></tr><tr><td style=text-align:left><code>$(y^m)^n=y^{mn}$</code></td><td style=text-align:left><span>\((y^m)^n=y^{mn}\)</span></td></tr><tr><td style=text-align:left><code>$^a_bY^c_d$</code></td><td style=text-align:left><span>\(^a_bY^c_d\)</span></td></tr><tr><td style=text-align:left><code>$e^{t \cos\theta}$</code></td><td style=text-align:left><span>\(e^{t \cos\theta}\)</span></td></tr><tr><td style=text-align:left><code>$\lim_{n \to \infty}\sum_{i=1}^n{\frac{1}{n}}$</code></td><td style=text-align:left><span>\(\lim_{n \to \infty}\sum_{i=1}^n{\frac{1}{n}}\)</span></td></tr><tr><td style=text-align:left><code>y_1=1/3(x_1+\omega x_2+\omega^2x_3)</code></td><td style=text-align:left><span>\(y_1=1/3(x_1+\omega x_2+\omega^2x_3)\)</span></td></tr></tbody></table><p>需要注意的是，不管是上下標，如果裡頭有兩個以上的字元都要當做上下標時，要使用大括號把他括住，否則會只作用在第一個字元而已。而且，上下標是左右兩邊都能標註的。這裡的 <code>\to</code> 指令，是 <code>\rightarrow</code> 的簡寫，就是向右的單箭號。相對的向左的單箭號 <code>\leftarrow</code>，他的簡寫是 <code>\gets</code>。</p><p>另外，像 <code>\sum</code>、<code>\lim</code>、<code>\int</code> 這類符號，如果是在展示數式的時候，他的上下標的表現會和隨文數式不一樣，符號也會比較大，例如：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#e6db74>\[</span>
+\lim_{n \to \infty}\sum_{i<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>}^n{\frac{<span style=color:#ae81ff>1</span>}{n}}\sin\frac{k}{n}
+<span style=color:#e6db74>\]</span>
+</code></pre></div><p>表現出來會變成：</p><span>\[\displaystyle \lim_{n \to \infty}\sum_{i=1}^n{\frac{1}{n}}\sin\frac{k}{n}\]</span><h3 id=1033-根號>10.3.3 根號
+<a class=anchor href=#1033-%e6%a0%b9%e8%99%9f>#</a></h3><table><thead><tr><th style=text-align:left>書寫方式</th><th style=text-align:left>排版結果</th></tr></thead><tbody><tr><td style=text-align:left><code>$\sqrt{x^2+y^2}$</code></td><td style=text-align:left><span>\(\sqrt{x^2+y^2}\)</span></td></tr><tr><td style=text-align:left><code>$\sqrt[5]{a+\sqrt{b}}$</code></td><td style=text-align:left><span>\(\sqrt[5]{a+\sqrt{b}}\)</span></td></tr></tbody></table><h3 id=104-矩陣array>10.4 矩陣（array）
+<a class=anchor href=#104-%e7%9f%a9%e9%99%a3array>#</a></h3><p>矩陣的排版方式和第 8.3 節所談的 <code>tabular</code> 表格類似，也是以 <code>&</code> 來區隔欄位，以 <code>\\</code> 來換行，只不過，矩陣的情形是在數學模式裡頭。</p><p>其中的分界符號（delimiter），在 <span>\(\LaTeX\)</span>
+是由 <code>\left</code> 及 <code>\right</code> 指令來引導，這些分界符號會隨裡頭式子的多寡，自動調整大小。至於有什麼分界符號可以使用，也請自行查一下 symbols-a4.pdf。我們來看例子：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#e6db74>\[</span>
+A <span style=color:#f92672>=</span> \left<span style=color:#f92672>(</span>   <span style=color:#75715e>% 視 \left 後面跟的是什麼分界符號，就是使用什麼
+</span><span style=color:#75715e></span>\begin{array}{clr}
+  t_{<span style=color:#ae81ff>11</span>} &amp; t_{<span style=color:#ae81ff>12</span>} &amp; t_{<span style=color:#ae81ff>13</span>} \\
+  t_{<span style=color:#ae81ff>21</span>} &amp; t_{<span style=color:#ae81ff>22</span>} &amp; t_{<span style=color:#ae81ff>23</span>} \\
+  t_{<span style=color:#ae81ff>31</span>} &amp; t_{<span style=color:#ae81ff>32</span>} &amp; t_{<span style=color:#ae81ff>33</span>}
+\end{arrary}\right<span style=color:#f92672>)</span>
+<span style=color:#e6db74>\]</span>
+</code></pre></div><p>排版結果是：</p><span>\[\displaystyle A = \left(
+\begin{array}{clr}
+t_{11} & t_{12} & t_{13} \\
+t_{21} & t_{22} & t_{23} \\
+t_{31} & t_{32} & t_{33}
+\end{array}\right)\]</span><p>是不是和排版表格一樣呢？指定的位置 <code>lcr</code> 的意思，和排版表格時是一樣的。如果右邊不需分界號，那麼可以使用 <code>\right.</code> 來代替，例如：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#e6db74>\[</span>
+g<span style=color:#f92672>(</span>x,y<span style=color:#f92672>)</span> <span style=color:#f92672>=</span> \left\{\begin{array}{ll}
+                 f<span style=color:#f92672>(</span>x,y<span style=color:#f92672>)</span>, &amp; \mbox{if $x&lt;y$} \\  <span style=color:#75715e>% 文字的部份要用 \mbox
+</span><span style=color:#75715e></span>                 f<span style=color:#f92672>(</span>y,x<span style=color:#f92672>)</span>, &amp; \mbox{if $x&gt;y$} \\  <span style=color:#75715e>% 包住，讓他使用正常字體
+</span><span style=color:#75715e></span>                 <span style=color:#ae81ff>0</span>,      &amp; \mbox{otherwise.}
+                \end{array} \right.
+<span style=color:#e6db74>\]</span>
+</code></pre></div><p>排版的結果是：</p><span>\[\displaystyle g(x,y) = \left\{\begin{array}{ll}
+f(x,y),& \text{if $x&lt;y$} \\
+f(y,x),& \text{if $x>y$} \\
+0,& \text{otherwise.}
+\end{array} \right.\]</span><p>AmS-LaTeX 另外提供了 <code>matrix</code> 環境，這是沒有分界符號的，另外有固定分界符號的環境：</p><table><thead><tr><th style=text-align:center>環境</th><th style=text-align:center>分界符號</th><th style=text-align:left>環境</th><th style=text-align:left>分界符號</th></tr></thead><tbody><tr><td style=text-align:center><code>matrix</code></td><td style=text-align:center>無分界號</td><td style=text-align:left><code>bmatrix</code></td><td style=text-align:left>方括號 <code>[ ]</code></td></tr><tr><td style=text-align:center><code>pmatrix</code></td><td style=text-align:center>小括號 <code>( )</code></td><td style=text-align:left><code>Bmatrix</code></td><td style=text-align:left>大括號 <code>{ }</code></td></tr><tr><td style=text-align:center><code>vmatrix</code></td><td style=text-align:center>單垂直線 `</td><td style=text-align:left></td><td style=text-align:left>`</td></tr></tbody></table><p>這樣就可以不必使用 <code>\left</code> 及 <code>\right</code> 來引導出分界符號，我們把上面的例子再排版一次：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex>  ...
+<span style=color:#66d9ef>\usepackage</span>{amsmath}           <span style=color:#75715e>% 要記得引用 amsmath 巨集
+</span><span style=color:#75715e></span>  ...
+<span style=color:#e6db74>\[</span>
+A <span style=color:#f92672>=</span>
+\begin{pmatrix}                <span style=color:#75715e>% 使用小括號
+</span><span style=color:#75715e></span>  t_{<span style=color:#ae81ff>11</span>} &amp; t_{<span style=color:#ae81ff>12</span>} &amp; t_{<span style=color:#ae81ff>13</span>} \\
+  t_{<span style=color:#ae81ff>21</span>} &amp; t_{<span style=color:#ae81ff>22</span>} &amp; t_{<span style=color:#ae81ff>23</span>} \\
+  t_{<span style=color:#ae81ff>31</span>} &amp; t_{<span style=color:#ae81ff>32</span>} &amp; t_{<span style=color:#ae81ff>33</span>}
+\end{pmatrix}
+<span style=color:#e6db74>\]</span>
+</code></pre></div><p>排版出來的結果是：</p><span>\[A =
+\begin{pmatrix} % 使用小括號
+t_{11} & t_{12} & t_{13} \\
+t_{21} & t_{22} & t_{23} \\
+t_{31} & t_{32} & t_{33}
+\end{pmatrix}\]</span><p>看起來會比較緊湊一點。<code>matrix</code> 環境仍然可以使用 <code>\left</code> 及 <code>\right</code> 來加上分界號。</p><h3 id=1041-矩陣方程式>10.4.1 矩陣方程式
+<a class=anchor href=#1041-%e7%9f%a9%e9%99%a3%e6%96%b9%e7%a8%8b%e5%bc%8f>#</a></h3><p><span>\(\LaTeX\)</span>
+有一個內建的 <code>eqnarray</code> 環境，來排版矩陣方程式，但這個環境對數學式子的空間安排會有潛在的瑕疵，因此，許多 <span>\(\LaTeX\)</span>
+專家建議使用 AmS-LaTeX 所提供的 <code>align</code> 環境。因此，這裡只討論 <code>align</code> 環境。而且，使用 <code>align</code> 環境的好處是，每一個數學式子只需要一個 <code>&</code> 即可，排版出來會依這個 <code>&</code> 來對齊，如果有數個數學式在同一行，那各個數學式子也是使用 <code>&</code> 來區隔。所有式子要向左對齊的話，只要把 <code>&</code> 置於行首就可以了。</p><p><code>align</code> 環境中的每行數學式子都會加以編號，要不編號的話，可在每行數學式子換行符號前加個 <code>\notag</code> 指令，這一行便不會編號，要所有的數學式子都不編號的話，就使用 <code>align*</code> 環境。要使用特別指定的符號來編號的話，可使用 <code>\tag{符號}</code> 放在這一行的換行指令前。使用 <code>subequations</code> 環境則會有子編號。我們來看個例子：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex>  ...
+<span style=color:#66d9ef>\usepackage</span>{amsmath}      <span style=color:#75715e>% 要記得引用 amsmath package
+</span><span style=color:#75715e></span>  ...
+<span style=color:#66d9ef>\begin</span>{subequations}      <span style=color:#75715e>% 讓編號同數，但以英文小寫為子編號
+</span><span style=color:#75715e></span><span style=color:#66d9ef>\begin</span>{align}             <span style=color:#75715e>% 韓信點兵，同餘方程式
+</span><span style=color:#75715e></span>x &amp; <span style=color:#66d9ef>\equiv</span> 2 <span style=color:#66d9ef>\pmod</span> 3 <span style=color:#66d9ef>\\</span>   <span style=color:#75715e>% 三三數之剩二
+</span><span style=color:#75715e></span>x &amp; <span style=color:#66d9ef>\equiv</span> 3 <span style=color:#66d9ef>\pmod</span> 5 <span style=color:#66d9ef>\\</span>   <span style=color:#75715e>% 五五數之剩三
+</span><span style=color:#75715e></span>x &amp; <span style=color:#66d9ef>\equiv</span> 2 <span style=color:#66d9ef>\pmod</span> 7      <span style=color:#75715e>% 七七數之剩二
+</span><span style=color:#75715e></span><span style=color:#66d9ef>\end</span>{align}
+<span style=color:#66d9ef>\end</span>{subequations}
+</code></pre></div><p>排版出來的結果是：</p><span>\[\begin{subequations} % 讓編號同數，但以英文小寫為子編號
+\begin{align} % 韓信點兵，同餘方程式
+x & \equiv 2 \pmod 3 \\ % 三三數之剩二
+x & \equiv 3 \pmod 5 \\ % 五五數之剩三
+x & \equiv 2 \pmod 7 % 七七數之剩二
+\end{align}
+\end{subequations}\]</span><p>\begin{subequations}\begin{align}x & \equiv 2 \pmod 3 \ x & \equiv 3 \pmod 5 \ x & \equiv 2 \pmod 7 \end{align}\end{subequations}</p><h2 id=105-定理>10.5 定理
+<a class=anchor href=#105-%e5%ae%9a%e7%90%86>#</a></h2><p><span>\(\LaTeX\)</span>
+有一個 <code>\newtheorem</code> 指令來定義，Theorem, Lemma, Definition……等等環境，但他的功能算是滿陽春的，因此，這裡也附帶說明美國數學協會的 <code>amsthm</code> package 的使用，他仍然是建立在 <span>\(\LaTeX\)</span>
+的 <code>\newtheorem</code> 而來的，因此可以配合 <span>\(\LaTeX\)</span>
+原有的定義。</p><h3 id=1051-原始-latex-的定義>10.5.1 原始 LaTeX 的定義
+<a class=anchor href=#1051-%e5%8e%9f%e5%a7%8b-latex-%e7%9a%84%e5%ae%9a%e7%be%a9>#</a></h3><p>定理環境，在 <span>\(\LaTeX\)</span>
+裡頭是要我們自行去指定環境名稱，他的語法是：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=color:#66d9ef>\newtheorem</span>{環境名稱}{定理名稱}[章節層次]
+</code></pre></div><p>編號如要加入章節編號，可加入選項參數的部份，例如 <code>chapter</code> 則會按 <code>chapter</code> 的編號來成為定理、定義的編號。我們來看看實際的例子：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex> ...
+<span style=color:#66d9ef>\newtheorem</span>{defi}{Definition}  <span style=color:#75715e>% 在 preamble 區先定義好環境名稱
+</span><span style=color:#75715e></span> ...
+<span style=color:#66d9ef>\begin</span>{defi}
+Let <span style=color:#e6db74>$</span>f<span style=color:#e6db74>$</span> be continuous on the half-open interval <span style=color:#e6db74>$</span><span style=color:#f92672>[</span>a, b<span style=color:#f92672>)</span><span style=color:#e6db74>$</span> and suppose
+<span style=color:#e6db74>$</span>\lim_{x\rightarrow b^<span style=color:#f92672>-</span>}|f<span style=color:#f92672>(</span>x<span style=color:#f92672>)</span>|<span style=color:#f92672>=</span>\infty<span style=color:#e6db74>$</span>. Then,
+<span style=color:#e6db74>\[</span>
+\int_a^bf<span style=color:#f92672>(</span>x<span style=color:#f92672>)</span>dx<span style=color:#f92672>=</span>\lim_{t\rightarrow b^<span style=color:#f92672>-</span>}\int_a^tf<span style=color:#f92672>(</span>x<span style=color:#f92672>)</span>dx
+<span style=color:#e6db74>\]</span>
+provided this limit exists and is finite, in which case we say the
+integral converges. Otherwise, we say it diverges.
+<span style=color:#66d9ef>\end</span>{defi}
+</code></pre></div><p>表現出來的將會是：</p><p>Definition 1 Let $ f$ be continuous on the half-open interval $ [a, b)$ and suppose $ \lim_{x\rightarrow b^-}\vert f(x)\vert=\infty$. Then,
+$\displaystyle \int_a^bf(x)dx=\lim_{t\rightarrow b^-}\int_a^tf(x)dx
+$
+provided this limit exists and is finite, in which case we say the integral converges. Otherwise, we say it diverges.</p><p>如果是定理的話，接著可能需要排版證明，我們可以直接使用 <code>amsthm</code> package 的 <code>proof</code> 環境，來排版證明的部份。</p><h3 id=1052-amsthm-巨集套件>10.5.2 amsthm 巨集套件
+<a class=anchor href=#1052-amsthm-%e5%b7%a8%e9%9b%86%e5%a5%97%e4%bb%b6>#</a></h3><p>我們在上一個小節裡頭看到了 <span>\(\LaTeX\)</span>
+預設的定理、定義環境，但彈性很小，這裡我們來使用 <code>amsthm</code> 巨集套件，並且試著排版中文：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex> ...
+<span style=color:#66d9ef>\usepackage</span>{CJK}                    <span style=color:#75715e>% 引入 CJK 環境
+</span><span style=color:#75715e></span><span style=color:#66d9ef>\usepackage</span>{amsmath,amsthm,amssymb} <span style=color:#75715e>% 引入 AMS 數學環境
+</span><span style=color:#75715e></span><span style=color:#66d9ef>\theoremstyle</span>{remark}               <span style=color:#75715e>% 內文使用正常字體
+</span><span style=color:#75715e></span><span style=color:#66d9ef>\newtheorem</span>{cdefi}{<span style=color:#66d9ef>\bf</span> 定義}        <span style=color:#75715e>% 改用粗體，預設 remark style 是斜體
+</span><span style=color:#75715e></span> ...
+<span style=color:#66d9ef>\begin</span>{CJK}{Bg5}{hwmm}
+<span style=color:#66d9ef>\begin</span>{cdefi}
+設函數 <span style=color:#e6db74>$</span>f:<span style=color:#f92672>[</span>a,b<span style=color:#f92672>]</span>\rightarrow\mathbb{R}<span style=color:#e6db74>$</span> 為可微分，且 <span style=color:#e6db74>$</span><span style=color:#f92672>(</span>f&#39;<span style=color:#f92672>)</span>^<span style=color:#ae81ff>2</span><span style=color:#e6db74>$</span> 為可積，則稱
+<span style=color:#e6db74>\[</span>
+L<span style=color:#f92672>(</span>s<span style=color:#f92672>)=</span>\int^b_a\sqrt{<span style=color:#ae81ff>1</span><span style=color:#f92672>+(</span>f&#39;<span style=color:#f92672>(</span>x<span style=color:#f92672>))</span>^<span style=color:#ae81ff>2</span>}dx
+<span style=color:#e6db74>\]</span>
+為 <span style=color:#e6db74>$</span>f<span style=color:#e6db74>$</span> 之圖形自點 <span style=color:#e6db74>$</span><span style=color:#f92672>(</span>a,f<span style=color:#f92672>(</span>a<span style=color:#f92672>))</span><span style=color:#e6db74>$</span> 至點 <span style=color:#e6db74>$</span><span style=color:#f92672>(</span>b,f<span style=color:#f92672>(</span>b<span style=color:#f92672>))</span><span style=color:#e6db74>$</span> 之弧 <span style=color:#e6db74>$</span>s<span style=color:#e6db74>$</span> 的弧長。
+<span style=color:#66d9ef>\end</span>{cdefi}
+<span style=color:#66d9ef>\end</span>{CJK}
+排版出來的結果是：
+</code></pre></div><p>\includegraphics{cmath}</p><p>其中 <code>theoremstyle</code> 有三種 style，<code>plain</code>, <code>difinition</code>, <code>remark</code>，預設使用的是 <code>plain</code>，即定理名稱會用粗體字，內文則是 italic 斜體字，但這在中文並不適當，所以改由 <code>remark</code> style 來排版。要注意的是定理環境內的 plain style 雖然使用 italic 字型，但他並沒有進入數學模式，因此裡頭的數學式子仍然要進入數學模式來排版。另外，實數的那個特殊符號 <span>\(\mathbb{R}\)</span>
+要引用 <code>amssymb</code> package 才會有，這也是美國數學協會發展的。</p><p><code>amsthm</code> 另提供了 <code>\theoremstyle</code> 給使用自行定義除了 <code>plain</code>、<code>definition</code> 及 <code>remark</code> 三種形式外的 style。另外，<span>
+\(\LaTeX\)</span>
+本身的工具組也提供了一個 <code>theorem</code> 巨集套件，能更有彈性的來細部微調，也有現成的指令，可以去改變所要使用的字體，可以參考系統上就有的 <code>theorem.dvi</code> 這個說明檔。</p><h2 id=106-數學模式中的字型及空間調整>10.6 數學模式中的字型及空間調整
+<a class=anchor href=#106-%e6%95%b8%e5%ad%b8%e6%a8%a1%e5%bc%8f%e4%b8%ad%e7%9a%84%e5%ad%97%e5%9e%8b%e5%8f%8a%e7%a9%ba%e9%96%93%e8%aa%bf%e6%95%b4>#</a></h2><p>我們前面已有談到調整數學模式字體大小的四個指令。這裡我們再來看看其他的調整指令。</p><h3 id=1061-數學字體的改變>10.6.1 數學字體的改變
+<a class=anchor href=#1061-%e6%95%b8%e5%ad%b8%e5%ad%97%e9%ab%94%e7%9a%84%e6%94%b9%e8%ae%8a>#</a></h3><p>以下的指令，相信大家從他的簡寫就可以知道意思：</p><p>指令 作用 實例
+\mathrm 正常字體 $ \mathrm{ABCabc}$
+\mathtt 打字機字族 $ \mathtt{ABCabc}$
+\mathbf 粗體字 $ \mathbf{ABCabc}$
+\mathsf sans serif $ \mathsf{ABCabc}$
+\mathit italic 斜體 $ \mathit{ABCabc}$
+\mathcal 數學花體字 $ \mathcal{ABC}$</p><p>其他的套件會有更多的不同字體，請參考系統裡頭的 <code>symbols-a4.pdf</code>。要注意的是，有些字型並不是都完全有各種字體組合，像花體字並沒有小寫字母。</p><h3 id=1062-數學模式中調整間距>10.6.2 數學模式中調整間距
+<a class=anchor href=#1062-%e6%95%b8%e5%ad%b8%e6%a8%a1%e5%bc%8f%e4%b8%ad%e8%aa%bf%e6%95%b4%e9%96%93%e8%b7%9d>#</a></h3><p>正常情況下，數學模式中的空間調整應不必使用者去操心，但程式畢竟不會思考，有些特殊場合仍然需要人為的調整。</p><p>指令 作用 指令 作用
+\quad 空出一個 em 單位的空白 \qquad 空出兩個 em 的空白
+, 加入 1/6 quad 的空白 ! 減去 1/6 quad 的空白
+; 加入 5/18 quad 的空白 : 加入 2/9 quad 的空白
+其中 ,、\quad 及 \qquad 可以用在一般的文字模式及數學模式，其他的只能使用在數學模式中。我們把上一個弧長定義的例子來試著調整一下：</p><p>&mldr;
+\begin{cdefi}
+設函數 $f:[a,b]\rightarrow{\mathbb R}$ 為可微分，且 $(f')^2$ 為可積，則稱
+[
+L(s)=\int^b_a!\sqrt{1+(f'(x))^2},dx
+]
+為 $f$ 之圖形自點 $(a,f(a))$ 至點 $(b,f(b))$ 之弧 $s$ 的弧長。
+\end{cdefi}
+&mldr;
+排版出來的結果是：</p><p>\includegraphics{cmath1}</p><p>但是，要注意的是，如果文章有點長，數學式子也不少，那一定要注意整體的一致性，要調整的話就全文相同的地方都要去調整，否則就使用預設值就可以了，至少他不會太離譜。</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/TeXtw/LaTeX123//commit/1f2339c690c0343d91048ad1e9fbf0ea1c1be9fc title="最後修改者 Hsins | May 1, 2021" target=_blank rel=noopener><img src=/LaTeX123/svg/calendar.svg class=book-icon alt=Calendar>
+<span>May 1, 2021</span></a></div><div><a class="flex align-center" href=https://github.com/TeXtw/LaTeX123//edit/docs/content/docs/math.md target=_blank rel=noopener><img src=/LaTeX123/svg/edit.svg class=book-icon alt=Edit>
+<span>編輯頁面</span></a></div></div></footer><div class=book-comments><script src=https://utteranc.es/client.js repo=TeXtw/utter-comments issue-term=pathname theme=github-light crossorigin=anonymous async></script></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#101-進入數學模式math-mode的方法>10.1 進入數學模式（math mode）的方法</a><ul><li><a href=#1011-隨文數式math-inline-mode>10.1.1 隨文數式（math inline mode）</a></li><li><a href=#1012-展式數式math-display-mode>10.1.2 展式數式（math display mode）</a></li><li><a href=#1013-在數學模式中的一些遊戲規則>10.1.3 在數學模式中的一些遊戲規則</a></li></ul></li><li><a href=#102-數學符號>10.2 數學符號</a></li><li><a href=#103-各種數學式子的書寫方法>10.3 各種數學式子的書寫方法</a><ul><li><a href=#1031-分式fraction>10.3.1 分式（fraction）</a></li><li><a href=#1032-上下標>10.3.2 上下標</a></li><li><a href=#1033-根號>10.3.3 根號</a></li><li><a href=#104-矩陣array>10.4 矩陣（array）</a></li><li><a href=#1041-矩陣方程式>10.4.1 矩陣方程式</a></li></ul></li><li><a href=#105-定理>10.5 定理</a><ul><li><a href=#1051-原始-latex-的定義>10.5.1 原始 LaTeX 的定義</a></li><li><a href=#1052-amsthm-巨集套件>10.5.2 amsthm 巨集套件</a></li></ul></li><li><a href=#106-數學模式中的字型及空間調整>10.6 數學模式中的字型及空間調整</a><ul><li><a href=#1061-數學字體的改變>10.6.1 數學字體的改變</a></li><li><a href=#1062-數學模式中調整間距>10.6.2 數學模式中調整間距</a></li></ul></li></ul></nav></div></aside></main></body></html>
